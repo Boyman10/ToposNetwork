@@ -84,13 +84,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>${servlet.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 </project>
