@@ -1,27 +1,49 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>rhm</groupId>
-    <artifactId>toponetwork</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>rhm</groupId>
-  <artifactId>climb-webapp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>climb-webapp Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>climb-webapp</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>rhm</groupId>
+		<artifactId>toponetwork</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+
+
+	<!-- ===== Informations Maven ===== -->
+	<artifactId>climb-webapp</artifactId>
+
+
+	<packaging>war</packaging>
+
+	<name>Climb Maven Webapp</name>
+
+	<!-- ===== Informations ===== -->
+	<name>${projectName} - web app</name>
+
+
+	<!-- =============================================================== -->
+	<!-- Properties -->
+	<!-- =============================================================== -->
+	<properties>
+		<application.name>ClimbingWeb</application.name>
+		<maven.build.timestamp.format>dd/MM/yyyy</maven.build.timestamp.format>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>climb-webapp</finalName>
+	</build>
 </project>
