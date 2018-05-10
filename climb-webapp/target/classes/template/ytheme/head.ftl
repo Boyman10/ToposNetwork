@@ -20,5 +20,6 @@
  * under the License.
  */
 -->
-<link rel="stylesheet" href="<@s.url value='/struts/ytheme/styles.css' includeParams='none' encode='false' />" type="text/css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <#include "/${parameters.templateDir}/simple/head.ftl" />
+<link rel="stylesheet" href="<@s.url value='/struts/ytheme/styles.css' includeParams='none' encode='false' />" type="text/css"/>
