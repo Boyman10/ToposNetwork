@@ -8,7 +8,7 @@
 	</Appenders>
 	<Loggers>
 		<Logger name="com.opensymphony.xwork2" level="info" />
-		<Logger name="org.palabres.webapp.action" level="info" />
+		<Logger name="org.rhm.climb.webapp.action" level="info" />
 		<Root level="warn">
 			<AppenderRef ref="STDOUT" />
 		</Root>

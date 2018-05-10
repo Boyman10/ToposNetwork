@@ -7,7 +7,7 @@
 	<package name="global" abstract="true" extends="struts-default">
 		<interceptors>
 			<interceptor name="auth"
-				class="org.palabres.webapp.interceptors.AuthInterceptor" />
+				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
 			<interceptor-stack name="authenticatedStack">
 				<interceptor-ref name="auth" />
 				<interceptor-ref name="timer" />
@@ -39,20 +39,18 @@
 		</action>
 
 		<!-- Action "login" -->
-		<action name="login" class="ManageUserAction" method="doLogin">
-
-
+		<action name="login" class="UserAction" method="doLogin">
 			<result name="input">/jsp/login.jsp</result>
 			<result type="redirectAction">index</result>
 		</action>
 
-		<action name="logout" class="ManageUserAction"
+		<action name="logout" class="UserAction"
 			method="doLogout">
 			<result type="redirectAction">index</result>
 		</action>
 
 		<!-- Action "register" -->
-		<action name="register" class="ManageUserAction"
+		<action name="register" class="UserAction"
 			method="doRegister">
 			<result name="input">/jsp/register.jsp</result>
 			<result>/jsp/success.jsp</result>
@@ -64,29 +62,14 @@
 	<!-- Private package - allowing access to connected users only -->
 	<package name="private" extends="global">
 
-
-
-
 		<default-interceptor-ref
 			name="authenticatedStack" />
 
 
 		<!-- Listing users action -->
-		<action name="user_list" class="ManageUserAction"
+		<action name="list" class="UserAction"
 			method="doList">
 			<result>/jsp/admin/listusers.jsp</result>
-		</action>
-
-
-		<!-- Action "chat room" -->
-		<action name="chat" class="ChannelAction" method="chat">
-			<result>/jsp/room.jsp</result>
-		</action>
-		
-		<!-- Action "chat selection" -->
-		<action name="chatroom" class="ChannelAction" method="chatRoom">
-
-			<result>/jsp/chatroom.jsp</result>
 		</action>
 
 	</package>
