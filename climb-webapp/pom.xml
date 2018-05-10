@@ -34,8 +34,10 @@
 
 
 	<dependencies>
-			<!-- ===== Modules ===== -->
-
+		<!-- ===== Modules ===== -->
+		
+		
+		<!-- ===== Tests ===== -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -46,21 +48,21 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-api</artifactId>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
 		</dependency>
+
+
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-api</artifactId>
+			<version>2.0.5</version>
 		</dependency>
 	</dependencies>
-	
-	
+
+
 	<build>
 		<finalName>climb-webapp</finalName>
 	</build>

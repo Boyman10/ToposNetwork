@@ -43,6 +43,7 @@
 		<postgres.version>42.2.1.jre7</postgres.version>
 		<struts.version>2.5.16</struts.version>
 		<servlet.version>4.0.1</servlet.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 
 	<modules>
@@ -57,6 +58,15 @@
 				<groupId>${project.groupId}</groupId>
 				<artifactId>climb-webapp</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+
+			<!-- ===== Tests ===== -->
+			<!-- https://mvnrepository.com/artifact/junit/junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
 			</dependency>
 
 
