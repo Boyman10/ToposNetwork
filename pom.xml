@@ -60,7 +60,13 @@
 				<artifactId>climb-webapp</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>climb-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			
 			<!-- ===== Tests ===== -->
 			<!-- https://mvnrepository.com/artifact/junit/junit -->
 			<dependency>

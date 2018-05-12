@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>climb-model</artifactId>
+  <artifactId>toponetwork-model</artifactId>
 
   <name>climb-model</name>
   <url>http://maven.apache.org</url>

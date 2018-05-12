@@ -12,6 +12,7 @@ public class User {
 	private String password;
 	private String datereg;
 	private Role role;
+	
 	/**
 	 * @return the id
 	 */
