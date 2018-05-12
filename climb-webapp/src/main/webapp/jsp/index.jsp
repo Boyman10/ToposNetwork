@@ -8,5 +8,8 @@
 
 <h2>Hello World!</h2>
 	
+<s:url value="login">
+    <s:param name="id" value="txt"/>
+</s:url>
 
 <%@ include file="_include/footer.jsp"%>
