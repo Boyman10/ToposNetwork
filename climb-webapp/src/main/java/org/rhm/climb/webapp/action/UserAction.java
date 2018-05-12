@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
+import org.climb.model.bean.user.User;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -47,8 +48,7 @@ public class UserAction  extends ActionSupport implements SessionAware {
 
 		// Return input by default :
         String vResult = ActionSupport.INPUT;
-        
-        
+                
 		// Redirect if user already logged in :
 		if (this.userSession.containsKey(USER) && null != this.userSession.get(USER)) {
 			
@@ -58,31 +58,27 @@ public class UserAction  extends ActionSupport implements SessionAware {
 		
         
         // Check if we have password and userBean submitted :
-        if (userBean != null && userBean.getPseudo() != null && !StringUtils.isAllEmpty(userBean.getPseudo(), password)) {
-            try {
+        if (userBean != null && userBean.getUsername() != null && !StringUtils.isAllEmpty(userBean.getUsername(), userBean.getPassword())) {
+            
+        	try {
             	
-            	System.out.println("Retrieving user with pseudo " + userBean.getPseudo());
+            	System.out.println("Retrieving user with pseudo " + userBean.getUsername());
             	
-                Utilisateur vUtilisateur
+               /* User vUtilisateur
                         = managerFactory.getUtilisateurManager()
                                       .getUtilisateur(userBean.getPseudo());
-
+*/
                 this.addActionError("You are already there !");
                 
-            } catch (NotFoundException pEx) {
-                //this.addActionError("Identifiant ou mot de passe invalide !");
+            } catch (Exception pEx) {
+                
+            	//this.addActionError("Identifiant ou mot de passe invalide !");
 
             	/* Perfect we are all good we should continue now :*/
                 
                 System.out.println("Adding user to session");
                 
-                try {
-                	managerFactory.getUtilisateurManager().addUtilisateur(userBean);
-				} catch (FunctionalException e) {
-					e.printStackTrace();
-				}
-                
-                // Ajout de l'utilisateur en session
+                // Adding user to session :
                 this.userSession.put(USER, userBean);
                 
                 vResult = ActionSupport.SUCCESS;            	
@@ -94,14 +90,13 @@ public class UserAction  extends ActionSupport implements SessionAware {
 	}
 
 	/**
-	 * Action de déconnexion d'un utilisateur
-	 * 
+	 * Login out current user : 
 	 * @return success
 	 */
 	public String doLogout() {
 		
 	    this.userSession.remove(USER);
-        // Invalidation de la session
+        // Invalide  session - security @TODO check further details about security :
         this.servletRequest.getSession().invalidate();
 		return ActionSupport.SUCCESS;
 	}

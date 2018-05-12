@@ -6,10 +6,17 @@
 <%@ include file="_include/header.jsp"%>
 
 
-<h2>Hello World!</h2>
-	
-<s:url value="login">
-    <s:param name="id" value="txt"/>
-</s:url>
+<div class="container">
+
+	<h2>Welcome dude !</h2>
+	<p>Temporary links to actions</p>
+
+	<s:a action="login">do login now</s:a>
+
+
+</div>
+
+
+
 
 <%@ include file="_include/footer.jsp"%>
