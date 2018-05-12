@@ -11,7 +11,7 @@ public class User {
 	private String username;
 	private String password;
 	private String datereg;
-	private String role;
+	private Role role;
 	/**
 	 * @return the id
 	 */
@@ -63,13 +63,13 @@ public class User {
 	/**
 	 * @return the role
 	 */
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 	/**
 	 * @param role the role to set
 	 */
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
