@@ -1,10 +1,13 @@
 package org.climb.model.bean.user;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Class handling User entity
  * @author bob
  * @version 1.1
  */
+@Component
 public class User {
 
 	private int id;
