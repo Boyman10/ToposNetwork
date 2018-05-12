@@ -4,5 +4,5 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<context:annotation-config></context:annotation-config>
-	<context:component-scan base-package="org.rhm.climb.model.bean"></context:component-scan>
+	<context:component-scan base-package="org.rhm.climb.model.bean.user"></context:component-scan>
 </beans>
