@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.climb.model.bean.user.User;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 1.0
  */
 @Service
-public class UserAction  extends ActionSupport implements SessionAware {
+public class UserAction  extends ActionSupport implements SessionAware, ServletRequestAware {
 
 	/**
 	 * TODO : https://www.journaldev.com/2203/get-servlet-session-request-response-context-attributes-struts-2-action 
@@ -36,11 +37,25 @@ public class UserAction  extends ActionSupport implements SessionAware {
 	
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO Auto-generated method stub
-		
+		userSession = session;		
 	}
 
+	/**
+	 * @return the userBean
+	 */
+	public User getUserBean() {
+		return userBean;
+	}
 
+	/**
+	 * @param userBean
+	 *            the userBean to set
+	 */
+	public void setUserBean(User userBean) {
+		this.userBean = userBean;
+	}
+	
+	
 	/**
 	 * Login method checking user sign in
 	 * 
@@ -52,7 +67,7 @@ public class UserAction  extends ActionSupport implements SessionAware {
         String vResult = ActionSupport.INPUT;
                 
 		// Redirect if user already logged in :
-		if (this.userSession.containsKey(USER) && null != this.userSession.get(USER)) {
+		if (null != this.userSession.get(USER) && this.userSession.containsKey(USER)) {
 			
 			return ActionSupport.SUCCESS;     
 		} 
@@ -102,5 +117,12 @@ public class UserAction  extends ActionSupport implements SessionAware {
         this.servletRequest.getSession().invalidate();
 		return ActionSupport.SUCCESS;
 	}
-
+	
+	
+	@Override
+	public void setServletRequest(HttpServletRequest request) {
+        this.servletRequest = request;
+		
+	}
+	
 }
