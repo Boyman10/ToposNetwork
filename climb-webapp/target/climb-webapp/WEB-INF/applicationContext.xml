@@ -10,6 +10,7 @@
 	<import
 		resource="classpath:/org/rhm/climb/webapp/webappContext.xml" />
 	
+	<context:annotation-config />
 	<context:component-scan
 		base-package="org.rhm.climb.webapp.action" />
 </beans>

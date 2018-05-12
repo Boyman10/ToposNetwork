@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.SessionAware;
 import org.climb.model.bean.user.User;
+import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -15,6 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author bob
  * @version 1.0
  */
+@Service
 public class UserAction  extends ActionSupport implements SessionAware {
 
 	/**
