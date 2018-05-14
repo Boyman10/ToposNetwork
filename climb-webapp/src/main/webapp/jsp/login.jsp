@@ -13,7 +13,7 @@
 	<p>Please login now</p>
 
 	<s:form action="login">
-			<s:textfield name="userBean.pseudo" label="Your login name" class="form-control"/>
+			<s:textfield name="userBean.username" label="Your login name" class="form-control"/>
 			<s:password name="userBean.password" label="Your password" class="form-control" />
 			<s:submit value="Submit" class="btn btn-primary" />
 		</s:form>
