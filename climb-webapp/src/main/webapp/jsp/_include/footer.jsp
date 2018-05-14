@@ -9,7 +9,7 @@
 		<hr />
 		<s:text name="contact" />
 		${application.name} - version ${project.version} &copy; <a
-			href="${organization.url}">${organization.name}</a>
+			href="${organization.url}">${organization.name}</a> - <s:a action="contact">Contact us</s:a>
 		</p>
 	</div>
 </footer>

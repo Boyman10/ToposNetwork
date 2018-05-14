@@ -2,19 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<nav>
-	
-</nav>
-<s:if test="#session.user">
-            Utilisateur connecté :
-            <s:property value="#session.user.pseudo" />
-
-	<s:a action="logout">Déconnexion</s:a>
-</s:if>
-<s:else>
-	<s:a action="login">Connexion</s:a>
-</s:else>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,13 +15,13 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Administration
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <s:a action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
+          <s:a action="register" title="register" cssClass="dropdown-item nav-link">Register</s:a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>
       <li class="nav-item">
