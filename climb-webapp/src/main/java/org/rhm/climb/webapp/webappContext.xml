@@ -8,5 +8,6 @@
 	<!-- ==== WebappHelper replacement ===== -->
 	<bean id="UserAction"
           class="org.rhm.climb.webapp.action.UserAction" />
-          
+    <bean id="Contact"
+          class="org.rhm.climb.webapp.action.Contact" />      
 </beans>

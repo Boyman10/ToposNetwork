@@ -56,7 +56,10 @@
 			<result>/jsp/success.jsp</result>
 		</action>
 
-
+		<!-- Action "contact" -->
+		<action name="contact" class="Contact">
+			<result>/jsp/contact.jsp</result>
+		</action>
 	</package>
 
 	<!-- Private package - allowing access to connected users only -->

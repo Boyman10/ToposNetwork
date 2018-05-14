@@ -9,14 +9,19 @@
 <div class="container">
 
 	<h2>Welcome dude !</h2>
-	<p>Temporary links to actions</p>
 
-	<s:a action="login">do login now</s:a>
+	<div class="alert alert-info" role="alert">
 
+		<s:if test="#session.user">
+            Utilisateur connecté :
+            <s:property value="#session.user.username" />
 
+			<s:a action="logout">Déconnexion</s:a>
+		</s:if>
+		<s:else>
+			<s:a action="login">Connexion</s:a>
+		</s:else>
+	</div>
 </div>
-
-
-
 
 <%@ include file="_include/footer.jsp"%>
