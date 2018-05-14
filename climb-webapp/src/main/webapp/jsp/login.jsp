@@ -13,9 +13,9 @@
 	<p>Please login now</p>
 
 	<s:form action="login">
-			<s:textfield name="userBean.pseudo" label="Your login name" />
-			<s:password name="password" label="Your password" />
-			<s:submit value="Submit" />
+			<s:textfield name="userBean.pseudo" label="Your login name" class="form-control"/>
+			<s:password name="userBean.password" label="Your password" class="form-control" />
+			<s:submit value="Submit" class="btn btn-primary" />
 		</s:form>
 		<s:if test="hasActionErrors()">
 			<div class="errors">
