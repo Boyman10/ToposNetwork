@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="s" uri="/struts-tags"%>
+	<%@ page isELIgnored="false"%>
+	
 <footer class="footer">
 	<div class="container">
 		<p>
 		<hr />
 		<s:text name="contact" />
-		${application.name} - version ${project.version} &copy; <a
-			href="${organization.url}">${organization.name}</a>
+		ClimbingWeb - version 0.0.1-SNAPSHOT &copy; <a
+			href="https://r-h-m.net">RHM</a>
 		</p>
 	</div>
 </footer>
