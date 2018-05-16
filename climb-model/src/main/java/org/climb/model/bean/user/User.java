@@ -15,6 +15,7 @@ public class User {
 	private String password;
 	private String datereg;
 	private String email;
+	private Role role;
 	
 	/**
 	 * @return the email
@@ -28,7 +29,6 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	private Role role;
 	
 	/**
 	 * @return the id

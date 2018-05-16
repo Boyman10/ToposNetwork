@@ -82,25 +82,26 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 
 				System.out.println("Retrieving user with pseudo " + userBean.getUsername());
 
+				// Should match the DB now :
+				
 				/*
 				 * User vUtilisateur = managerFactory.getUtilisateurManager()
 				 * .getUtilisateur(userBean.getPseudo());
 				 */
-				this.addActionError("You are already there !");
-
-			} catch (Exception pEx) {
-
-				// this.addActionError("Identifiant ou mot de passe invalide !");
-
+				
+				
 				/* Perfect we are all good we should continue now : */
 
 				System.out.println("Adding user to session");
 
 				// Adding user to session :
 				this.userSession.put(USER, userBean);
+				
+				return ActionSupport.SUCCESS;
 
-				vResult = ActionSupport.SUCCESS;
+			} catch (Exception pEx) {
 
+				this.addActionError("Identifiant ou mot de passe invalide !");
 			}
 		}
 
