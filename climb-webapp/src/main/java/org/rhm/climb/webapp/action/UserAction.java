@@ -11,6 +11,7 @@ import org.climb.model.bean.user.User;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.interceptor.ParameterNameAware;
 
 /**
  * Defined Action for authentication purpose and may be additional user
@@ -20,7 +21,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 1.0
  */
 @Service
-public class UserAction extends ActionSupport implements SessionAware, ServletRequestAware {
+public class UserAction extends ActionSupport implements SessionAware, ServletRequestAware, ParameterNameAware {
 
 	/**
 	 * TODO :
@@ -165,6 +166,12 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 	public void setServletRequest(HttpServletRequest request) {
 		this.servletRequest = request;
 
+	}
+
+	@Override
+	public boolean acceptableParameterName(String parameterName) {
+
+		return false;
 	}
 
 }

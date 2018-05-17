@@ -23,14 +23,17 @@
 			</interceptor-stack>
 			
 			<interceptor-stack name="registerStack">
-				
+				<interceptor-ref name="register">
+					<param name="excludeParams">admin,struts,boy</param>
+				</interceptor-ref>				
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
+					<param name="params.excludeParams">test,dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit</param>
 				</interceptor-ref>
-				<interceptor-ref name="register" />
+
 			</interceptor-stack>
 		</interceptors>
 		

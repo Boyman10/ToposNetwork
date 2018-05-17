@@ -29,6 +29,7 @@ public class RegisterInterceptor extends AbstractInterceptor  {
 		logger.debug("Triggering interceptor for registration control - avoid use of admin username");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
+
 		if (request.getMethod().equals("GET")) {
 			
 			System.out.println("Within intereceptor... GET");
@@ -39,9 +40,11 @@ public class RegisterInterceptor extends AbstractInterceptor  {
 			
 			System.out.println("Within intereceptor... POST");
 			
+		// ex of use : http://www.wideskills.com/struts/struts-param-interceptor
+			String username = request.getParameter("userBean.username");
 			
-			UserAction action = (UserAction) pInvocation.getAction();
-			String username = action.getUserBean().getUsername();
+			//UserAction action = (UserAction) pInvocation.getAction();
+			//String username = action.getUserBean().getUsername();
 
 		System.out.println("Retrieving user with pseudo " + username);
 			
