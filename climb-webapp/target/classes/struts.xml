@@ -6,8 +6,12 @@
 
 	<package name="global" abstract="true" extends="struts-default">
 		<interceptors>
+			
 			<interceptor name="auth"
 				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
+			<interceptor name="register"
+				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />	
+				
 			<interceptor-stack name="authenticatedStack">
 				<interceptor-ref name="auth" />
 				<interceptor-ref name="timer" />
@@ -52,6 +56,9 @@
 		<!-- Action "register" -->
 		<action name="register" class="UserAction"
 			method="doRegister">
+			<interceptor-ref name="register" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
 			<result name="input">/jsp/register.jsp</result>
 			<result>/jsp/success.jsp</result>
 		</action>
