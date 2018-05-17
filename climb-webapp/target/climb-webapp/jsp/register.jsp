@@ -13,9 +13,9 @@
 	<p>Please register to get access</p>
 
 	<s:form action="register">
-			<s:textfield name="userBean.username" label="Your login name" class="form-control"/>
-			<s:textfield name="userBean.email" label="Your email" class="form-control" />
-			<s:password name="userBean.password" label="Your password" class="form-control" />
+			<s:textfield name="userBean.username"  class="form-control"/>
+			<s:textfield name="userBean.email" class="form-control" />
+			<s:password name="userBean.password"  class="form-control" />
 			
 			<s:submit value="Submit" class="btn btn-primary" />
 		</s:form>
