@@ -29,20 +29,32 @@ public class RegisterInterceptor extends AbstractInterceptor {
 
 		HttpServletRequest request = ServletActionContext.getRequest();
 		if (request.getMethod().equals("GET")) {
+			
+			System.out.println("Within intereceptor... GET");
+
 			return vResult;
 		} else if (request.getMethod().equals("POST")) {
-
+			System.out.println("Within intereceptor... POST");
+			
+			
 			UserAction action = (UserAction) pInvocation.getAction();
 			String username = action.getUserBean().getUsername();
 
+		System.out.println("Retrieving user with pseudo " + username);
+			
 			logger.debug("Within action User  - intercepting username : " + username);
 
 			if (StringUtils.containsAny(username, "admin", "bob")) {
 				
+				
 				vResult = "error-forbidden";
 			}
+		} else {
+			System.out.println("Within intereceptor... METHOD : " + request.getMethod());
+			
 		}
 
+		System.out.println(vResult);
 		return vResult;
 	}
 }

@@ -82,6 +82,11 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-json-plugin</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>rhm</groupId>
+			<artifactId>climb-technical</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 
