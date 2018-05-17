@@ -122,45 +122,6 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 		return ActionSupport.SUCCESS;
 	}
 
-	/**
-	 * Register new user :
-	 * 
-	 * @return success
-	 */
-	public String doRegister() {
-
-		// Return input by default :
-		String vResult = ActionSupport.INPUT;
-
-		// Check if we have password and userBean submitted :
-		if (userBean != null 
-				&& !StringUtils.isAllEmpty(userBean.getUsername(), userBean.getPassword())) {
-
-			try {
-
-				System.out.println("Retrieving user with pseudo " + userBean.getUsername());
-
-				/*
-				 * User vUtilisateur = managerFactory.getUtilisateurManager()
-				 * .getUtilisateur(userBean.getPseudo());
-				 */
-				this.addActionError("You are already there !");
-
-			} catch (Exception pEx) {
-
-				// this.addActionError("Identifiant ou mot de passe invalide !");
-
-				/* Perfect we are all good we should continue now : */
-
-				System.out.println("Adding user to session");
-
-				vResult = ActionSupport.SUCCESS;
-
-			}
-		}
-		
-		return vResult;
-	}
 
 	@Override
 	public void setServletRequest(HttpServletRequest request) {

@@ -68,8 +68,7 @@
 		</action>
 
 		<!-- Action "register" -->
-		<action name="register" class="UserAction"
-			method="doRegister">
+		<action name="register" class="Register">
 			<interceptor-ref name="timer" />
 			<interceptor-ref name="logger" />	
 				
