@@ -15,7 +15,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Administration
+          <s:text name="authentication" />
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <s:a action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
@@ -25,7 +25,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+      
+      <s:if test="#session.user">
+        <s:a action="admin" title="Administrative interface" cssClass="nav-link"><s:text name="administration" /></s:a>
+       </s:if>
+       <s:else>
+       	<s:a action="admin" title="Administrative interface" cssClass="nav-link disabled"><s:text name="administration" /></s:a>
+       </s:else>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

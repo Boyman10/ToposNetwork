@@ -7,7 +7,7 @@
 
 	<!-- ==== WebappHelper replacement ===== -->
 	<bean id="UserAction"
-          class="org.rhm.climb.webapp.action.UserAction" />
-    <bean id="Contact"
-          class="org.rhm.climb.webapp.action.Contact" />      
+		class="org.rhm.climb.webapp.action.UserAction" />
+	<bean id="Contact" class="org.rhm.climb.webapp.action.Contact" />
+	<bean id="Admin" class="org.rhm.climb.webapp.action.Admin" />
 </beans>

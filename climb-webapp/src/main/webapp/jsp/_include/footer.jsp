@@ -8,8 +8,9 @@
 		<p>
 		<hr />
 		<s:text name="contact" />
-		${application.name} - version ${project.version} &copy; <a
-			href="${organization.url}">${organization.name}</a> - <s:a action="contact">Contact us</s:a>
+		<s:text name="application.name" /> - version ${project.version} &copy; 
+		<s:text name="organization.url" />
+		 - <s:a action="contact">Contact us</s:a>
 		</p>
 	</div>
 </footer>

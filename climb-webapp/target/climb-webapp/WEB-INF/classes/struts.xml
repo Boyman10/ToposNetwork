@@ -68,7 +68,11 @@
 		<default-interceptor-ref
 			name="authenticatedStack" />
 
-
+		<!-- admin interface action -->
+		<action name="admin" class="Admin">
+			<result>/jsp/admin/index.jsp</result>
+		</action>
+		
 		<!-- Listing users action -->
 		<action name="list" class="UserAction"
 			method="doList">

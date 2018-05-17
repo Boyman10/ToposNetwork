@@ -8,8 +8,9 @@
 		<p>
 		<hr />
 		<s:text name="contact" />
-		ClimbingWeb - version 0.0.1-SNAPSHOT &copy; <a
-			href="https://r-h-m.net">RHM</a> - <s:a action="contact">Contact us</s:a>
+		<s:text name="application.name" /> - version 0.0.1-SNAPSHOT &copy; 
+		<s:text name="organization.url" />
+		 - <s:a action="contact">Contact us</s:a>
 		</p>
 	</div>
 </footer>
