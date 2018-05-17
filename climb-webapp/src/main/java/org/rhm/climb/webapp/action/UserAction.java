@@ -122,7 +122,6 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 		return ActionSupport.SUCCESS;
 	}
 
-
 	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.servletRequest = request;

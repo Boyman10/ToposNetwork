@@ -24,14 +24,12 @@
 			
 			<interceptor-stack name="registerStack">
 				<interceptor-ref name="register">
-					<param name="excludeParams">admin,struts,boy</param>
 				</interceptor-ref>				
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
-					<param name="params.excludeParams">test,dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit</param>
 				</interceptor-ref>
 
 			</interceptor-stack>
@@ -68,15 +66,11 @@
 		</action>
 
 		<!-- Action "register" -->
-		<action name="register" class="UserAction"
-			method="doRegister">
-			<interceptor-ref name="timer" />
-			<interceptor-ref name="logger" />	
-				
+		<action name="register" class="Register">
+	
                 <interceptor-ref name="registerStack"/>
-
 				<result name="input">/jsp/register.jsp</result>
-			<result>/jsp/success.jsp</result>
+				<result name="success">/jsp/register.jsp</result>
 		</action>
 
 		<!-- Action "contact" -->
