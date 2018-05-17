@@ -14,16 +14,17 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 /**
  * Interceptor controling access using session and role
  */
-public class RegisterInterceptor extends AbstractInterceptor {
+public class RegisterInterceptor extends AbstractInterceptor  {
 
 	private static final long serialVersionUID = 7995153741671857846L;
 
 	static final Logger logger = LogManager.getLogger(AuthInterceptor.class);
 
+   
 	@Override
 	public String intercept(ActionInvocation pInvocation) throws Exception {
 
-		String vResult = pInvocation.invoke();
+		String vResult = "";
 
 		logger.debug("Triggering interceptor for registration control - avoid use of admin username");
 
@@ -32,8 +33,10 @@ public class RegisterInterceptor extends AbstractInterceptor {
 			
 			System.out.println("Within intereceptor... GET");
 
-			return vResult;
+			return pInvocation.invoke();
+			
 		} else if (request.getMethod().equals("POST")) {
+			
 			System.out.println("Within intereceptor... POST");
 			
 			
@@ -54,7 +57,7 @@ public class RegisterInterceptor extends AbstractInterceptor {
 			
 		}
 
-		System.out.println(vResult);
+		System.out.println(vResult + " " );
 		return vResult;
 	}
 }

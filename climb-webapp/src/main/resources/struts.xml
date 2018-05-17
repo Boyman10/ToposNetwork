@@ -20,7 +20,18 @@
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
 				</interceptor-ref>
-				</interceptor-stack>
+			</interceptor-stack>
+			
+			<interceptor-stack name="registerStack">
+				
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">DEBUG</param>
+				</interceptor-ref>
+				<interceptor-ref name="register" />
+			</interceptor-stack>
 		</interceptors>
 		
 		<global-results>
@@ -56,15 +67,12 @@
 		<!-- Action "register" -->
 		<action name="register" class="UserAction"
 			method="doRegister">
-				<interceptor-ref name="defaultStack">
-					<param name="exception.logEnabled">true</param>
-					<param name="exception.logLevel">DEBUG</param>
-				</interceptor-ref>
 			<interceptor-ref name="timer" />
-			<interceptor-ref name="logger" />				
-			<interceptor-ref name="register" />
+			<interceptor-ref name="logger" />	
+				
+                <interceptor-ref name="registerStack"/>
 
-			<result name="input">/jsp/register.jsp</result>
+				<result name="input">/jsp/register.jsp</result>
 			<result>/jsp/success.jsp</result>
 		</action>
 

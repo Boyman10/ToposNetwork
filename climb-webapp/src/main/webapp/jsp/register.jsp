@@ -35,4 +35,4 @@
 
 
 
-<%@ include file="_include/footer.jsp"%>/html>
+<%@ include file="_include/footer.jsp"%>
