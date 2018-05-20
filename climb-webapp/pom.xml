@@ -40,7 +40,11 @@
 			<artifactId>${project.parent.artifactId}-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-technical</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- ===== Tests ===== -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -82,11 +86,7 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-json-plugin</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>rhm</groupId>
-			<artifactId>climb-technical</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 	</dependencies>
 
 

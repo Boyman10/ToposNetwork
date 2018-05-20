@@ -14,12 +14,12 @@
         <Logger name="com.opensymphony.xwork2" level="debug">
             <AppenderRef ref="STDOUT"/>
         </Logger>
-        <Logger name="org.apache.struts2" level="warn">
+        <Logger name="org.apache.struts2" level="debug">
             <AppenderRef ref="STDOUT"/>
         </Logger>
 
         <!-- == Logger pour l'application ==additivity="false" -->
-        <Logger name="org.rhm.climb" level="info" >
+        <Logger name="org.rhm.climb.webapp" level="info" >
             <AppenderRef ref="STDOUT"/>
         </Logger>
 

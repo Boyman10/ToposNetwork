@@ -17,9 +17,6 @@
         <dependent-module archiveName="toponetwork-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-model/climb-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="climb-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-technical/climb-technical">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
                         
         
         <property name="context-root" value="climb-webapp"/>

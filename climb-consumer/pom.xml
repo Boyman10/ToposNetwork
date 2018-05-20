@@ -7,10 +7,10 @@
     <artifactId>toponetwork</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>toponetwork-technical</artifactId>
-  
-  
-  <name>climb-technical</name>
+  <groupId>rhm</groupId>
+  <artifactId>climb-consumer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>climb-consumer</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,19 +19,8 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>3.8.1</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-    	<groupId>commons-logging</groupId>
-    	<artifactId>commons-logging</artifactId>
-    </dependency>
-    <dependency>
-    	<groupId>org.apache.logging.log4j</groupId>
-    	<artifactId>log4j-core</artifactId>
-    </dependency>
-    <dependency>
-    	<groupId>org.apache.logging.log4j</groupId>
-    	<artifactId>log4j-jcl</artifactId>
     </dependency>
   </dependencies>
 </project>

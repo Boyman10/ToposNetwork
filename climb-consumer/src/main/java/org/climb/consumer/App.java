@@ -1,4 +1,4 @@
-package org.climb.technical;
+package org.climb.consumer;
 
 /**
  * Hello world!
