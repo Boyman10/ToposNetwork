@@ -3,8 +3,8 @@ package org.rhm.climb.webapp.interceptors;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
@@ -16,15 +16,15 @@ public class RegisterInterceptor extends AbstractInterceptor  {
 
 	private static final long serialVersionUID = 7995153741671857846L;
 
-	static final Logger logger = LogManager.getLogger("org.rhm.climb");
-
+	//static final Logger logger = LogManager.getLogger("org.rhm.climb");
+	private static final Log LOGGER = LogFactory.getLog(RegisterInterceptor.class);
    
 	@Override
 	public String intercept(ActionInvocation pInvocation) throws Exception {
 
 		String vResult = "";
 
-		logger.debug("Triggering interceptor for registration control - avoid use of admin username");
+		LOGGER.debug("Triggering interceptor for registration control - avoid use of admin username");
 
 		HttpServletRequest request = ServletActionContext.getRequest();
 
@@ -40,15 +40,14 @@ public class RegisterInterceptor extends AbstractInterceptor  {
 			//UserAction action = (UserAction) pInvocation.getAction();
 			//String username = action.getUserBean().getUsername();
 			
-			logger.debug("Within action User  - intercepting username : " + username);
+			LOGGER.debug("Within action User  - intercepting username : " + username);
 
 			if (StringUtils.containsAny(username, "admin", "bob")) {
-			
-				
+						
 				return "error-forbidden";
 			}
 		} else {
-			logger.debug("Within intereceptor... METHOD : " + request.getMethod());
+			LOGGER.debug("Within intereceptor... METHOD : " + request.getMethod());
 		}
 
 		return pInvocation.invoke();

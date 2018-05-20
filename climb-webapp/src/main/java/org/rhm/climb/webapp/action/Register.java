@@ -1,8 +1,8 @@
 package org.rhm.climb.webapp.action;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.climb.model.bean.user.User;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +12,14 @@ import com.opensymphony.xwork2.ActionSupport;
  * Defined Action for registration form
  * 
  * @author bob
- * @version 1.0
+ * @version 0.1.0
  */
 @Service
 public class Register extends ActionSupport {
 
-	static final Logger logger = LogManager.getLogger("org.rhm.climb");
-
+	//static final Logger logger = LogManager.getLogger("org.rhm.climb");
+	private static final Log LOGGER = LogFactory.getLog(Register.class);
+	
 	private static final long serialVersionUID = 1L;
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
@@ -49,24 +50,26 @@ public class Register extends ActionSupport {
 
 			try {
 
-				logger.debug("Retrieving user with pseudo " + userBean.getUsername());
+				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
 				/*
 				 * User vUtilisateur = managerFactory.getUtilisateurManager()
 				 * .getUtilisateur(userBean.getPseudo());
 				 */
-				this.addActionError("You are already there !");
+				
+				vResult = ActionSupport.SUCCESS;
+				
+				
+				/* Perfect we are all good we should continue now : */
+
+				this.addActionMessage("Welcome here dude, you should now confirm your email and then sign in from the menu !");
+				
+				LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
+
 
 			} catch (Exception pEx) {
 
-				// this.addActionError("Identifiant ou mot de passe invalide !");
-
-				/* Perfect we are all good we should continue now : */
-
-				logger.debug("Adding user to session");
-
-				vResult = ActionSupport.SUCCESS;
-
+				this.addActionError("Somehting went wrong please check your entries !");
 			}
 		}
 

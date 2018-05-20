@@ -18,8 +18,8 @@
             <AppenderRef ref="STDOUT"/>
         </Logger>
 
-        <!-- == Logger pour l'application == -->
-        <Logger name="org.rhm.climb" level="info" additivity="false">
+        <!-- == Logger pour l'application ==additivity="false" -->
+        <Logger name="org.rhm.climb" level="info" >
             <AppenderRef ref="STDOUT"/>
         </Logger>
 
