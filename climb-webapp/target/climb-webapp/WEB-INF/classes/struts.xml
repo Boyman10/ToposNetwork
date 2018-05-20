@@ -6,27 +6,28 @@
 
 	<package name="global" abstract="true" extends="struts-default">
 		<interceptors>
-			
+
 			<interceptor name="auth"
 				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
 			<interceptor name="register"
-				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />	
-				
+				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />
+
 			<interceptor-stack name="authenticatedStack">
-				<interceptor-ref name="auth" />
+
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
+				<interceptor-ref name="auth" />
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
 				</interceptor-ref>
 			</interceptor-stack>
-			
+
 			<interceptor-stack name="registerStack">
-				<interceptor-ref name="register">
-				</interceptor-ref>				
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
+				<interceptor-ref name="register">
+				</interceptor-ref>
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
@@ -34,7 +35,7 @@
 
 			</interceptor-stack>
 		</interceptors>
-		
+
 		<global-results>
 			<result name="error-forbidden" type="httpheader">
 				<param name="error">403</param>
@@ -60,17 +61,16 @@
 			<result type="redirectAction">index</result>
 		</action>
 
-		<action name="logout" class="UserAction"
-			method="doLogout">
+		<action name="logout" class="UserAction" method="doLogout">
 			<result type="redirectAction">index</result>
 		</action>
 
 		<!-- Action "register" -->
 		<action name="register" class="Register">
-	
-                <interceptor-ref name="registerStack"/>
-				<result name="input">/jsp/register.jsp</result>
-				<result name="success">/jsp/register.jsp</result>
+
+			<interceptor-ref name="registerStack" />
+			<result name="input">/jsp/register.jsp</result>
+			<result name="success">/jsp/register.jsp</result>
 		</action>
 
 		<!-- Action "contact" -->
@@ -89,10 +89,9 @@
 		<action name="admin" class="Admin">
 			<result>/jsp/admin/index.jsp</result>
 		</action>
-		
+
 		<!-- Listing users action -->
-		<action name="list" class="UserAction"
-			method="doList">
+		<action name="list" class="UserAction" method="doList">
 			<result>/jsp/admin/listusers.jsp</result>
 		</action>
 
