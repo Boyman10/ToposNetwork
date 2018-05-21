@@ -1,1 +1,3 @@
-org\climb\consumer\App.class
+org\climb\consumer\dao\interfaces\DaoFactory.class
+org\climb\consumer\dao\AbstractDaoImpl.class
+org\climb\consumer\dao\interfaces\UserDao.class
