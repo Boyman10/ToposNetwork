@@ -6,9 +6,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<!-- Import additional Spring context configuration files -->
-	<import
-		resource="classpath:/org/rhm/climb/webapp/webappContext.xml" />
+
 	
 	<context:annotation-config />
 	<context:component-scan

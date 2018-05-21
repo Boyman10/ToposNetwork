@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <Resource name="jdbc/DB_TICKET"
+    <Resource name="jdbc/DB_CLIMB"
               auth="Container"
               type="javax.sql.DataSource"
 

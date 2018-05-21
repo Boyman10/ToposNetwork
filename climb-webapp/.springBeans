@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/webapp/WEB-INF/applicationContext.xml</config>
 		<config>src/main/java/org/rhm/climb/webapp/webappContext.xml</config>
+		<config>src/main/resources/bootstrapContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
