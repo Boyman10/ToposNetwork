@@ -8,6 +8,5 @@ package org.climb.consumer.dao.interfaces;
 public interface DaoFactory {
 
 	public UserDao getUserDao();
-	
-	public void setUserDao(UserDao td);
+	public void setUserDao(UserDao uDao);
 }
