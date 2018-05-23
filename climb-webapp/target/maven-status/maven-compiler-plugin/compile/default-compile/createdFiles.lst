@@ -1,6 +1,6 @@
-org\rhm\climb\webapp\action\Admin.class
-org\rhm\climb\webapp\action\Register.class
-org\rhm\climb\webapp\interceptors\AuthInterceptor.class
-org\rhm\climb\webapp\action\UserAction.class
-org\rhm\climb\webapp\interceptors\RegisterInterceptor.class
-org\rhm\climb\webapp\action\Contact.class
+org/rhm/climb/webapp/action/UserAction.class
+org/rhm/climb/webapp/interceptors/RegisterInterceptor.class
+org/rhm/climb/webapp/action/Contact.class
+org/rhm/climb/webapp/interceptors/AuthInterceptor.class
+org/rhm/climb/webapp/action/Register.class
+org/rhm/climb/webapp/action/Admin.class

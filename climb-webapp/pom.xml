@@ -105,7 +105,6 @@
 			<artifactId>log4j-core</artifactId>
 			<type>test-jar</type>
 		</dependency>
-
 	</dependencies>
 
 

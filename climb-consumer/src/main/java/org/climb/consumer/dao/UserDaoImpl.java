@@ -3,7 +3,9 @@ package org.climb.consumer.dao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.climb.consumer.dao.interfaces.UserDao;
+import org.springframework.stereotype.Component;
 
+@Component("UserDao")
 public class UserDaoImpl extends AbstractDaoImpl implements UserDao{
 
 	private static final Log LOGGER = LogFactory.getLog(UserDaoImpl.class);
