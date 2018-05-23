@@ -121,13 +121,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>42.2.2.jre7</version>
-				<type>bundle</type>
-				<scope>runtime</scope>
-			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
