@@ -6,9 +6,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.climb.business.manager.interfaces.UserManager;
 import org.climb.model.bean.user.User;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service("userManager")
+@Component("userManager")
 public class UserManagerImpl extends AbstractManager implements UserManager {
 
 	private static final Log LOGGER = LogFactory.getLog(UserManagerImpl.class);
