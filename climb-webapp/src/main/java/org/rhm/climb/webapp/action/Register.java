@@ -52,11 +52,9 @@ public class Register extends ActionSupport {
 
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
-				/*
-				 * User vUtilisateur = managerFactory.getUtilisateurManager()
-				 * .getUtilisateur(userBean.getPseudo());
-				 */
+				// Persist data to db now :
 				
+								
 				vResult = ActionSupport.SUCCESS;
 				
 				

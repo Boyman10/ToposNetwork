@@ -48,7 +48,7 @@
 
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.parent.artifactId}-consumer</artifactId>
+			<artifactId>${project.parent.artifactId}-business</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
