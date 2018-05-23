@@ -17,6 +17,9 @@ public class User {
 	private String email;
 	private Role role;
 	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @return the email
 	 */

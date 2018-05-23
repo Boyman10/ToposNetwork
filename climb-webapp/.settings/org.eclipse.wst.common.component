@@ -30,12 +30,6 @@
         <dependent-module archiveName="toponetwork-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-technical/climb-technical">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="toponetwork-business-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-business/climb-business">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="toponetwork-consumer-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-consumer/climb-consumer">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
                                         
         
         
