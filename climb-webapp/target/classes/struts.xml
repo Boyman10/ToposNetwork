@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package name="global" abstract="true" extends="struts-default">
+		<interceptors>
+
+			<interceptor name="auth"
+				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
+			<interceptor name="register"
+				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />
+
+			<interceptor-stack name="authenticatedStack">
+
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="auth" />
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">DEBUG</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="registerStack">
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="register">
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">DEBUG</param>
+				</interceptor-ref>
+
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="error-forbidden" type="httpheader">
+				<param name="error">403</param>
+			</result>
+		</global-results>
+
+
+	</package>
+
+
+	<package name="public" extends="global">
+
+		<!-- default Action -->
+		<default-action-ref name="index" />
+		<!-- Action "index" -->
+		<action name="index">
+			<result>/jsp/index.jsp</result>
+		</action>
+
+		<!-- Action "login" -->
+		<action name="login" class="UserAction" method="doLogin">
+			<result name="input">/jsp/login.jsp</result>
+			<result type="redirectAction">index</result>
+		</action>
+
+		<action name="logout" class="UserAction" method="doLogout">
+			<result type="redirectAction">index</result>
+		</action>
+
+		<!-- Action "register" -->
+		<action name="register" class="Register">
+
+			<interceptor-ref name="registerStack" />
+			<result name="input">/jsp/register.jsp</result>
+			<result name="success">/jsp/register.jsp</result>
+		</action>
+
+		<!-- Action "contact" -->
+		<action name="contact" class="Contact">
+			<result>/jsp/contact.jsp</result>
+		</action>
+	</package>
+
+	<!-- Private package - allowing access to connected users only -->
+	<package name="private" extends="global">
+
+		<default-interceptor-ref
+			name="authenticatedStack" />
+
+		<!-- admin interface action -->
+		<action name="admin" class="Admin">
+			<result>/jsp/admin/index.jsp</result>
+		</action>
+
+		<!-- Listing users action -->
+		<action name="list" class="UserAction" method="doList">
+			<result>/jsp/admin/listusers.jsp</result>
+		</action>
+
+	</package>
+</struts>
