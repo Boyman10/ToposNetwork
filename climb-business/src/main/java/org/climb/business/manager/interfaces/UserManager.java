@@ -7,4 +7,5 @@ import org.climb.model.bean.user.User;
 public interface UserManager {
 
 	public List<User> getUsersList();
+	public void addUser(User user);
 }

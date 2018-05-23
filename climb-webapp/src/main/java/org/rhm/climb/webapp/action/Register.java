@@ -3,7 +3,9 @@ package org.rhm.climb.webapp.action;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.climb.business.manager.interfaces.UserManager;
 import org.climb.model.bean.user.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -23,6 +25,17 @@ public class Register extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
+
+	@Autowired
+	private UserManager userManager;
+	
+	public UserManager getUserManager() {
+		return userManager;
+	}
+
+	public void setUserManager(UserManager userManager) {
+		this.userManager = userManager;
+	}
 
 	/**
 	 * @return the userBean
@@ -53,7 +66,7 @@ public class Register extends ActionSupport {
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
 				// Persist data to db now :
-				
+				this.userManager.addUser(userBean);
 								
 				vResult = ActionSupport.SUCCESS;
 				
