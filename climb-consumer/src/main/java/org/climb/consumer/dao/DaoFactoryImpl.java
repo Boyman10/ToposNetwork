@@ -5,7 +5,7 @@ import org.climb.consumer.dao.interfaces.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("DaoFactory")
+@Service("daoFactory")
 public class DaoFactoryImpl implements DaoFactory {
 
 	@Autowired

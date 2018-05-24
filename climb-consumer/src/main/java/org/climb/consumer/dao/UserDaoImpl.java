@@ -64,6 +64,5 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 		LOGGER.debug("adding user to DB - UserDAO : " + user.getUsername());
 		
 		
-		
 	}
 }
