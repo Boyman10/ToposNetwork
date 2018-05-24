@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
+import org.climb.model.bean.user.Role;
 import org.climb.model.bean.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -74,7 +75,8 @@ public class Register extends ActionSupport {
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
 				// First retrieve the default Role by its name :
-				this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
+				Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
+				userBean.setRole(role);
 				
 				// Persist data to db now :
 				if (this.managerFactory.getUserManager().addUser(userBean)) {

@@ -1,6 +1,8 @@
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/rm/UserRowMapper.java
+/home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/interfaces/RoleDao.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/UserDaoImpl.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/interfaces/UserDao.java
+/home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/RoleDaoImpl.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/AbstractDaoImpl.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/DaoFactoryImpl.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-consumer/src/main/java/org/climb/consumer/dao/interfaces/DaoFactory.java

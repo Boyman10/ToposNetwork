@@ -6,6 +6,7 @@ import org.climb.consumer.dao.interfaces.RoleDao;
 import org.climb.model.bean.user.Role;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +32,7 @@ public class RoleDaoImpl extends AbstractDaoImpl implements RoleDao {
 			
 			LOGGER.debug("Launching query now...");
 
-			Role role = this.npjTemplate.queryForObject(sql, vParams, Role.class);
+			Role role = (Role) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(Role.class));
 			
 			LOGGER.debug("Query done ! ");
 			

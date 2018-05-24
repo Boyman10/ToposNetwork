@@ -61,7 +61,6 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 	 * @param User
 	 */
 	@Override
-	@Transactional
 	public boolean addUser(User user) {
 
 		try {
@@ -75,9 +74,12 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 			LOGGER.debug("Launching query now...");
 
 			int nRows = this.npjTemplate.update(
-					"INSERT INTO public.climb_user(username,email,pass) values(:username,:email,:password)",
+					"INSERT INTO public.climb_user(username,email,pass,datereg,role_id) values(:username,:email,:password,TO_DATE(:datereg,'YYYY-MM-DD'),:role.id)",
 					params);
 			LOGGER.debug("Query done ! ");
+			
+			
+			
 			return nRows == 1;
 
 		} catch (InvalidResultSetAccessException e) {
