@@ -15,5 +15,6 @@ public interface UserDao {
 	public void updateRole();
 	public List<User> getListUsers();
 	public boolean addUser(User user);
+	public User findUserByBean(User user);
 
 }

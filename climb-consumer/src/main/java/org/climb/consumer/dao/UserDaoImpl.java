@@ -9,12 +9,12 @@ import org.climb.consumer.rm.UserRowMapper;
 import org.climb.model.bean.user.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 @Component("userDao")
 public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
@@ -93,5 +93,45 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 			throw new RuntimeException(e);
 		}
 
+	}
+
+	/**
+	 * Getting the user from db using the bean data / password and email/name
+	 */
+	@Override
+	public User findUserByBean(User user) {
+		
+		String sql = "SELECT * FROM public.climb_user WHERE (username = :name OR email = :email) AND pass = :password";
+		
+		try {
+			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
+			
+			this.setDataSource(getDataSource());
+			MapSqlParameterSource vParams = new MapSqlParameterSource();			
+			
+			LOGGER.debug("getting user by name and pass : " + user.getUsername());
+
+			vParams.addValue("name", user.getUsername());
+			vParams.addValue("password", user.getPassword());
+			
+			LOGGER.debug("Launching query now...");
+
+			User qUser = (User) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(User.class));
+			
+			LOGGER.debug("Query done - returning user ");
+			
+			return qUser;
+			
+			
+		} catch (InvalidResultSetAccessException e) {
+			LOGGER.error("FATAL ERROR Invalid resultset " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (DataAccessException e) {
+			LOGGER.error("FATAL ERROR dataAccess " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (Exception e) {
+			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
+			throw new RuntimeException(e);
+		}
 	}
 }

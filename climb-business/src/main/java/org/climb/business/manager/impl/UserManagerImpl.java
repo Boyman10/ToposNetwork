@@ -31,4 +31,10 @@ public class UserManagerImpl extends AbstractManager implements UserManager {
 		
 	}
 
+	@Override
+	public User findUserByBean(User user) {
+		LOGGER.debug("Matching submitted user - User manager " + user.getUsername());
+		return getDaoFactory().getUserDao().findUserByBean(user);
+	}
+
 }

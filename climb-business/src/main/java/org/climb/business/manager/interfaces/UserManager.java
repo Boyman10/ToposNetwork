@@ -8,4 +8,5 @@ public interface UserManager {
 
 	public List<User> getUsersList();
 	public boolean addUser(User user);
+	public User findUserByBean(User user);
 }

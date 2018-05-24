@@ -5,9 +5,14 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.user.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -29,6 +34,8 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 	 */
 	private static final long serialVersionUID = -312477649388098567L;
 
+	private static final Logger LOGGER = LogManager.getLogger(UserAction.class);
+
 	// Constant to be used to identify session
 	private static final String USER = "user";
 
@@ -38,6 +45,10 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
+
+	@Autowired
+	@Qualifier("managerFactory")
+	private ManagerFactory managerFactory;
 
 	@Override
 	public void setSession(Map<String, Object> session) {
@@ -81,24 +92,23 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 
 			try {
 
-				System.out.println("Retrieving user with pseudo " + userBean.getUsername());
+				LOGGER.debug("Retrieving user with pseudo and password " + userBean.getUsername());
 
 				// Should match the DB now :
-				
-				/*
-				 * User vUtilisateur = managerFactory.getUtilisateurManager()
-				 * .getUtilisateur(userBean.getPseudo());
-				 */
-				
-				
-				/* Perfect we are all good we should continue now : */
+				User uEx = this.managerFactory.getUserManager().findUserByBean(userBean);
 
-				System.out.println("Adding user to session");
+				if (uEx != null) {
+					/* Perfect we are all good we should continue now : */
 
-				// Adding user to session :
-				this.userSession.put(USER, userBean);
-				
-				return ActionSupport.SUCCESS;
+					LOGGER.debug("Adding user to session");
+
+					// Adding user to session :
+					this.userSession.put(USER, uEx);
+
+					return ActionSupport.SUCCESS;
+
+				} else 
+					this.addActionError("Wrong username and password combination !");
 
 			} catch (Exception pEx) {
 
