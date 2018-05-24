@@ -26,7 +26,7 @@ import com.opensymphony.xwork2.interceptor.ParameterNameAware;
  * @version 1.0
  */
 @Service
-public class UserAction extends ActionSupport implements SessionAware, ServletRequestAware, ParameterNameAware {
+public class UserAction extends ActionSupport implements SessionAware, ServletRequestAware {
 
 	/**
 	 * TODO :
@@ -80,16 +80,20 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 		// Return input by default :
 		String vResult = ActionSupport.INPUT;
 
+		LOGGER.debug("Entering doLogin action...");
+		
 		// Redirect if user already logged in :
 		if (null != this.userSession.get(USER) && this.userSession.containsKey(USER)) {
 
+			LOGGER.debug("Already connected " + userBean.getUsername());
 			return ActionSupport.SUCCESS;
 		}
 
 		// Check if we have password and userBean submitted :
-		if (userBean != null && userBean.getUsername() != null
-				&& !StringUtils.isAllEmpty(userBean.getUsername(), userBean.getPassword())) {
+		if (userBean != null && !StringUtils.isAllEmpty(userBean.getUsername(), userBean.getPassword())) {
 
+			LOGGER.debug("We DO have a userBean " + userBean.getUsername());
+			
 			try {
 
 				LOGGER.debug("Retrieving user with pseudo and password " + userBean.getUsername());
@@ -101,7 +105,7 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 					/* Perfect we are all good we should continue now : */
 
 					LOGGER.debug("Adding user to session");
-
+					userBean = uEx;
 					// Adding user to session :
 					this.userSession.put(USER, uEx);
 
@@ -114,6 +118,10 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 
 				this.addActionError("Identifiant ou mot de passe invalide !");
 			}
+		} else {
+			
+			LOGGER.debug("Are we in POST ? ");
+			
 		}
 
 		return vResult;
@@ -138,10 +146,5 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 
 	}
 
-	@Override
-	public boolean acceptableParameterName(String parameterName) {
-
-		return false;
-	}
 
 }

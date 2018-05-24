@@ -6,8 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- ==== WebappHelper replacement ===== -->
-	<bean id="UserAction"
-		class="org.rhm.climb.webapp.action.UserAction" />
+	<bean id="UserAction" class="org.rhm.climb.webapp.action.UserAction" />
 	<bean id="Contact" class="org.rhm.climb.webapp.action.Contact" />
 	<bean id="Admin" class="org.rhm.climb.webapp.action.Admin" />
 	<bean id="Register" class="org.rhm.climb.webapp.action.Register" />
