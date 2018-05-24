@@ -76,7 +76,7 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 			LOGGER.debug("Launching query now...");
 
 			int nRows = this.npjTemplate.update(
-					"INSERT INTO public.climb_user(username,email,password) values(:username,:email,:password)",
+					"INSERT INTO public.climb_user(username,email,pass) values(:username,:email,:password)",
 					params);
 			LOGGER.debug("Query done ! ");
 			return nRows == 1;
