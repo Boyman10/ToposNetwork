@@ -16,6 +16,7 @@ public class AbstractDaoImpl {
 	@Autowired
 	@Qualifier("dataSourceClimb")
 	private DataSource dataSource;
+	
 	protected NamedParameterJdbcTemplate npjTemplate;
 	
 	protected DataSource getDataSource() {

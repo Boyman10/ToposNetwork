@@ -1,5 +1,6 @@
 package org.climb.consumer.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -65,23 +66,31 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 	public boolean addUser(User user) {
 
 		try {
+			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
+			this.setDataSource(getDataSource());
+			
 			LOGGER.debug("adding user to DB - UserDAO : " + user.getUsername());
+
 			BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
 
-			return this.npjTemplate.update(
-					"INSERT INTO public.climb_user(username,email,password) values(:username,:email,:password)", params) == 1;
-			
+			LOGGER.debug("Launching query now...");
+
+			int nRows = this.npjTemplate.update(
+					"INSERT INTO public.climb_user(username,email,password) values(:username,:email,:password)",
+					params);
+			LOGGER.debug("Query done ! ");
+			return nRows == 1;
+
 		} catch (InvalidResultSetAccessException e) {
-			LOGGER.error("FATAL ERROR " + e.getMessage());
+			LOGGER.error("FATAL ERROR Invalid resultset " + e.getMessage());
 			throw new RuntimeException(e);
 		} catch (DataAccessException e) {
-			LOGGER.error("FATAL ERROR " + e.getMessage());
+			LOGGER.error("FATAL ERROR dataAccess " + e.getMessage());
 			throw new RuntimeException(e);
-		}catch (Exception e) {
-			LOGGER.error("FATAL ERROR " + e.getMessage());
+		} catch (Exception e) {
+			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
 			throw new RuntimeException(e);
 		}
-		
 
 	}
 }
