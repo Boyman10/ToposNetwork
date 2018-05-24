@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
  * @author bob
  * @version 1.1
  */
-@Component
 public class User {
 
 	private int id;

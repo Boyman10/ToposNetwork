@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
  * @author bob
  *
  */
-@Component
 public class Role {
 
 	private int id;
