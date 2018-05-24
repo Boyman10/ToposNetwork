@@ -19,7 +19,7 @@
         </Logger>
 
         <!-- == Logger pour l'application = -->
-        <Logger name="org.rhm.climb" level="info" additivity="false">
+        <Logger name="org.rhm.climb.FAKE" level="info" additivity="false">
             <AppenderRef ref="STDOUT"/>
         </Logger>
 

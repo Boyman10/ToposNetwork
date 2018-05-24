@@ -26,13 +26,13 @@
 			<interceptor-stack name="registerStack">
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
-				<interceptor-ref name="register">
-				</interceptor-ref>
+				
+				
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
 				</interceptor-ref>
-
+				<interceptor-ref name="register" />
 			</interceptor-stack>
 		</interceptors>
 

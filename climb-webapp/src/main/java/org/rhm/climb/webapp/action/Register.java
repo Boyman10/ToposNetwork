@@ -1,7 +1,5 @@
 package org.rhm.climb.webapp.action;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,9 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @Service
 public class Register extends ActionSupport {
 
-	//static final Logger LOGGER = LogManager.getLogger(Register.class);
-	//private static final Log LOGGER = LogFactory.getLog(Register.class);
-	static final Logger LOGGER = LogManager.getRootLogger();
+	private static final Logger LOGGER = LogManager.getLogger(Register.class);
 	
 	private static final long serialVersionUID = 1L;
 	// The bean to be defined for the login form - using corresponding entity
@@ -100,6 +96,10 @@ public class Register extends ActionSupport {
 		return vResult;
 	}
 
+	/**
+	 * Validation of the form 
+	 * @Todo next : use properties file ?
+	 */
 	@Override
 	public void validate() {
 
