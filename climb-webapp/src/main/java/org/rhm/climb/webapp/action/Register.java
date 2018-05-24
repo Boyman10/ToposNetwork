@@ -3,9 +3,10 @@ package org.rhm.climb.webapp.action;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.climb.business.manager.interfaces.UserManager;
+import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,14 +28,22 @@ public class Register extends ActionSupport {
 	private User userBean;
 
 	@Autowired
-	private UserManager userManager;
+	@Qualifier("managerFactory")
+	private ManagerFactory managerFactory;
 	
-	public UserManager getUserManager() {
-		return userManager;
+
+	/**
+	 * @return the managerFactory
+	 */
+	public ManagerFactory getManagerFactory() {
+		return managerFactory;
 	}
 
-	public void setUserManager(UserManager userManager) {
-		this.userManager = userManager;
+	/**
+	 * @param managerFactory the managerFactory to set
+	 */
+	public void setManagerFactory(ManagerFactory managerFactory) {
+		this.managerFactory = managerFactory;
 	}
 
 	/**
@@ -66,7 +75,7 @@ public class Register extends ActionSupport {
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
 				// Persist data to db now :
-				this.userManager.addUser(userBean);
+				this.managerFactory.getUserManager().addUser(userBean);
 								
 				vResult = ActionSupport.SUCCESS;
 				

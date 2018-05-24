@@ -1,5 +1,5 @@
-org/climb/business/manager/UserManagerImpl.class
 org/climb/business/manager/interfaces/UserManager.class
-org/climb/business/manager/AbstractManager.class
-org/climb/business/manager/ManagerFactoryImpl.class
+org/climb/business/manager/impl/ManagerFactoryImpl.class
 org/climb/business/manager/interfaces/factory/ManagerFactory.class
+org/climb/business/manager/impl/AbstractManager.class
+org/climb/business/manager/impl/UserManagerImpl.class

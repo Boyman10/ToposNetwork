@@ -6,7 +6,7 @@
 
 	<!-- Import additional Spring context configuration files -->
 	<import resource="classpath:/org/rhm/climb/webapp/webappContext.xml" />
-	<import resource="classpath*:/org/rhm/climb/business/businessContext.xml" />
+	<import resource="classpath*:/org/climb/business/businessContext.xml" />
 	<import resource="classpath*:/org/climb/consumer/consumerContext.xml" />
 	
 </beans>
