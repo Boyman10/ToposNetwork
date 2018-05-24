@@ -23,11 +23,11 @@ public class UserManagerImpl extends AbstractManager implements UserManager {
 	}
 	
 	@Override
-	public void addUser(User user) {
+	public boolean addUser(User user) {
 		
 		LOGGER.debug("Adding new user - User manager " + user.getUsername());
 		
-		getDaoFactory().getUserDao().addUser(user);
+		return getDaoFactory().getUserDao().addUser(user);
 		
 	}
 

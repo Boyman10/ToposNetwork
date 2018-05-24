@@ -21,7 +21,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class Register extends ActionSupport {
 
 	private static final Logger LOGGER = LogManager.getLogger(Register.class);
-	
+
 	private static final long serialVersionUID = 1L;
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
@@ -29,7 +29,6 @@ public class Register extends ActionSupport {
 	@Autowired
 	@Qualifier("managerFactory")
 	private ManagerFactory managerFactory;
-	
 
 	/**
 	 * @return the managerFactory
@@ -39,7 +38,8 @@ public class Register extends ActionSupport {
 	}
 
 	/**
-	 * @param managerFactory the managerFactory to set
+	 * @param managerFactory
+	 *            the managerFactory to set
 	 */
 	public void setManagerFactory(ManagerFactory managerFactory) {
 		this.managerFactory = managerFactory;
@@ -71,21 +71,19 @@ public class Register extends ActionSupport {
 
 			try {
 
-				
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
 				// Persist data to db now :
-				this.managerFactory.getUserManager().addUser(userBean);
-								
-				vResult = ActionSupport.SUCCESS;
-				
-				
-				/* Perfect we are all good we should continue now : */
+				if (this.managerFactory.getUserManager().addUser(userBean)) {
+					vResult = ActionSupport.SUCCESS;
+					/* Perfect we are all good we should continue now : */
 
-				this.addActionMessage("Welcome here dude, you should now confirm your email and then sign in from the menu !");
-				
-				LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
+					this.addActionMessage(
+							"Welcome here dude, you should now confirm your email and then sign in from the menu !");
 
+					LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
+				} else
+					this.addActionError("Somehting went wrong please check your entries !");
 
 			} catch (Exception pEx) {
 
@@ -97,7 +95,8 @@ public class Register extends ActionSupport {
 	}
 
 	/**
-	 * Validation of the form 
+	 * Validation of the form
+	 * 
 	 * @Todo next : use properties file ?
 	 */
 	@Override

@@ -9,9 +9,10 @@ import org.climb.consumer.rm.UserRowMapper;
 import org.climb.model.bean.user.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component("userDao")
 public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
@@ -23,10 +24,9 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 
 		StringBuilder vSQL = new StringBuilder("SELECT COUNT(*) FROM public.user WHERE 1=1");
 
-		NamedParameterJdbcTemplate nParamTemplate = new NamedParameterJdbcTemplate(getDataSource());
 		MapSqlParameterSource vParams = new MapSqlParameterSource();
 
-		return nParamTemplate.queryForObject(vSQL.toString(), vParams, Integer.class);
+		return this.npjTemplate.queryForObject(vSQL.toString(), vParams, Integer.class);
 	}
 
 	@Override
@@ -59,9 +59,13 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 	 * @param User
 	 */
 	@Override
-	public void addUser(User user) {
+	@Transactional
+	public boolean addUser(User user) {
 		
 		LOGGER.debug("adding user to DB - UserDAO : " + user.getUsername());
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
+		
+		return this.npjTemplate.update("INSERT INTO public.user(username,email,password) values(:username,:email,:password)", params) == 1;
 		
 		
 	}

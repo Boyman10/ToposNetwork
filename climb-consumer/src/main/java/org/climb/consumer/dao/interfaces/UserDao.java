@@ -14,6 +14,6 @@ public interface UserDao {
 	public int getCountUsers();
 	public void updateRole();
 	public List<User> getListUsers();
-	public void addUser(User user);
+	public boolean addUser(User user);
 
 }
