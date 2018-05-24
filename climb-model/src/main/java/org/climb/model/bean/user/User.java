@@ -1,5 +1,8 @@
 package org.climb.model.bean.user;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,9 +20,13 @@ public class User {
 	private String email;
 	private Role role;
 	
+	/**
+	 * Entity Constructor to initialize data
+	 */
 	public User() {
-		// TODO Auto-generated constructor stub
+		setDefaultDate(); 
 	}
+	
 	/**
 	 * @return the email
 	 */
@@ -81,6 +88,15 @@ public class User {
 	public void setDatereg(String datereg) {
 		this.datereg = datereg;
 	}
+	
+	/**
+	 * Define the default date for new entry
+	 */
+	public void setDefaultDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		this.datereg = sdf.format(new Date());
+	}
+	
 	/**
 	 * @return the role
 	 */

@@ -73,6 +73,9 @@ public class Register extends ActionSupport {
 
 				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
 
+				// First retrieve the default Role by its name :
+				this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
+				
 				// Persist data to db now :
 				if (this.managerFactory.getUserManager().addUser(userBean)) {
 					vResult = ActionSupport.SUCCESS;

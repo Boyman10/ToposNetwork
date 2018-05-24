@@ -2,6 +2,7 @@ package org.climb.business.manager.impl;
 
 import org.climb.business.manager.interfaces.UserManager;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
+import org.climb.business.manager.interfaces.RoleManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +18,9 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	@Autowired
 	private UserManager userManager;
 	
+	@Autowired
+	private RoleManager roleManager;
+	
 	@Override
 	public UserManager getUserManager() {
 		
@@ -27,6 +31,18 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	public void setUserManager(UserManager userManager) {
 
 		this.userManager = userManager;
+	}
+
+	@Override
+	public RoleManager getRoleManager() {
+		
+		return roleManager;
+	}
+
+	@Override
+	public void setRoleManager(RoleManager roleManager) {
+
+		this.roleManager = roleManager;
 	}
 
 }
