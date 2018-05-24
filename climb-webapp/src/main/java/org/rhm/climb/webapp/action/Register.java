@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Preparable;
 
 /**
  * Defined Action for registration form
@@ -19,7 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @version 0.1.0
  */
 @Service
-public class Register extends ActionSupport {
+public class Register extends ActionSupport implements Preparable{
 
 	private static final Logger LOGGER = LogManager.getLogger(Register.class);
 
@@ -119,5 +120,10 @@ public class Register extends ActionSupport {
 			}
 		}
 
+	}
+
+	@Override
+	public void prepare() throws Exception {
+		LOGGER.debug("In prepare method for registration - any bean ? " + userBean);		
 	}
 }
