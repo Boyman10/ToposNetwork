@@ -90,9 +90,9 @@
 			<result>/jsp/admin/index.jsp</result>
 		</action>
 
-		<!-- Listing users action -->
-		<action name="list" class="UserAction" method="doList">
-			<result>/jsp/admin/listusers.jsp</result>
+		<!-- Gravatar Upload using Ajax -->
+		<action name="gravatar" class="Gravatar">
+			<result>/jsp/_include/_gravatar.jsp</result>
 		</action>
 
 	</package>

@@ -3,8 +3,6 @@ package org.climb.model.bean.user;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-
 /**
  * Class handling User entity
  * @author bob

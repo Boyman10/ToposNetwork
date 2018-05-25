@@ -17,6 +17,7 @@ CREATE TABLE public.climb_user (
                 username VARCHAR NOT NULL,
                 pass VARCHAR NOT NULL,
                 email VARCHAR NOT NULL,
+                gravatar VARCHAR(25),
                 datereg DATE NOT NULL,
                 role_id INTEGER NOT NULL,
                 CONSTRAINT id PRIMARY KEY (id)

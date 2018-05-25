@@ -1,7 +1,5 @@
 package org.climb.model.bean.user;
 
-import org.springframework.stereotype.Component;
-
 /**
  * Define Role Entity for a user
  * @author bob
