@@ -39,7 +39,11 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">...</div>
+				<div class="modal-body">
+				
+				<%@ include file="_include/_gravatar.jsp"%>
+				
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">Close</button>

@@ -2,5 +2,6 @@
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Contact.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/interceptors/AuthInterceptor.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Admin.java
+/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Gravatar.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/interceptors/RegisterInterceptor.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Register.java

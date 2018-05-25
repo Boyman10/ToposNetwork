@@ -90,10 +90,15 @@
 			<result>/jsp/admin/index.jsp</result>
 		</action>
 
+	</package>
+	
+	<!-- package dedicated to ajax Actions -->
+	<package name="ajax" extends="global, json-default">
 		<!-- Gravatar Upload using Ajax -->
 		<action name="gravatar" class="Gravatar">
-			<result>/jsp/_include/_gravatar.jsp</result>
-		</action>
-
+		    <result type="json" name="success">
+		        <param name="root">gravatar</param>
+		    </result>		
+	    </action>	
 	</package>
 </struts>

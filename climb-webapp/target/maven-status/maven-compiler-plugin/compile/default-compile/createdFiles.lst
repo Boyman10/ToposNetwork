@@ -1,4 +1,5 @@
 org/rhm/climb/webapp/action/UserAction.class
+org/rhm/climb/webapp/action/Gravatar.class
 org/rhm/climb/webapp/interceptors/RegisterInterceptor.class
 org/rhm/climb/webapp/action/Contact.class
 org/rhm/climb/webapp/interceptors/AuthInterceptor.class
