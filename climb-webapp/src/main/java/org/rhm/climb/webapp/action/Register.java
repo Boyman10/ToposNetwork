@@ -8,7 +8,6 @@ import org.climb.model.bean.user.Role;
 import org.climb.model.bean.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
@@ -19,12 +18,12 @@ import com.opensymphony.xwork2.Preparable;
  * @author bob
  * @version 0.1.0
  */
-@Service
-public class Register extends ActionSupport implements Preparable{
+public class Register extends ActionSupport implements Preparable {
 
 	private static final Logger LOGGER = LogManager.getLogger(Register.class);
 
 	private static final long serialVersionUID = 1L;
+
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
 
@@ -63,13 +62,30 @@ public class Register extends ActionSupport implements Preparable{
 	}
 
 	@Override
+	public String input() {
+
+		// Return input by default :
+		String vResult = ActionSupport.INPUT;
+
+		LOGGER.debug("Are we having a user - input ? " + userBean);
+
+		if (userBean != null && !StringUtils.isEmpty(Integer.toString(userBean.getId()))) {
+
+			LOGGER.debug("What are we doing here -> lead to logout page or tell him to go somewhere else...");
+			
+		}
+
+		return vResult;
+	}
+
+	@Override
 	public String execute() {
 
 		// Return input by default :
 		String vResult = ActionSupport.INPUT;
 
 		// Check if we have password and userBean submitted :
-		if (userBean != null && !StringUtils.isAllEmpty(userBean.getUsername(), userBean.getPassword())) {
+		if (userBean != null && !StringUtils.isAllEmpty(Integer.toString(userBean.getId()))) {
 
 			try {
 
@@ -78,7 +94,7 @@ public class Register extends ActionSupport implements Preparable{
 				// First retrieve the default Role by its name :
 				Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
 				userBean.setRole(role);
-				
+
 				// Persist data to db now :
 				if (this.managerFactory.getUserManager().addUser(userBean)) {
 					vResult = ActionSupport.SUCCESS;
@@ -124,6 +140,6 @@ public class Register extends ActionSupport implements Preparable{
 
 	@Override
 	public void prepare() throws Exception {
-		LOGGER.debug("In prepare method for registration - any bean ? " + userBean);		
+		LOGGER.debug("In prepare method for registration - any bean ? " + userBean);
 	}
 }

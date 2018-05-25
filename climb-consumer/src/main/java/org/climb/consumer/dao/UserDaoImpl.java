@@ -101,7 +101,7 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 	@Override
 	public User findUserByBean(User user) {
 		
-		String sql = "SELECT * FROM public.climb_user WHERE (username = :name OR email = :email) AND pass = :password";
+		String sql = "SELECT * FROM public.climb_user WHERE (username = :name ) AND pass = :password";
 		
 		try {
 			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");

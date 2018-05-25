@@ -25,7 +25,6 @@ import com.opensymphony.xwork2.interceptor.ParameterNameAware;
  * @author bob
  * @version 1.0
  */
-@Service
 public class UserAction extends ActionSupport implements SessionAware, ServletRequestAware {
 
 	/**
