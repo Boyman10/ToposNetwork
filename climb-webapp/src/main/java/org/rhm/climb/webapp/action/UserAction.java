@@ -84,7 +84,7 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 		// Redirect if user already logged in :
 		if (null != this.userSession.get(USER) && this.userSession.containsKey(USER)) {
 
-			LOGGER.debug("Already connected " + userBean.getUsername());
+			LOGGER.debug("Already connected " + ((User)(userSession.get(USER))).getUsername());
 			return ActionSupport.SUCCESS;
 		}
 

@@ -17,6 +17,7 @@ public class User {
 	private String password;
 	private String datereg;
 	private String email;
+	private String gravatar;
 	private Role role;
 	
 	/**
@@ -26,6 +27,20 @@ public class User {
 		setDefaultDate(); 
 	}
 	
+	/**
+	 * @return the gravatar
+	 */
+	public String getGravatar() {
+		return gravatar;
+	}
+
+	/**
+	 * @param gravatar the gravatar to set
+	 */
+	public void setGravatar(String gravatar) {
+		this.gravatar = gravatar;
+	}
+
 	/**
 	 * @return the email
 	 */
