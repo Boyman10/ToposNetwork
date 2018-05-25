@@ -1,9 +1,9 @@
 package org.rhm.climb.webapp.action;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+import org.climb.business.manager.interfaces.factory.ManagerFactory;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.inject.Inject;
 
 /**
  * Handling gravatar upload using Ajax call in a modal box from the index
@@ -14,17 +14,11 @@ public class Gravatar extends ActionSupport {
 
 	private static final long serialVersionUID = 17L;
     
-	private InputStream inputStream;
-    
-    public InputStream getInputStream() {
-        return inputStream;
-    }
-    
+	@Inject
+	ManagerFactory managerFactory;
     
 	@Override
 	public String execute() throws Exception {
-
-        inputStream = new ByteArrayInputStream("Response from gravatar action".getBytes("UTF-8"));
 		
 		
 		return ActionSupport.SUCCESS;
