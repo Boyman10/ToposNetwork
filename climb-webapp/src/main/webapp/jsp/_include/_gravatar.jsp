@@ -10,24 +10,29 @@
 	<s:if test="#session.user.gravatar">
 		<img src="<s:property value="#session.user.gravatar" />" />
 	</s:if>
-	
+
 	<s:else>
-	
-	<p>Please submit your gravatar now :</p>
-	
-	<s:form>
-	
-	</s:form>
-	
-	
-	<script>
+
+		<p>Please pick up your gravatar now :</p>
+
+		<div class="form-group">
+			<s:file name="upload" label="Your File" class="form-control-file" id="gravatar"/>
+      
+			<label for="gravatar">Your file</label> 
+			<input type="file" class="form-control-file" id="gravatar" name="upload">
+			 <button type="submit" class="btn btn-primary" id="subGravatar">Submit</button>
+		</div>
 		
-	</script>
-	
-	
-	
+
+
+		<script>
+			$.{"#subGravatar"}.onClick()
+		</script>
+
+
+
 	</s:else>
-	
+
 </s:if>
 <s:else>
 	<s:a action="login">Please do login first !</s:a>
