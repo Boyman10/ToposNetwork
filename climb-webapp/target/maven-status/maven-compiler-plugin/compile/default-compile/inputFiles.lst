@@ -1,7 +1,7 @@
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/UserAction.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Contact.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/interceptors/AuthInterceptor.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Admin.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Gravatar.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/interceptors/RegisterInterceptor.java
-/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Register.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\action\Admin.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\action\Contact.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\action\UserAction.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\action\Register.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\interceptors\RegisterInterceptor.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\action\Gravatar.java
+C:\Users\bill\git\ToposNetwork\climb-webapp\src\main\java\org\rhm\climb\webapp\interceptors\AuthInterceptor.java

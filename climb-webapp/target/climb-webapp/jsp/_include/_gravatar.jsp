@@ -13,6 +13,18 @@
 	
 	<s:else>
 	
+	<p>Please submit your gravatar now :</p>
+	
+	<s:form>
+	
+	</s:form>
+	
+	
+	<script>
+		
+	</script>
+	
+	
 	
 	</s:else>
 	
