@@ -16,17 +16,26 @@
 		<p>Please pick up your gravatar now :</p>
 
 		<div class="form-group">
-			<s:file name="upload" label="Your File" class="form-control-file" id="gravatar"/>
-      
-			<label for="gravatar">Your file</label> 
-			<input type="file" class="form-control-file" id="gravatar" name="upload">
-			 <button type="submit" class="btn btn-primary" id="subGravatar">Submit</button>
+			<s:file name="upload" label="Your File" class="form-control-file"
+				id="gravatar" />
+
+			<label for="gravatar">Your file</label> <input type="file"
+				class="form-control-file" id="gravatar" name="upload">
+			<button type="submit" class="btn btn-primary" id="subGravatar">Submit</button>
 		</div>
-		
+
 
 
 		<script>
-			$.{"#subGravatar"}.onClick()
+		$(document).ready(function () {
+			//https://www.mkyong.com/jquery/jquery-ajax-submit-a-multipart-form/
+		
+			${"#subGravatar"}.click(function(){
+				console.log("Click on BTN...");
+				
+			});
+		
+		}	
 		</script>
 
 
