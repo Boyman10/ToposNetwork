@@ -1,5 +1,6 @@
 package org.rhm.climb.webapp.action;
 
+import java.io.File;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -20,10 +21,14 @@ public class Gravatar extends ActionSupport implements SessionAware {
 	private static final String USER = "user";
 	// Handling session
 	private Map<String, Object> userSession;
-	
-	/*@Inject
-	ManagerFactory managerFactory;
-*/
+
+	// Handling the file being submitted
+	private File file;
+    private String contentType;
+    private String filename;
+	/*
+	 * @Inject ManagerFactory managerFactory;
+	 */
 	private String gravatar;
 
 	// ============= GETTERS/ SETTERS ===============
@@ -46,18 +51,35 @@ public class Gravatar extends ActionSupport implements SessionAware {
 	// ============= METHODS ==============
 
 	/**
+	 * Upload handling set of methods - matching name of upload field
+	 * @param file
+	 */
+    public void setUpload(File file) {
+        this.file = file;
+     }
+
+     public void setUploadContentType(String contentType) {
+        this.contentType = contentType;
+     }
+
+     public void setUploadFileName(String filename) {
+        this.filename = filename;
+     }
+	
+	
+	/**
 	 * Default action method to deliver the listing
 	 */
 	@Override
 	public String execute() throws Exception {
 
-		gravatar = ((User)(userSession.get(USER))).getGravatar();
+		gravatar = ((User) (userSession.get(USER))).getGravatar();
 		return ActionSupport.SUCCESS;
 	}
 
 	@Override
 	public void setSession(Map<String, Object> session) {
-		userSession = session;		
+		userSession = session;
 	}
 
 }
