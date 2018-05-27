@@ -54,17 +54,17 @@ public class Upload extends ActionSupport implements ServletContextAware {
         this.uploadFile = file;
      }
 
-     public void setUploadFileContentType(String contentType) {
+     public void setContentType(String contentType) {
         this.contentType = contentType;
      }
 
-     public void setUploadFileFileName(String filename) {
+     public void setFileName(String filename) {
     	 
     	 LOGGER.debug("Setting upload filename : " + filename);
         this.filename = filename;
      }
 	
-     public String getUploadFileFileName() {
+     public String getFileName() {
     	 
        return this.filename;
      }
@@ -86,7 +86,7 @@ public class Upload extends ActionSupport implements ServletContextAware {
         	try {
     			LOGGER.debug("Saving file to proper location" );
     			
-    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("") + File.separator + filesPath);
+    			FileUtils.saveFile(getUploadFile(), getFileName(), context.getRealPath("") + File.separator + filesPath);
     			
     			addActionMessage("File successfully saved !");
     			
