@@ -27,8 +27,8 @@ public class Upload extends ActionSupport implements ServletContextAware {
 
 	// Handling the file being submitted
 	private File uploadFile;
-    private String contentType;
-    private String filename;
+    private String uploadFileContentType;
+    private String uploadFileFilename;
 
     // Saving to app specified dir
     private ServletContext context;
@@ -54,19 +54,19 @@ public class Upload extends ActionSupport implements ServletContextAware {
         this.uploadFile = file;
      }
 
-     public void setContentType(String contentType) {
-        this.contentType = contentType;
+     public void setUploadFileContentType(String contentType) {
+        this.uploadFileContentType = contentType;
      }
 
-     public void setFileName(String filename) {
+     public void setUploadFileFileName(String filename) {
     	 
     	 LOGGER.debug("Setting upload filename : " + filename);
-        this.filename = filename;
+        this.uploadFileFilename = filename;
      }
 	
-     public String getFileName() {
+     public String getUploadFileFileName() {
     	 
-       return this.filename;
+       return this.uploadFileFilename;
      }
 		
 	/**
@@ -77,7 +77,7 @@ public class Upload extends ActionSupport implements ServletContextAware {
 
 		LOGGER.debug("Within execute action : " );
 
-        if (filename == null) {
+        if (uploadFileFilename == null) {
             LOGGER.debug("Within execute action - no file sent yet..." );
         } else {
         	
@@ -86,7 +86,7 @@ public class Upload extends ActionSupport implements ServletContextAware {
         	try {
     			LOGGER.debug("Saving file to proper location" );
     			
-    			FileUtils.saveFile(getUploadFile(), getFileName(), context.getRealPath("") + File.separator + filesPath);
+    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("") + File.separator + filesPath);
     			
     			addActionMessage("File successfully saved !");
     			

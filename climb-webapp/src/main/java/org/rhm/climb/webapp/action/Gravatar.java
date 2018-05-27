@@ -72,11 +72,11 @@ public class Gravatar extends ActionSupport implements SessionAware {
         this.uploadFile = file;
      }
 
-     public void setContentType(String contentType) {
+     public void setUploadFileContentType(String contentType) {
         this.contentType = contentType;
      }
 
-     public void setFileName(String filename) {
+     public void setUploadFileFileName(String filename) {
     	 
     	 LOGGER.debug("Setting upload filename : " + filename);
         this.filename = filename;
