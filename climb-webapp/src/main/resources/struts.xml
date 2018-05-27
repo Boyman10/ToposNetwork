@@ -108,7 +108,7 @@
 		<!-- Action "upload" -->
 		<action name="upload" class="Upload">
 			<interceptor-ref name="fileUploadStack" />
-
+			<param name="filesPath">myfiles</param>
 			<result name="input">/jsp/upload.jsp</result>
 			<result name="success">/jsp/upload.jsp</result>
 		</action>
