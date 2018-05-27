@@ -24,6 +24,16 @@
           <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <s:text name="tools" />
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <s:a action="upload" title="Upload files" cssClass="dropdown-item nav-link">Uploads files</s:a>
+          <div class="dropdown-divider"></div>
+          <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
+        </div>
+      </li>      
       <li class="nav-item">
       
       <s:if test="#session.user">

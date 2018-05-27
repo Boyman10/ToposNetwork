@@ -73,6 +73,19 @@
 			<result name="success">/jsp/register.jsp</result>
 		</action>
 
+		<!-- Action "upload" -->
+		<action name="upload" class="Upload">
+			<interceptor-ref name="basicStack" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg,image/gif,image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="validation" />
+			<interceptor-ref name="workflow" />
+			<result name="input">/jsp/upload.jsp</result>
+			<result name="success">/jsp/upload.jsp</result>
+		</action>
+		
+		
 		<!-- Action "contact" -->
 		<action name="contact" class="Contact">
 			<result>/jsp/contact.jsp</result>
