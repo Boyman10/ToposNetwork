@@ -26,8 +26,8 @@
 			<interceptor-stack name="registerStack">
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
-				
-				
+
+
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
@@ -91,14 +91,22 @@
 		</action>
 
 	</package>
-	
+
 	<!-- package dedicated to ajax Actions -->
 	<package name="ajax" extends="global, json-default">
 		<!-- Gravatar Upload using Ajax -->
 		<action name="gravatar" class="Gravatar">
-		    <result type="json" name="success">
-		        <param name="root">gravatar</param>
-		    </result>		
-	    </action>	
+			<interceptor-ref name="basicStack" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg,image/gif,image/png</param>
+			</interceptor-ref>
+			<interceptor-ref name="validation" />
+			<interceptor-ref name="workflow" />
+			<result type="json" name="success">
+				<param name="root">gravatar</param>
+			</result>
+			<result type="json" name="input">
+			</result>
+		</action>
 	</package>
 </struts>

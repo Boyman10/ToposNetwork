@@ -76,12 +76,14 @@ $(document).ready(function () {
 		        var data = new FormData(form);
 
 				// If you want to add an extra field for the FormData
-		        data.append("CustomField", "This is some extra data, testing");
+		        data.append("sourceToken", "This is some extra data, token to implement ?");
 
 				// disabled the submit button
-		        $("#btnSubmit").prop("disabled", true);
+				
+				 $(this).removeClass();
+				    $(this).addClass('fa fa-spinner fa-spin');
+				    setTimeout(function() { $('.fa').removeClass().addClass('fa fa-minus-circle') }, 1000);
 
-				form.append('<i class="fa fa-spinner" aria-hidden="true"></i>');
 				
 		        $.ajax({
 		            type: "POST",
@@ -94,16 +96,18 @@ $(document).ready(function () {
 		            timeout: 600000,
 		            success: function (data) {
 
-		                $("#result").text(data);
-		                console.log("SUCCESS : ", data);
-		                $("#subGravatar").prop("disabled", false);
+		            	console.log("Receiving data : " , data);
+		            	$.each(data, function (key, val) {
+		            		
+		            		console.log("SUCCESS key : ", key , " and val : ", val );
+		            		
+		                });
+		                
+		                
 
 		            },
 		            error: function (e) {
-
-		                $("#result").text(e.responseText);
 		                console.log("ERROR : ", e);
-		                $("#subGravatar").prop("disabled", false);
 
 		            }
 		        });
