@@ -1,18 +1,20 @@
 package org.rhm.climb.webapp.action;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.servlet.ServletContext;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.util.ServletContextAware;
+import org.rhm.climb.webapp.utils.FileUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Handling files(s) upload using JQuery
- * 
+ * @see https://www.journaldev.com/2192/struts-2-file-upload-example
  * @author bob
  *
  */
@@ -30,10 +32,17 @@ public class Upload extends ActionSupport implements ServletContextAware {
 
     // Saving to app specified dir
     private ServletContext context;
+    private String filesPath;
     
 	// ============= GETTERS/ SETTERS ===============
 	
-
+    public void setFilesPath(String filesPath) {
+		this.filesPath = filesPath;
+	}
+    
+    public File getUploadFile() {
+        return this.uploadFile;
+     }
 	// ============= METHODS ==============
 
 	/**
@@ -55,7 +64,11 @@ public class Upload extends ActionSupport implements ServletContextAware {
         this.filename = filename;
      }
 	
-	
+     public String getUploadFileFileName() {
+    	 
+       return this.filename;
+     }
+		
 	/**
 	 * Default action method to deliver the listing
 	 */
@@ -63,10 +76,21 @@ public class Upload extends ActionSupport implements ServletContextAware {
 	public String execute() throws Exception {
 
 		LOGGER.debug("Within execute action : " );
-		//gravatar = ((User) (userSession.get(USER))).getGravatar();
+
         if (filename == null) {
             addActionError("File must be valid !");
-        } 
+            LOGGER.debug("Within execute action - no file sent yet..." );
+        } else {
+        	
+    		try {
+    			LOGGER.debug("Saving file to proper location" );
+    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("") + File.separator + filesPath);
+    		} catch (IOException e) {
+    			e.printStackTrace();
+    			return ActionSupport.INPUT;
+    		}
+        	
+        }
 				
         return hasErrors() ? ActionSupport.INPUT : ActionSupport.SUCCESS;
 	}
