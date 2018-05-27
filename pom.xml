@@ -100,6 +100,16 @@
 				<artifactId>javax.servlet-api</artifactId>
 				<version>4.0.1</version>
 			</dependency>
+			<!--  commons-io above logging to avoid conflict - ex in uploading files -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.6</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+
 			<dependency>
 				<groupId>commons-logging</groupId>
 				<artifactId>commons-logging</artifactId>
@@ -129,6 +139,7 @@
 				<scope>runtime</scope>
 
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

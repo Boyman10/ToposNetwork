@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 import org.climb.model.bean.user.User;
+import org.apache.commons.io.FileUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,7 +24,7 @@ public class Gravatar extends ActionSupport implements SessionAware {
 	private Map<String, Object> userSession;
 
 	// Handling the file being submitted
-	private File file;
+	private File uploadFile;
     private String contentType;
     private String filename;
 	/*
@@ -54,15 +55,15 @@ public class Gravatar extends ActionSupport implements SessionAware {
 	 * Upload handling set of methods - matching name of upload field
 	 * @param file
 	 */
-    public void setUpload(File file) {
-        this.file = file;
+    public void setUploadFile(File file) {
+        this.uploadFile = file;
      }
 
-     public void setUploadContentType(String contentType) {
+     public void setUploadFileContentType(String contentType) {
         this.contentType = contentType;
      }
 
-     public void setUploadFileName(String filename) {
+     public void setUploadFileFileName(String filename) {
         this.filename = filename;
      }
 	
