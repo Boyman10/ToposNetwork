@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Handling files(s) upload using JQuery
- * @see https://www.journaldev.com/2192/struts-2-file-upload-example
+ * @see 
  * @author bob
  *
  */
@@ -78,15 +78,24 @@ public class Upload extends ActionSupport implements ServletContextAware {
 		LOGGER.debug("Within execute action : " );
 
         if (filename == null) {
-            addActionError("File must be valid !");
             LOGGER.debug("Within execute action - no file sent yet..." );
         } else {
         	
-    		try {
+        	
+    		
+        	try {
     			LOGGER.debug("Saving file to proper location" );
+    			
     			FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("") + File.separator + filesPath);
+    			
+    			addActionMessage("File successfully saved !");
+    			
     		} catch (IOException e) {
-    			e.printStackTrace();
+    			
+    			//e.printStackTrace();
+    			
+    			addActionError("File must be valid !" + e.getMessage());
+    			
     			return ActionSupport.INPUT;
     		}
         	

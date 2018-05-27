@@ -1,4 +1,5 @@
 org\rhm\climb\webapp\action\Upload.class
+org\rhm\climb\webapp\utils\FileUtils.class
 org\rhm\climb\webapp\action\Admin.class
 org\rhm\climb\webapp\action\Register.class
 org\rhm\climb\webapp\interceptors\AuthInterceptor.class
