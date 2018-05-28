@@ -116,28 +116,6 @@ public class Register extends ActionSupport implements Preparable {
 		return vResult;
 	}
 
-	/**
-	 * Validation of the form
-	 * 
-	 * @Todo next : use properties file ?
-	 */
-	@Override
-	public void validate() {
-
-		// Beware POST or not :
-		if (userBean != null) {
-
-			if (userBean.getUsername().length() == 0) {
-				addFieldError("userBean.username", "user name is required.");
-			}
-
-			if (userBean.getEmail().length() == 0) {
-				addFieldError("userBean.email", "Email is required.");
-			}
-		}
-
-	}
-
 	@Override
 	public void prepare() throws Exception {
 		LOGGER.debug("In prepare method for registration - any bean ? " + userBean);

@@ -19,6 +19,5 @@
 	<aop:aspectj-autoproxy />
 	<!-- Aspect -->
 	<bean id="siteAspect" class="org.climb.business.manager.aspects.SiteTransactionAspect" />
-	
-	
+		
 </beans>
