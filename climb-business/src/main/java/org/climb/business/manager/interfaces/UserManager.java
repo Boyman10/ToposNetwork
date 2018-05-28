@@ -7,6 +7,6 @@ import org.climb.model.bean.user.User;
 public interface UserManager {
 
 	public List<User> getUsersList();
-	public boolean addUser(User user);
+	public Boolean addUser(User user);
 	public User findUserByBean(User user);
 }
