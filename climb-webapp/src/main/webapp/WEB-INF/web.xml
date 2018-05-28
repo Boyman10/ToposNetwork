@@ -5,6 +5,8 @@
          version="3.1">
 
 	<display-name>Climbing Created Web Application</display-name>
+	
+	
 	<!-- Struts 2 filter -->
 	<filter>
 		<filter-name>struts2</filter-name>

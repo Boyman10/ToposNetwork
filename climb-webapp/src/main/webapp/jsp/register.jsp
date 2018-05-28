@@ -24,6 +24,8 @@
 			<s:password key="userBean.password" class="form-control" />
 
 			<s:submit value="Submit" class="btn btn-primary" />
+			<%-- add token to JSP to be used by Token interceptor --%>
+			<s:token />
 		</s:form>
 		<s:if test="hasActionErrors()">
 			<div class="errors">

@@ -18,8 +18,17 @@
           <s:text name="authentication" />
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+        <s:if test="#session.user">
+			<s:a action="logout" title="logout" cssClass="dropdown-item nav-link">Logout</s:a>
+        </s:if>
+        <s:else>
           <s:a action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
-          <s:a action="register" title="register" cssClass="dropdown-item nav-link">Register</s:a>
+          <s:a action="register" title="register" cssClass="dropdown-item nav-link">Register</s:a>       
+        
+       	 
+        </s:else>
+
           <div class="dropdown-divider"></div>
           <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>

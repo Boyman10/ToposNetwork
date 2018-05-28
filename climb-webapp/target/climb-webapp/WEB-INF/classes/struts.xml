@@ -101,10 +101,11 @@
 
 		<!-- Action "register" -->
 		<action name="register" class="Register">
-
+			<interceptor-ref name="token"></interceptor-ref>
 			<interceptor-ref name="registerStack" />
 			<result name="input">/jsp/register.jsp</result>
 			<result name="success">/jsp/register.jsp</result>
+			<result name="invalid.token">/jsp/invalid_token.jsp</result>
 		</action>
 
 		<!-- Action "upload" -->
