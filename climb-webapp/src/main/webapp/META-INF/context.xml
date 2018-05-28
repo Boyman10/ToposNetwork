@@ -8,7 +8,7 @@
               driverClassName="org.postgresql.Driver"
               username="test"
               password="debian"
-              defaultAutoCommit="true"
+              defaultAutoCommit="false"
               defaultTransactionIsolation="READ_COMMITTED"
 
               initialSize="1"
