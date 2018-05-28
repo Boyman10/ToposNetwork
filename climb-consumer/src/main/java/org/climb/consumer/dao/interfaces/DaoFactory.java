@@ -14,4 +14,5 @@ public interface DaoFactory {
 	public void setUserDao(UserDao uDao);
 	
 	public RoleDao getRoleDao();
+	public SiteDao getSiteDao();
 }

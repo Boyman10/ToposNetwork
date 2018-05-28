@@ -4,11 +4,11 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
+   <property key="Logical" value="Postgresql" />
    <property key="Connection Type" value="PostgreSQL" />
-   <property key="Logical" value="PlayPen Database" />
-   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/climb" />
-   <property key="UID" value="postgres" />
-   <property key="PWD" value="test" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/struts_app" />
+   <property key="UID" value="test" />
+   <property key="PWD" value="debian" />
    <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
    <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
    <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
@@ -107,7 +107,7 @@
     <folder id="FOLTAB192" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB194" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX27" populated="true" UUID="b2302a89-67bb-492a-954f-0fd0629736c6" clustered="false" name="id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX27" populated="true" UUID="b2302a89-67bb-492a-954f-0fd0629736c6" clustered="false" name="id" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC28" populated="true" UUID="98abec44-f0c5-4919-96ce-1e80ee1800d7" ascendingOrDescending="UNSPECIFIED" column-ref="COL20" name="site_id" physicalName="id" />
     </index>
    </folder>
@@ -133,7 +133,7 @@
     <folder id="FOLTAB292" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB294" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX34" populated="true" UUID="d3f02df1-77de-4c01-80c4-9efc89fd6694" clustered="false" name="id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX34" populated="true" UUID="d3f02df1-77de-4c01-80c4-9efc89fd6694" clustered="false" name="area_id_pk" physicalName="area_id_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC35" populated="true" UUID="716e5b36-f87c-4f51-a632-505c219738f0" ascendingOrDescending="UNSPECIFIED" column-ref="COL30" name="area_id" physicalName="id" />
     </index>
    </folder>
@@ -168,7 +168,7 @@
     <folder id="FOLTAB362" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB364" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX44" populated="true" UUID="30f22b03-5211-4fb2-b79e-3d535812da90" clustered="false" name="id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX44" populated="true" UUID="30f22b03-5211-4fb2-b79e-3d535812da90" clustered="false" name="route_id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC45" populated="true" UUID="b6767e29-c3cf-47b9-8faf-9c68203e7016" ascendingOrDescending="UNSPECIFIED" column-ref="COL37" name="route_id" physicalName="id" />
     </index>
    </folder>
@@ -191,7 +191,7 @@
     <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX50" populated="true" UUID="808f384a-2c92-412a-a0a5-3facaf6ae8c6" clustered="false" name="id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX50" populated="true" UUID="808f384a-2c92-412a-a0a5-3facaf6ae8c6" clustered="false" name="grade_id_pk" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC51" populated="true" UUID="a3422f05-cbfe-4d9d-b0d1-6a44057b577b" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="grade_id" physicalName="id" />
     </index>
    </folder>
@@ -211,7 +211,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
@@ -219,12 +219,12 @@
   <table-pane table-ref="TAB14" x="60" y="45" bgColor="0xe8cfdb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB19" x="378" y="46" bgColor="0xffffff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB29" x="646" y="47" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB36" x="379" y="234" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB46" x="648" y="237" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB36" x="645" y="179" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB46" x="644" y="348" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL52" pkConnection="0.5085714285714286" fkConnection="0.4744897959183674" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL54" pkConnection="0.47244094488188976" fkConnection="0.5294117647058824" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL56" pkConnection="0.36312849162011174" fkConnection="0.6721311475409836" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL58" pkConnection="0.6197183098591549" fkConnection="0.4251968503937008" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL58" pkConnection="0.24324324324324326" fkConnection="0.9459459459459459" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="72"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">

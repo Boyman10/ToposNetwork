@@ -2,6 +2,7 @@ package org.climb.consumer.dao;
 
 import org.climb.consumer.dao.interfaces.DaoFactory;
 import org.climb.consumer.dao.interfaces.RoleDao;
+import org.climb.consumer.dao.interfaces.SiteDao;
 import org.climb.consumer.dao.interfaces.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ public class DaoFactoryImpl implements DaoFactory {
 	
 	@Autowired
 	private RoleDao roleDao;
+	
+	@Autowired
+	private SiteDao siteDao;
 	
 	@Override
 	public UserDao getUserDao() {
@@ -28,6 +32,12 @@ public class DaoFactoryImpl implements DaoFactory {
 	@Override
 	public RoleDao getRoleDao() {
 		return roleDao;
+	}
+
+	@Override
+	public SiteDao getSiteDao() {
+		return siteDao;
+
 	}
 
 }

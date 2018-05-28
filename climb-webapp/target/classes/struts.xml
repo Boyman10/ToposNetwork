@@ -134,7 +134,7 @@
 		</action>
 		
 		<!-- Adding new site/area/route -->
-		<action name="new_site" class="NewSite">
+		<action name="newSite" class="NewSite">
 			<result>/jsp/admin/new_site.jsp</result>
 		</action>
 

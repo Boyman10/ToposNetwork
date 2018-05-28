@@ -12,6 +12,8 @@
 	<bean id="Register" class="org.rhm.climb.webapp.action.Register" scope="prototype" />
 	<bean id="Gravatar" class="org.rhm.climb.webapp.action.Gravatar" scope="prototype" />
 	<bean id="Upload" class="org.rhm.climb.webapp.action.Upload" scope="prototype" />
+	
+	<bean id="NewSite" class="org.rhm.climb.webapp.action.admin.NewSite" scope="prototype" />
 
 	<bean id="dataSourceClimb"
 		class="org.springframework.jndi.JndiObjectFactoryBean">
