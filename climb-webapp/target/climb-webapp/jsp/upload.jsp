@@ -17,7 +17,7 @@
 			<s:actionmessage />
 
 			<s:if test="uploadFileFilename">
-				<s:url var="url" value="/img/test.gif" />
+			Check out your file :<br/>
 				<img src="<s:property value="filesPath"/>/<s:property value="uploadFileFilename"/>" border="0" alt="My uploaded image">
 			</s:if>
 		</div>
