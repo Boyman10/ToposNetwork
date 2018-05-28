@@ -32,7 +32,7 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 
 			nRows = this.npjTemplate.update(
 					"INSERT INTO public.climb_site(location,region,department,name,country,type) "
-					+ "values(:location,:region,:department,:name,:type)",
+					+ "values(:location,:region,:department,:name,:country,:type)",
 					params);
 			
 			LOGGER.debug("Query done ! ");
