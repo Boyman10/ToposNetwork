@@ -3,6 +3,7 @@
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/interfaces/RoleManager.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/interfaces/factory/ManagerFactory.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/impl/AbstractManager.java
+/home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/aspects/SiteTransactionAspect.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/interfaces/UserManager.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/impl/UserManagerImpl.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-business/src/main/java/org/climb/business/manager/impl/ManagerFactoryImpl.java

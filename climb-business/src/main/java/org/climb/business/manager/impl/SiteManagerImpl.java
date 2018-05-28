@@ -1,10 +1,10 @@
 package org.climb.business.manager.impl;
 
-import org.springframework.stereotype.Component;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.SiteManager;
 import org.climb.model.bean.route.Site;
+import org.springframework.stereotype.Component;
 
 @Component("siteManager")
 public class SiteManagerImpl extends AbstractManager implements SiteManager {
