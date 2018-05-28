@@ -134,8 +134,9 @@
 		</action>
 		
 		<!-- Adding new site/area/route -->
-		<action name="newSite" class="NewSite">
-			<result>/jsp/admin/new_site.jsp</result>
+		<action name="new_site" class="NewSite">
+			<result name="input">/jsp/admin/new_site.jsp</result>
+			<result name="success">/jsp/admin/new_site.jsp</result>
 		</action>
 
 	</package>

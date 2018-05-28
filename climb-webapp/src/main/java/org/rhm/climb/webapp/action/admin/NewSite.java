@@ -68,7 +68,7 @@ public class NewSite extends ActionSupport {
 				LOGGER.debug("About to persist the bean to DB " + siteBean.getName());
 
 				// Persist data to db now :
-				if (this.managerFactory.getSiteManager().addSite(siteBean)) {
+				if (this.managerFactory.getSiteManager().addSite(siteBean) > 0) {
 					vResult = ActionSupport.SUCCESS;
 					/* Perfect we are all good we should continue now : */
 

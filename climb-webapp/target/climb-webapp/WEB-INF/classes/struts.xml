@@ -7,11 +7,14 @@
 	<package name="global" abstract="true" extends="struts-default">
 		<interceptors>
 
+			<!-- Own interceptors -->
 			<interceptor name="auth"
 				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
+				
 			<interceptor name="register"
 				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />
 
+			<!-- Stacks of interceptors -->
 			<interceptor-stack name="authenticatedStack">
 
 				<interceptor-ref name="timer" />
@@ -26,14 +29,13 @@
 			<interceptor-stack name="registerStack">
 				<interceptor-ref name="timer" />
 				<interceptor-ref name="logger" />
-
-
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
 				</interceptor-ref>
 				<interceptor-ref name="register" />
 			</interceptor-stack>
+			
 			<interceptor-stack name="fileUploadStack">
 				<interceptor-ref name="exception" />
 				<interceptor-ref name="alias" />
@@ -129,6 +131,12 @@
 		<!-- admin interface action -->
 		<action name="admin" class="Admin">
 			<result>/jsp/admin/index.jsp</result>
+		</action>
+		
+		<!-- Adding new site/area/route -->
+		<action name="new_site" class="NewSite">
+			<result name="input">/jsp/admin/new_site.jsp</result>
+			<result name="success">/jsp/admin/new_site.jsp</result>
 		</action>
 
 	</package>

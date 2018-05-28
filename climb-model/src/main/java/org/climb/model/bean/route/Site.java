@@ -27,7 +27,9 @@ public class Site {
 	
 	/** country of a site */
 	private String country;
-
+	
+	/** location of a site */
+	private String location;
 
 	/////////////// GETTER/SETTERS //////////////
 	
@@ -65,5 +67,10 @@ public class Site {
 	public void setCountry(String country) {
 		this.country = country;
 	}		
-	
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}		
 }

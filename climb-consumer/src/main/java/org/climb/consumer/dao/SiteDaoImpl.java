@@ -31,7 +31,8 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 			LOGGER.debug("Launching query now...");
 
 			nRows = this.npjTemplate.update(
-					"INSERT INTO public.climb_site() values(:username,:email,:password,TO_DATE(:datereg,'YYYY-MM-DD'),:role.id)",
+					"INSERT INTO public.climb_site(location,region,department,name,country,type) "
+					+ "values(:location,:region,:department,:name,:type)",
 					params);
 			
 			LOGGER.debug("Query done ! ");

@@ -34,10 +34,17 @@
           <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>      
-      <li class="nav-item">
+      <li class="nav-item dropdown">
       
       <s:if test="#session.user">
-        <s:a action="admin" title="Administrative interface" cssClass="nav-link"><s:text name="administration" /></s:a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <s:text name="administration" />
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        	<s:a action="admin" title="Administrative interface" cssClass="nav-link"><s:text name="board" /></s:a>
+        	<div class="dropdown-divider"></div>
+        	<s:a action="new_site" title="Add new Site" cssClass="dropdown-item nav-link">Add new site</s:a>
+        </div>
        </s:if>
        <s:else>
        	<s:a action="admin" title="Administrative interface" cssClass="nav-link disabled"><s:text name="administration" /></s:a>

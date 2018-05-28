@@ -107,7 +107,7 @@
     <folder id="FOLTAB192" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB194" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX27" populated="true" UUID="b2302a89-67bb-492a-954f-0fd0629736c6" clustered="false" name="id" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX27" populated="true" UUID="b2302a89-67bb-492a-954f-0fd0629736c6" clustered="false" name="id" physicalName="id" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC28" populated="true" UUID="98abec44-f0c5-4919-96ce-1e80ee1800d7" ascendingOrDescending="UNSPECIFIED" column-ref="COL20" name="site_id" physicalName="id" />
     </index>
    </folder>
@@ -133,7 +133,7 @@
     <folder id="FOLTAB292" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB294" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX34" populated="true" UUID="d3f02df1-77de-4c01-80c4-9efc89fd6694" clustered="false" name="id" physicalName="area_id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX34" populated="true" UUID="d3f02df1-77de-4c01-80c4-9efc89fd6694" clustered="false" name="id" physicalName="id" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC35" populated="true" UUID="716e5b36-f87c-4f51-a632-505c219738f0" ascendingOrDescending="UNSPECIFIED" column-ref="COL30" name="area_id" physicalName="id" />
     </index>
    </folder>
@@ -168,7 +168,7 @@
     <folder id="FOLTAB362" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB364" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX44" populated="true" UUID="30f22b03-5211-4fb2-b79e-3d535812da90" clustered="false" name="id" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX44" populated="true" UUID="30f22b03-5211-4fb2-b79e-3d535812da90" clustered="false" name="id" physicalName="id" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC45" populated="true" UUID="b6767e29-c3cf-47b9-8faf-9c68203e7016" ascendingOrDescending="UNSPECIFIED" column-ref="COL37" name="route_id" physicalName="id" />
     </index>
    </folder>
@@ -191,7 +191,7 @@
     <folder id="FOLTAB462" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB464" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX50" populated="true" UUID="808f384a-2c92-412a-a0a5-3facaf6ae8c6" clustered="false" name="id" physicalName="id_pk" primaryKeyIndex="true" unique="false" >
+    <index id="IDX50" populated="true" UUID="808f384a-2c92-412a-a0a5-3facaf6ae8c6" clustered="false" name="id" physicalName="id" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC51" populated="true" UUID="a3422f05-cbfe-4d9d-b0d1-6a44057b577b" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="grade_id" physicalName="id" />
     </index>
    </folder>
