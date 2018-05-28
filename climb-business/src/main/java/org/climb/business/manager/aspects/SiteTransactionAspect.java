@@ -1,26 +1,29 @@
 package org.climb.business.manager.aspects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * My first Aspect - AOP - adapted to SiteManager
  * @author bob
- * @see https://blog.espenberntsen.net/tag/aspectj/
- * @see https://www.mkyong.com/spring3/spring-aop-aspectj-annotation-example/
+ * @see http://www.eclipse.org/aspectj/doc/released/progguide/preface.html
  */
 @Aspect
 public class SiteTransactionAspect {
 
+	static final Logger LOGGER = LogManager.getLogger(SiteTransactionAspect.class);
+	
 	@Before("execution(* org.climb.business.manager.impl.SiteManagerImpl.addSite(..))")
 	public void transactionBefore(JoinPoint joinPoint) {
 
-		System.out.println("transactionBefore() is running!");
-		System.out.println("hijacked : " + joinPoint.getSignature().getName());
-		System.out.println("******");
+		LOGGER.debug("transactionBefore() is running!");
+		LOGGER.debug("hijacked : " + joinPoint.getSignature().getName());
+		LOGGER.debug("************");
+		
+		
+		
 	}
 }
