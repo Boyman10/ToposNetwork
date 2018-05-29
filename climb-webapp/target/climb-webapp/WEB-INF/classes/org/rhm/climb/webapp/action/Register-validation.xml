@@ -1,12 +1,51 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 
 <validators>
-    <validator type="requiredstring">
-        <param name="fieldname">userBean.username</param>
-        <message>User name is required.</message>
-    </validator>
- <validator type="email">
-    <param name="fieldname">userBean.email</param>
-    <message>Email address not valid.</message>
-</validator>
+
+	<field name="userBean.username">
+		<field-validator type="required">
+			<message>User name is required.</message>
+		</field-validator>
+		<field-validator type="string">
+			<message>User name must be a string.</message>
+		</field-validator>
+
+	</field>
+
+	<field name="userBean.email">
+		<field-validator type="required">
+			<message>Email is required.</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>Email must be valid.</message>
+		</field-validator>
+
+	</field>
+	<field name="userBean.password">
+		<field-validator type="required">
+			<message>password is required.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<message>password must 6 characters minimum.</message>
+		</field-validator>
+
+	</field>
+	<field name="confirm">
+		<field-validator type="required">
+			<message>Confirmed password is required.</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<message>Confirmed  password must 6 characters minimum.</message>
+		</field-validator>
+
+	</field>
+
+  <!-- Plain Validator 1 -->
+  <validator type="expression">
+      <param name="expression">confirm.equals(userBean.password)</param>
+      <message>Password do not match!</message>
+  </validator>
+  
 </validators>

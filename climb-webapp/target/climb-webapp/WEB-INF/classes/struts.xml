@@ -100,6 +100,11 @@
 		</action>
 
 		<!-- Action "register" -->
+		<action name="register_form" class="Register">
+			<result name="input">/jsp/register.jsp</result>
+		</action>
+		
+		
 		<action name="register" class="Register">
 			<interceptor-ref name="token"></interceptor-ref>
 			<interceptor-ref name="registerStack" />

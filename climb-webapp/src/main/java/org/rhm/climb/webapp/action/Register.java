@@ -26,6 +26,8 @@ public class Register extends ActionSupport implements Preparable {
 
 	// The bean to be defined for the login form - using corresponding entity
 	private User userBean;
+	private String confirm;
+
 
 	@Autowired
 	@Qualifier("managerFactory")
@@ -59,6 +61,22 @@ public class Register extends ActionSupport implements Preparable {
 	 */
 	public void setUserBean(User userBean) {
 		this.userBean = userBean;
+	}
+	
+	
+	/**
+	 * Confirm password 
+	 * @return the confirm
+	 */
+	public String getConfirm() {
+		return confirm;
+	}
+
+	/**
+	 * @param confirm the confirm to set
+	 */
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
 	}
 
 	@Override

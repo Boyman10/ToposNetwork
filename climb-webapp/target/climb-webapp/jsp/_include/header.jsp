@@ -24,7 +24,7 @@
         </s:if>
         <s:else>
           <s:a action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
-          <s:a action="register" title="register" cssClass="dropdown-item nav-link">Register</s:a>       
+          <s:a action="register_form" title="register" cssClass="dropdown-item nav-link">Register</s:a>       
         
        	 
         </s:else>

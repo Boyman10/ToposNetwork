@@ -22,7 +22,7 @@
 			<s:textfield key="userBean.username" class="form-control" />
 			<s:textfield key="userBean.email" class="form-control" />
 			<s:password key="userBean.password" class="form-control" />
-
+			<s:password key="confirm" class="form-control" />
 			<s:submit value="Submit" class="btn btn-primary" />
 			<%-- add token to JSP to be used by Token interceptor --%>
 			<s:token />
