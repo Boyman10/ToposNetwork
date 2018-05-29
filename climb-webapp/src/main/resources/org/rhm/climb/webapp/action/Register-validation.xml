@@ -2,13 +2,13 @@
 
 <validators>
 
-	<field name="username">
+	<field name="userBean.username">
 		<field-validator type="requiredstring">
 			<message>User name is required.</message>
 		</field-validator>
 	</field>
 
-	<field name="email">
+	<field name="userBean.email">
 		<field-validator type="requiredstring">
 			<message>Email is required.</message>
 		</field-validator>
@@ -17,7 +17,7 @@
 		</field-validator>
 
 	</field>
-	<field name="password">
+	<field name="userBean.password">
 		<field-validator type="required">
 			<message>password is required.</message>
 		</field-validator>

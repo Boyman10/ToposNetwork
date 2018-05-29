@@ -13,7 +13,7 @@
 	<p>Fill the form and click the button to contact us</p>
 
 	<s:form action="contact" method="post">
-			<s:textfield name="email" label="Your email" class="form-control"/>
+			<s:textfield name="contactEmail" key="email" label="Your email" class="form-control"/>
 			<s:textfield name="subject" label="Your subject" class="form-control"/>
 			<s:textarea name="message" label="Message" class="form-control"/>
 			

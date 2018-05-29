@@ -100,7 +100,7 @@
 		</action>
 
 		<!-- Action "register" -->
-		<action name="register_form" class="Register">
+		<action name="register_form" class="Register" method="input">
 			<result name="input">/jsp/register.jsp</result>
 		</action>
 		
@@ -121,12 +121,10 @@
 			<result name="success">/jsp/upload.jsp</result>
 		</action>
 
-
 		<!-- Action "contact" -->
-		<action name="contact" class="Contact">
-			<interceptor-ref name="defaultStack" />
-			<result name="input">/jsp/contact.jsp</result>
+		<action name="contact" class="Contact" method="exexute">			
 			<result name="success">/jsp/contact.jsp</result>
+			<result name="input">/jsp/contact.jsp</result>
 		</action>
 	</package>
 

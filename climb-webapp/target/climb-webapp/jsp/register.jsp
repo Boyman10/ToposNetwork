@@ -20,7 +20,7 @@
 	<s:else>
 		<s:form action="register" method="post" validate="true">
 			<s:textfield key="username" name="userBean.username" class="form-control" />
-			<s:textfield key="email" name="userBean.email" />
+			<s:textfield key="email" name="userBean.email" class="form-control"/>
 			<s:password key="password" name="userBean.password" class="form-control" />
 			<s:password key="confirm" name="confirm" class="form-control" />
 			<s:submit value="Submit" class="btn btn-primary" />
