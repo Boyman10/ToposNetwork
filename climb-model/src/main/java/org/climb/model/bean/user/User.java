@@ -105,7 +105,7 @@ public class User {
 	 * Define the default date for new entry
 	 */
 	public void setDefaultDate() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		this.datereg = sdf.format(new Date());
 	}
 	

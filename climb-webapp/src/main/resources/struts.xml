@@ -10,7 +10,7 @@
 			<!-- Own interceptors -->
 			<interceptor name="auth"
 				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
-				
+
 			<interceptor name="register"
 				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />
 
@@ -35,7 +35,7 @@
 				</interceptor-ref>
 				<interceptor-ref name="register" />
 			</interceptor-stack>
-			
+
 			<interceptor-stack name="fileUploadStack">
 				<interceptor-ref name="exception" />
 				<interceptor-ref name="alias" />
@@ -103,13 +103,17 @@
 		<action name="register_form" class="Register" method="input">
 			<result name="input">/jsp/register.jsp</result>
 		</action>
-		
-		
+
+
 		<action name="register" class="Register">
-			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="token">
+			</interceptor-ref>
+			<interceptor-ref name="params">
+				<param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
+			</interceptor-ref>
 			<interceptor-ref name="registerStack" />
-			<result name="input">/jsp/register.jsp</result>
 			<result name="success">/jsp/register.jsp</result>
+			<result name="input">/jsp/register.jsp</result>
 			<result name="invalid.token">/jsp/invalid_token.jsp</result>
 		</action>
 
@@ -122,7 +126,7 @@
 		</action>
 
 		<!-- Action "contact" -->
-		<action name="contact" class="Contact" method="exexute">			
+		<action name="contact" class="Contact" method="execute">
 			<result name="success">/jsp/contact.jsp</result>
 			<result name="input">/jsp/contact.jsp</result>
 		</action>
@@ -138,7 +142,7 @@
 		<action name="admin" class="Admin">
 			<result>/jsp/admin/index.jsp</result>
 		</action>
-		
+
 		<!-- Adding new site/area/route -->
 		<action name="new_site" class="NewSite">
 			<result name="input">/jsp/admin/new_site.jsp</result>

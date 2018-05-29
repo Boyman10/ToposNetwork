@@ -107,7 +107,7 @@ public class Register extends ActionSupport implements Preparable {
 
 			try {
 
-				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername());
+				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername() + " With date " + userBean.getDatereg() );
 
 				// First retrieve the default Role by its name :
 				Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
@@ -122,9 +122,11 @@ public class Register extends ActionSupport implements Preparable {
 							"Welcome here dude, you should now confirm your email and then sign in from the menu !");
 
 					LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
-				} else
-					this.addActionError("Somehting went wrong please check your entries !");
-
+				} else {
+					this.addActionError("Somehting went wrong please check your entries!");
+					this.userBean = null;
+					LOGGER.debug("Not written to db - removing bean now");
+				}
 			} catch (Exception pEx) {
 
 				this.addActionError("Somehting went wrong please check your entries !");
