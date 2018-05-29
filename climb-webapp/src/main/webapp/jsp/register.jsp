@@ -18,11 +18,11 @@
 		</div>
 	</s:if>
 	<s:else>
-		<s:form action="register">
-			<s:textfield key="userBean.username" class="form-control" />
-			<s:textfield key="userBean.email" class="form-control" />
-			<s:password key="userBean.password" class="form-control" />
-			<s:password key="confirm" class="form-control" />
+		<s:form action="register" method="post" validate="true">
+			<s:textfield key="username" name="userBean.username" class="form-control" />
+			<s:textfield key="email" name="userBean.email" class="form-control"/>
+			<s:password key="password" name="userBean.password" class="form-control" />
+			<s:password key="confirm" name="confirm" class="form-control" />
 			<s:submit value="Submit" class="btn btn-primary" />
 			<%-- add token to JSP to be used by Token interceptor --%>
 			<s:token />
