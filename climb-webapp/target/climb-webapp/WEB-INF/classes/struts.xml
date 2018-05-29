@@ -124,7 +124,9 @@
 
 		<!-- Action "contact" -->
 		<action name="contact" class="Contact">
-			<result>/jsp/contact.jsp</result>
+			<interceptor-ref name="defaultStack" />
+			<result name="input">/jsp/contact.jsp</result>
+			<result name="success">/jsp/contact.jsp</result>
 		</action>
 	</package>
 

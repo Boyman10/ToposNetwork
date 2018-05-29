@@ -1,5 +1,5 @@
 /*
- * $Id: styles.css 722375 2008-12-02 05:19:57Z wesw $
+ * $Id$
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,37 +18,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-.wwFormTable {
-	background-color: black;
-}
 
-.label {
-	font-style: italic;
-}
+.wwFormTable {}
+.label {font-style:italic; }
+.errorLabel {font-style:italic; color:red; }
+.errorMessage {font-weight:bold; color:red; }
+.checkboxLabel {}
+.checkboxErrorLabel {color:red; }
+.required {color:red;}
+.tdLabel {text-align:right; vertical-align:top; }
 
-.errorLabel {
-	font-style: italic;
-	color: red;
-}
+.tdTransferSelect {text-align:center; vertical-align:middle;}
+.tdLabelTop {text-align:left; vertical-align:top;}
+.tdCheckboxLabel {text-align:right; vertical-align:top;}
+.tdCheckboxInput {text-align:left; vertical-align:top;}
+.tdCheckboxErrorMessage {text-align:left; vertical-align:top;}
+.tdErrorMessage {text-align:center; vertical-align:top;}
+.formButton {text-align:right;}
+.tdInput {text-align:left;}
 
-.errorMessage {
-	font-weight: bold;
-	color: red;
-}
 
-.checkboxLabel {
-	
-}
-
-.checkboxErrorLabel {
-	color: red;
-}
-
-.required {
-	color: red;
-}
-
-.tdLabel {
-	text-align: right;
-	vertical-align: top;
-}
+.align-center{text-align:center;}
+.align-right{text-align:right;}
+.align-left{text-align:left;}
+.align-justify{text-align:justify;}

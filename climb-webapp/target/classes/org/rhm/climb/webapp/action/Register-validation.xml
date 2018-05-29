@@ -3,17 +3,13 @@
 <validators>
 
 	<field name="userBean.username">
-		<field-validator type="required">
+		<field-validator type="requiredstring">
 			<message>User name is required.</message>
 		</field-validator>
-		<field-validator type="string">
-			<message>User name must be a string.</message>
-		</field-validator>
-
 	</field>
 
 	<field name="userBean.email">
-		<field-validator type="required">
+		<field-validator type="requiredstring">
 			<message>Email is required.</message>
 		</field-validator>
 		<field-validator type="email">
