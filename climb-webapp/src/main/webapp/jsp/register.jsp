@@ -17,22 +17,21 @@
 			<s:actionmessage />
 		</div>
 	</s:if>
-	<s:else>
-		<s:form action="register" method="post" validate="true">
-			<s:textfield key="username" name="userBean.username" class="form-control" />
-			<s:textfield key="email" name="userBean.email" class="form-control"/>
-			<s:password key="password" name="userBean.password" class="form-control" />
-			<s:password key="confirm" name="confirm" class="form-control" />
-			<s:submit value="Submit" class="btn btn-primary" />
-			<%-- add token to JSP to be used by Token interceptor --%>
-			<s:token />
-		</s:form>
-		<s:if test="hasActionErrors()">
-			<div class="errors">
-				<s:actionerror />
-			</div>
-		</s:if>
-	</s:else>
+
+	<s:form action="register" method="post" validate="true">
+		<s:textfield key="username" name="userBean.username" />
+		<s:textfield key="email" name="userBean.email" />
+		<s:password key="password" name="userBean.password" />
+		<s:password key="confirm" name="confirm" />
+		<s:submit value="Submit" />
+		<%-- add token to JSP to be used by Token interceptor --%>
+		<s:token />
+	</s:form>
+	<s:if test="hasActionErrors()">
+		<div class="errors">
+			<s:actionerror />
+		</div>
+	</s:if>
 
 </div>
 

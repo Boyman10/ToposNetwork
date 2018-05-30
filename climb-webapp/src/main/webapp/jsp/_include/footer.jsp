@@ -10,7 +10,7 @@
 		<s:text name="contact" />
 		<s:text name="application.name" /> - version ${project.version} &copy; 
 		<s:text name="organization.url" />
-		 - <s:a action="contact">Contact us</s:a>
+		 - <s:a action="contact_form">Contact us</s:a>
 		</p>
 	</div>
 </footer>

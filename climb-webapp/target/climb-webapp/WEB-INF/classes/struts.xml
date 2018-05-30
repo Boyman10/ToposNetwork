@@ -108,9 +108,6 @@
 		<action name="register" class="Register">
 			<interceptor-ref name="token">
 			</interceptor-ref>
-			<interceptor-ref name="params">
-				<param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
-			</interceptor-ref>
 			<interceptor-ref name="registerStack" />
 			<result name="success">/jsp/register.jsp</result>
 			<result name="input">/jsp/register.jsp</result>
@@ -125,10 +122,24 @@
 			<result name="success">/jsp/upload.jsp</result>
 		</action>
 
+		<!-- Action "register" -->
+		<action name="contact_form" class="Contact" method="input">
+			<result name="input">/jsp/contact.jsp</result>
+		</action>
+		
 		<!-- Action "contact" -->
-		<action name="contact" class="Contact" method="execute">
+		<action name="contact" class="Contact">
+			<interceptor-ref name="token">		
+			</interceptor-ref> 
+		    <interceptor-ref name="defaultStack">
+		       <param name="exception.logEnabled">true</param>
+		       <param name="exception.logLevel">ERROR</param>
+		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+		    </interceptor-ref>
+
 			<result name="success">/jsp/contact.jsp</result>
 			<result name="input">/jsp/contact.jsp</result>
+			<result name="invalid.token">/jsp/invalid_token.jsp</result>
 		</action>
 	</package>
 

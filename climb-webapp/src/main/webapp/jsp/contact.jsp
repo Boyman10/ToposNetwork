@@ -9,26 +9,30 @@
 <div class="container">
 
 	<h2>Contact form</h2>
-	
-	<p>Fill the form and click the button to contact us</p>
 
-	<s:form action="contact" method="post">
-			<s:textfield name="contactEmail" key="email" label="Your email" class="form-control"/>
-			<s:textfield name="subject" label="Your subject" class="form-control"/>
-			<s:textarea name="message" label="Message" class="form-control"/>
-			
-			<s:submit value="Send" class="btn btn-primary" />
+	<p>Fill the form and click the button to contact us</p>
+	<s:if test="hasActionMessages()">
+		<div class="welcome">
+			<s:actionmessage />
+		</div>
+	</s:if>
+		<s:form action="contact" method="post" validate="true">
+			<s:textfield name="contactEmail" key="email" />
+			<s:textfield name="contactSubject" key="subject" />
+			<s:textarea key="message" name="contactMessage" />
+			<%-- add token to JSP to be used by Token interceptor --%>
+			<s:token />
+			<s:submit value="Send" />
+
 		</s:form>
-		<s:if test="hasActionErrors()">
-			<div class="errors">
-				<s:actionerror />
-			</div>
-		</s:if>
-		<s:if test="hasActionMessages()">
-			<div class="welcome">
-				<s:actionmessage />
-			</div>
-		</s:if>
+
+
+	<s:if test="hasActionErrors()">
+		<div class="errors">
+			<s:actionerror />
+		</div>
+
+	</s:if>
 
 </div>
 

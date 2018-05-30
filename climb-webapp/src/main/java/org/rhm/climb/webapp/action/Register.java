@@ -101,6 +101,9 @@ public class Register extends ActionSupport implements Preparable {
 
 		// Return input by default :
 		String vResult = ActionSupport.INPUT;
+		
+		// Let's clear the messages and errors first !
+		//this.clearErrorsAndMessages();
 
 		// Check if we have password and userBean submitted :
 		if (userBean != null && !StringUtils.isAllEmpty(Integer.toString(userBean.getId()))) {

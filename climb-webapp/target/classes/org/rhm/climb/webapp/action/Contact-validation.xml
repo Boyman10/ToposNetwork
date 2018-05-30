@@ -2,7 +2,7 @@
 
 <validators>
 
-	<field name="email">
+	<field name="contactEmail">
 		<field-validator type="requiredstring">
 			<message>Email is required.</message>
 		</field-validator>

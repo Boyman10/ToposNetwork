@@ -30,7 +30,7 @@
         </s:else>
 
           <div class="dropdown-divider"></div>
-          <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
+          <s:a action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -40,7 +40,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <s:a action="upload" title="Upload files" cssClass="dropdown-item nav-link">Uploads files</s:a>
           <div class="dropdown-divider"></div>
-          <s:a action="contact" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
+          <s:a action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>      
       <li class="nav-item dropdown">

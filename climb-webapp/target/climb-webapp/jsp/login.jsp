@@ -14,8 +14,8 @@
 
 	<s:form action="login">
 
-		<s:textfield key="userBean.username" class="form-control" />
-		<s:password key="userBean.password" class="form-control" />
+		<s:textfield key="userBean.username" />
+		<s:password key="userBean.password"/>
 
 
 		<s:submit value="Submit" class="btn btn-primary" />
