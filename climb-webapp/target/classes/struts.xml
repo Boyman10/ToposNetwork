@@ -108,7 +108,9 @@
 		<action name="register" class="Register">
 			<interceptor-ref name="token">
 			</interceptor-ref>
-			<interceptor-ref name="registerStack" />
+			<interceptor-ref name="registerStack">
+		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+		    </interceptor-ref>   
 			<result name="success">/jsp/register.jsp</result>
 			<result name="input">/jsp/register.jsp</result>
 			<result name="invalid.token">/jsp/invalid_token.jsp</result>
