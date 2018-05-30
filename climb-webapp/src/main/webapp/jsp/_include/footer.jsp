@@ -17,13 +17,15 @@
 
 <s:debug />
 
+<!-- 
+
 <s:component template="/footer.ftl" label="Zip+4">
         <s:param name="zipName" value="%{'zip'}" />
         <s:param name="zipValue" value="%{zip}" />
         <s:param name="plus4Name" value="%{'plus4'}" />
         <s:param name="plus4Value" value="%{plus4}" />
     </s:component>
-
+-->
 <!-- Bootstrap -->
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

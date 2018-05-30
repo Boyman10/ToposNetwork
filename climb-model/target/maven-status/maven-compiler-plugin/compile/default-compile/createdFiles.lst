@@ -1,7 +1,7 @@
-org\climb\model\bean\route\Site.class
-org\climb\model\bean\route\Area.class
-org\climb\model\bean\user\User.class
-org\climb\model\bean\route\Level.class
-org\climb\model\bean\route\Route.class
-org\climb\model\bean\user\Role.class
-org\climb\model\bean\route\Grade.class
+org/climb/model/bean/route/Site.class
+org/climb/model/bean/user/User.class
+org/climb/model/bean/route/Grade.class
+org/climb/model/bean/user/Role.class
+org/climb/model/bean/route/Area.class
+org/climb/model/bean/route/Route.class
+org/climb/model/bean/route/Level.class
