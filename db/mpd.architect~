@@ -277,14 +277,14 @@
   <table-pane table-ref="TAB29" x="646" y="47" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB36" x="378" y="258" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB46" x="648" y="259" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB52" x="273" y="482" bgColor="0xe4e4b8" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB52" x="613" y="575" bgColor="0xe4e4b8" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB60" x="604" y="453" bgColor="0xdfedce" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL66" pkConnection="0.5085714285714286" fkConnection="0.4744897959183674" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL68" pkConnection="0.47244094488188976" fkConnection="0.5294117647058824" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL70" pkConnection="0.36312849162011174" fkConnection="0.6721311475409836" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL74" pkConnection="0.13333333333333333" fkConnection="0.762962962962963" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL72" pkConnection="0.5021834061135371" fkConnection="0.49433962264150944" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL76" pkConnection="0.4095238095238095" fkConnection="0.65" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL76" pkConnection="0.9471698113207547" fkConnection="0.25" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="72"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
