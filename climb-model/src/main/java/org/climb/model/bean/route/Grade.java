@@ -1,13 +1,21 @@
 package org.climb.model.bean.route;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Route grade - cotation in french - refer to the level of a route
  * @author bill
  *
  */
+@Entity
 public class Grade {
 
 	/** integer as a reference */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	/** refer to level */
