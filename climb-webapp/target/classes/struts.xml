@@ -32,6 +32,7 @@
 				<interceptor-ref name="defaultStack">
 					<param name="exception.logEnabled">true</param>
 					<param name="exception.logLevel">DEBUG</param>
+					<param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
 				</interceptor-ref>
 				<interceptor-ref name="register" />
 			</interceptor-stack>
@@ -109,7 +110,7 @@
 			<interceptor-ref name="token">
 			</interceptor-ref>
 			<interceptor-ref name="registerStack">
-		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+		       
 		    </interceptor-ref>   
 			<result name="success">/jsp/register.jsp</result>
 			<result name="input">/jsp/register.jsp</result>
