@@ -1,5 +1,11 @@
 package org.climb.business;
 
+import org.climb.model.bean.route.Grade;
+import org.climb.model.bean.route.Level;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -7,8 +13,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
+public class AppTest extends TestCase
 {
     /**
      * Create the test case
@@ -33,6 +38,18 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
-    }
+		SessionFactory sessionFactory = new Configuration().configure()
+				.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+ 
+		Grade grade = new Grade();
+		grade.setLevel(Level.ALIEN);
+		grade.setDetails("God damn grade here !");
+		
+		session.save(grade);
+ 
+		session.getTransaction().commit();
+		session.close();
+	}
 }
