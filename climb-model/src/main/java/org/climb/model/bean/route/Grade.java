@@ -1,5 +1,6 @@
 package org.climb.model.bean.route;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,9 +22,11 @@ public class Grade {
 	private int id;
 	
 	/** refer to level */
+	@Column(name="level")
 	private Level level;
 	
 	/** details of grade */
+	@Column(name="details")
 	private String details;
 
 	public Level getLevel() {
