@@ -155,13 +155,21 @@
 				<scope>import</scope>
 			</dependency>
 
-			<!-- https://mvnrepository.com/artifact/com.covisint.core/aspectj-bom -->
+			<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
 			<dependency>
-				<groupId>com.covisint.core</groupId>
-				<artifactId>aspectj-bom</artifactId>
-				<version>1.8.0</version>
-				<type>pom</type>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>1.9.1</version>
+				<scope>import</scope>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.9.1</version>
+			</dependency>
+
+
 
 			<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-bom -->
 			<dependency>
@@ -169,6 +177,7 @@
 				<artifactId>hibernate-ogm-bom</artifactId>
 				<version>5.4.0.Beta1</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
