@@ -22,7 +22,7 @@
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
  
         <!-- Annotated entity classes -->
-        <mapping class="com.climb.model.bean.route.Grade"/>
+        <mapping class="org.climb.model.bean.route.Grade"/>
         
     </session-factory>
 </hibernate-configuration>
