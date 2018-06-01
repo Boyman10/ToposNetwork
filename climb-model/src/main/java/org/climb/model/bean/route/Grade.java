@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Route grade - cotation in french - refer to the level of a route
@@ -11,6 +12,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
+@Table(name = "climb_grade")
 public class Grade {
 
 	/** integer as a reference */
