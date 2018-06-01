@@ -1,5 +1,10 @@
 package org.climb.model.bean.route;
 
+/**
+ * Defining levels related to grades 
+ * @see https://www.guidedolomiti.com/en/rock-climbing-grades/
+ * @author bob
+ */
 public enum Level {
 
 	NOVICE("Novice"),
