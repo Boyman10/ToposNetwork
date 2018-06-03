@@ -18,8 +18,8 @@
 	</s:if>
 	<s:else>
 		<s:form action="add_grade">
-			<s:textfield key="gradeBean.name" />
-			<s:textarea key="gradeBean.details"  />
+			<s:select list="levels" key="gradeBean.level" />
+			<s:textarea key="gradeBean.details" cols="40" rows="10"   />
 
 			
 			<s:submit value="Submit"  />

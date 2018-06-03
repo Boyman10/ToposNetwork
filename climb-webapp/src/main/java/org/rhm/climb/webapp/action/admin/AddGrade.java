@@ -1,10 +1,14 @@
 package org.rhm.climb.webapp.action.admin;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.route.Grade;
+import org.climb.model.bean.route.Level;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -23,6 +27,14 @@ public class AddGrade extends ActionSupport {
 
 	// The bean to be defined for the login form - using corresponding entity
 	private Grade gradeBean;
+
+	// retrieve level list for the select box ! -- could be done via Ajax also ;) @todo
+	private List<Level> levels = Arrays.asList(Level.values());
+	
+	public List<Level> getLevels() {
+		return levels;
+	}
+
 
 	@Autowired
 	@Qualifier("managerFactory")
