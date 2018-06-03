@@ -53,6 +53,7 @@
         	<s:a action="admin" title="Administrative interface" cssClass="nav-link"><s:text name="board" /></s:a>
         	<div class="dropdown-divider"></div>
         	<s:a action="new_site" title="Add new Site" cssClass="dropdown-item nav-link">Add new site</s:a>
+        	<s:a action="add_grade" title="Add new Grade" cssClass="dropdown-item nav-link">Add new grade</s:a>
         </div>
        </s:if>
        <s:else>

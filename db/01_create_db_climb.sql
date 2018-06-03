@@ -41,7 +41,7 @@ CREATE TABLE public.climb_area (
 ALTER SEQUENCE public.climb_area_id_seq OWNED BY public.climb_area.id;
 
 CREATE SEQUENCE public.climb_route_id_seq;
-
+CREATE TABLE public.climb_route (
                 id INTEGER NOT NULL DEFAULT nextval('public.climb_route_id_seq'),
                 name VARCHAR NOT NULL,
                 grade_id INTEGER NOT NULL,
