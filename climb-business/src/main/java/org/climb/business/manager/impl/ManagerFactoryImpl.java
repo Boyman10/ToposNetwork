@@ -1,9 +1,10 @@
 package org.climb.business.manager.impl;
 
-import org.climb.business.manager.interfaces.UserManager;
-import org.climb.business.manager.interfaces.factory.ManagerFactory;
+import org.climb.business.manager.interfaces.GradeManager;
 import org.climb.business.manager.interfaces.RoleManager;
 import org.climb.business.manager.interfaces.SiteManager;
+import org.climb.business.manager.interfaces.UserManager;
+import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,9 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	@Autowired
 	private RoleManager roleManager;
 
-	
+	@Autowired
+	private GradeManager gradeManager;
+		
 	@Autowired
 	private SiteManager siteManager;
 	
@@ -36,6 +39,14 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	public void setUserManager(UserManager userManager) {
 
 		this.userManager = userManager;
+	}
+
+	public GradeManager getBrandManager() {
+		return gradeManager;
+	}
+
+	public void setBrandManager(GradeManager gradeManager) {
+		this.gradeManager = gradeManager;
 	}
 
 	@Override
