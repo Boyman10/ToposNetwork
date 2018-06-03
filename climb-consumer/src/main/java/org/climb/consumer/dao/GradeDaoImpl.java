@@ -29,6 +29,8 @@ public class GradeDaoImpl extends AbstractDaoImpl implements GradeDao {
  
 		session.getTransaction().commit();
 		session.close();
+		
+		return 0;
 	}
 
 }
