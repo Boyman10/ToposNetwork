@@ -163,6 +163,11 @@
 			<result name="success">/jsp/admin/new_site.jsp</result>
 		</action>
 
+		<!-- Adding new grade -->
+		<action name="add_grade" class="AddGrade">
+			<result name="input">/jsp/admin/add_grade.jsp</result>
+			<result name="success">/jsp/admin/add_grade.jsp</result>
+		</action>
 	</package>
 
 	<!-- package dedicated to ajax Actions -->

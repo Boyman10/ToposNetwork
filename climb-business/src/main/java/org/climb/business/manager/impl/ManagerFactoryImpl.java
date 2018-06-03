@@ -41,13 +41,6 @@ public class ManagerFactoryImpl implements ManagerFactory {
 		this.userManager = userManager;
 	}
 
-	public GradeManager getBrandManager() {
-		return gradeManager;
-	}
-
-	public void setBrandManager(GradeManager gradeManager) {
-		this.gradeManager = gradeManager;
-	}
 
 	@Override
 	public RoleManager getRoleManager() {
@@ -69,6 +62,18 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	@Override
 	public void setSiteManager(SiteManager siteManager) {
 		this.siteManager = siteManager;		
+	}
+
+	@Override
+	public GradeManager getGradeManager() {
+		// TODO Auto-generated method stub
+		return gradeManager;
+	}
+
+	@Override
+	public void setGradeManager(GradeManager gradeManager) {
+		this.gradeManager = gradeManager;
+		
 	}
 
 }

@@ -25,12 +25,12 @@ public class GradeDaoImpl extends AbstractDaoImpl implements GradeDao {
 				.buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
- 		session.save(grade);
+ 		Integer affectedRows = (Integer)session.save(grade);
  
 		session.getTransaction().commit();
 		session.close();
 		
-		return 0;
+		return affectedRows;
 	}
 
 }
