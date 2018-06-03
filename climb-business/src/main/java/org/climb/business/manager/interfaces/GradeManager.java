@@ -9,4 +9,5 @@ import org.springframework.stereotype.Component;
 public interface GradeManager {
 
 	public List<Grade> getGradesList();
+	public int addGrade(Grade grade);
 }

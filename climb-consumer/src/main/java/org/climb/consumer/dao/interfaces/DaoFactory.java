@@ -15,4 +15,5 @@ public interface DaoFactory {
 	
 	public RoleDao getRoleDao();
 	public SiteDao getSiteDao();
+	public GradeDao getGradeDao();
 }

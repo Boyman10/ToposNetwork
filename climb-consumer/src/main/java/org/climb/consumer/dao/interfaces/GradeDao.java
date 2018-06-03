@@ -13,5 +13,5 @@ public interface GradeDao {
 
 	public List<Grade> getListGrades();
 
-	void addGrade(Grade grade);
+	int addGrade(Grade grade);
 }

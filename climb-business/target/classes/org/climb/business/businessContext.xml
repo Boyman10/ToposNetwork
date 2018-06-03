@@ -24,17 +24,4 @@
 		class="org.climb.business.manager.aspects.SiteTransactionAspect" />
 
 
-
-	<tx:annotation-driven mode="aspectj" />
-	<tx:advice id="transactionAdvice">
-		<tx:attributes>
-			<tx:method name="create*" />
-			<tx:method name="add*" />
-			<tx:method name="update*" />
-			<tx:method name="delete*" />
-			<tx:method name="count*" read-only="true" />
-			<tx:method name="find*" read-only="true" />
-			<tx:method name="*" read-only="true" />
-		</tx:attributes>
-	</tx:advice>
 </beans>
