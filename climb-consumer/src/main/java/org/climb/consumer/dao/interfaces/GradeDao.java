@@ -12,4 +12,6 @@ import org.climb.model.bean.route.Grade;
 public interface GradeDao {
 
 	public List<Grade> getListGrades();
+
+	void addGrade(Grade grade);
 }
