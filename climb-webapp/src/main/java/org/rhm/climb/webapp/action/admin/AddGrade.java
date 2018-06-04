@@ -30,13 +30,7 @@ public class AddGrade extends ActionSupport {
 
 	// retrieve level list for the select box ! -- could be done via Ajax also ;) @todo
 	private List<Level> levels = Arrays.asList(Level.values());
-	// choosen level
-	private Level level;
-	
-	public void setLevel(Level level) {
-		this.level = level;
-	}
-	
+
 	public List<Level> getLevels() {
 		return levels;
 	}
@@ -82,10 +76,8 @@ public class AddGrade extends ActionSupport {
 		if (gradeBean != null && !StringUtils.isAnyEmpty(gradeBean.getDetails())) {
 
 			try {
-
-				gradeBean.setLevel(level);
 				
-				LOGGER.debug("About to persist the bean to DB " + level.name());
+				LOGGER.debug("About to persist the bean to DB ");
 
 				// Persist data to db now :
 				if (this.managerFactory.getGradeManager().addGrade(gradeBean) > 0) {
