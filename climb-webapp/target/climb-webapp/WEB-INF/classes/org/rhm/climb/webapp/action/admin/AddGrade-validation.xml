@@ -2,7 +2,7 @@
 
 <validators>
 
-	<field name="level">
+	<field name="gradeBean.level">
 		<field-validator type="required">
 			<message>Level is required.</message>
 		</field-validator>

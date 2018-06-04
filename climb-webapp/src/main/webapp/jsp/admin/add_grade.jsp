@@ -18,7 +18,7 @@
 	</s:if>
 	<s:else>
 		<s:form action="add_grade">
-			<s:select list="levels" key="level" />
+			<s:select list="levels" key="gradeBean.level" />
 			<s:textarea key="gradeBean.details"  />
 
 			

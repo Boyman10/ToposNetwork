@@ -34,6 +34,10 @@ public class AddGrade extends ActionSupport {
 	public List<Level> getLevels() {
 		return levels;
 	}
+	
+	public void setLevels(List<Level> levels) {
+		this.levels = levels;
+	}
 
 	
 

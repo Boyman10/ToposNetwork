@@ -3,6 +3,8 @@ package org.rhm.climb.webapp.converter;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.util.StrutsTypeConverter;
 import org.climb.model.bean.route.Level;
 
@@ -12,7 +14,9 @@ import org.climb.model.bean.route.Level;
  *
  */
 public class LevelConverter  extends StrutsTypeConverter {
-
+	
+	private static final Logger LOGGER = LogManager.getLogger(LevelConverter.class);
+	
 	@Override
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		
@@ -31,6 +35,8 @@ public class LevelConverter  extends StrutsTypeConverter {
 	            }
 	        }
 
+	        LOGGER.info("Inside convertFromString...");
+
 	        return vReturn;
 	}
 
@@ -44,6 +50,9 @@ public class LevelConverter  extends StrutsTypeConverter {
         } else {
             vString = "";
         }
+        
+        LOGGER.info("Inside convertToString...");
+        
         return vString;
 	}
 	
