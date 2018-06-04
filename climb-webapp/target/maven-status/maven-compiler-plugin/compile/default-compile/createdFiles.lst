@@ -8,4 +8,5 @@ org\rhm\climb\webapp\action\admin\AddGrade.class
 org\rhm\climb\webapp\action\Register.class
 org\rhm\climb\webapp\action\Gravatar.class
 org\rhm\climb\webapp\action\UserAction.class
+org\rhm\climb\webapp\converter\LevelConverter.class
 org\rhm\climb\webapp\action\Contact.class
