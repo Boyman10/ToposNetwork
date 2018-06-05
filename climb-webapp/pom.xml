@@ -96,10 +96,6 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.opensymphony/xwork -->
-		<dependency>
-			<groupId>com.opensymphony</groupId>
-			<artifactId>xwork</artifactId>
-		</dependency>
 
 
 
