@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
-import org.climb.model.bean.route.Site;
+import org.climb.model.bean.route.Area;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -15,13 +15,13 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author bob
  * @version 0.1.0
  */
-public class NewSite extends ActionSupport {
+public class NewArea extends ActionSupport {
 
 	private static final long serialVersionUID = 189L;
-	private static final Logger LOGGER = LogManager.getLogger(NewSite.class);
+	private static final Logger LOGGER = LogManager.getLogger(NewArea.class);
 
-	// The bean to be defined for the login form - using corresponding entity
-	private Site siteBean;
+	// The bean to be defined for the new area form - using corresponding entity
+	private Area areaBean;
 
 	@Autowired
 	@Qualifier("managerFactory")
@@ -31,22 +31,22 @@ public class NewSite extends ActionSupport {
 	/**
 	 * @return the siteBean
 	 */
-	public Site getSiteBean() {
-		return siteBean;
+	public Area getAreaBean() {
+		return areaBean;
 	}
 
 
 	/**
 	 * @param siteBean the siteBean to set
 	 */
-	public void setSiteBean(Site siteBean) {
-		this.siteBean = siteBean;
+	public void setAreaBean(Area areaBean) {
+		this.areaBean = areaBean;
 	}
 
 	@Override
 	public String input() {
 		
-		LOGGER.debug("Yes we are on the input form for a new Site entry");
+		LOGGER.debug("Yes we are on the input form for a new Area entry");
 		
 		return INPUT;
 	}
@@ -56,24 +56,24 @@ public class NewSite extends ActionSupport {
 		
 		String vResult = INPUT;
 		
-		LOGGER.debug("Let's add a new site now !");
+		LOGGER.debug("Let's add a new area now !");
 		
 		// Check if we have a bean filled in :
-		if (siteBean != null && !StringUtils.isAllEmpty(siteBean.getName())) {
+		if (areaBean != null && !StringUtils.isAllEmpty(areaBean.getName())) {
 
 			try {
 
-				LOGGER.debug("About to persist the bean to DB " + siteBean.getName());
+				LOGGER.debug("About to persist the bean to DB " + areaBean.getName());
 
 				// Persist data to db now :
-				if (this.managerFactory.getSiteManager().addSite(siteBean) > 0) {
+				if (this.managerFactory.getAreaManager().addArea(areaBean) > 0) {
 					vResult = ActionSupport.SUCCESS;
 					/* Perfect we are all good we should continue now : */
 
 					this.addActionMessage(
-							"Thank you for registering a new site entry - please check out the url now to add new area and routes.");
+							"Thank you for registering a new area entry - please check out the url now to add new routes.");
 
-					LOGGER.debug("Adding site to DB - Adding event to control the location or whatever ?");
+					LOGGER.debug("Adding area to DB - Adding event to control the location or whatever ?");
 					
 				} else
 					this.addActionError("Something went wrong please check your entries or contact our support");

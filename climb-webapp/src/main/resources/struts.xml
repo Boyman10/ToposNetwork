@@ -162,6 +162,12 @@
 			<result name="input">/jsp/admin/new_site.jsp</result>
 			<result name="success">/jsp/admin/new_site.jsp</result>
 		</action>
+		
+		<!-- Adding new area-->
+		<action name="new_area" class="NewArea">
+			<result name="input">/jsp/admin/new_area.jsp</result>
+			<result name="success">/jsp/admin/new_area.jsp</result>
+		</action>		
 
 		<!-- Adding new grade -->
 		<action name="add_grade" class="AddGrade">

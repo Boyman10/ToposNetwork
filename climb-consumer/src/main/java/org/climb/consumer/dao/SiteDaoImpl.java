@@ -1,12 +1,17 @@
 package org.climb.consumer.dao;
 
+import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.climb.consumer.dao.interfaces.SiteDao;
+import org.climb.consumer.rm.SiteRowMapper;
 import org.climb.model.bean.route.Site;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.stereotype.Component;
 
@@ -53,6 +58,20 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
 			throw new RuntimeException(e);
 		}
+	}
+
+	@Override
+	public List<Site> getSites() {
+		
+        String vSQL = "SELECT * FROM public.climb_site";
+
+        JdbcTemplate vJdbcTemplate = new JdbcTemplate(getDataSource());
+
+        RowMapper<Site> vRowMapper = new SiteRowMapper();
+
+        List<Site> vListSite = vJdbcTemplate.query(vSQL, vRowMapper);
+
+        return vListSite;
 	}
 
 }
