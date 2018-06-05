@@ -2,9 +2,11 @@ package org.climb.model.bean.route;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -31,8 +33,6 @@ public class Area {
 	private String details;	
 	
 	/** area Site */
-	@ManyToOne
-	@Column(name="site_id")
 	private Site site;
 
 	public String getName() {
@@ -50,7 +50,9 @@ public class Area {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_id", nullable = false)
 	public Site getSite() {
 		return site;
 	}
