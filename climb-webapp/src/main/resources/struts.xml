@@ -178,6 +178,7 @@
 
 	<!-- package dedicated to ajax Actions -->
 	<package name="ajax" extends="global, json-default">
+		
 		<!-- Gravatar Upload using Ajax -->
 		<action name="gravatar" class="Gravatar">
 			<interceptor-ref name="basicStack" />
@@ -192,5 +193,13 @@
 			<result type="json" name="input">
 			</result>
 		</action>
+		
+		<!-- Site listing API -->
+		<action name="sites" class="org.rhm.climb.webapp.action.admin.Sites" method="execute">
+            <result name="success" type="json">
+                <param name="root">siteList</param>
+            </result>
+        </action>
+		
 	</package>
 </struts>
