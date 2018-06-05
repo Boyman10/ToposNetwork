@@ -2,10 +2,13 @@ package org.climb.model.bean.route;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 /**
  * Route grade - cotation in french - refer to the level of a route
@@ -22,6 +25,7 @@ public class Grade {
 	private int id;
 	
 	/** refer to level */
+	@Enumerated(EnumType.STRING)
 	@Column(name="level")
 	private Level level;
 	

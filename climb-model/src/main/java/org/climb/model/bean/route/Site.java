@@ -1,19 +1,39 @@
 package org.climb.model.bean.route;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 /**
  * Class defining the main details about a site
  * @author bill
  *
  */
+@Entity
+@Table(name="climb_site", uniqueConstraints = {
+		@UniqueConstraint(columnNames = "name")})
 public class Site {
 
 	
 	/////////////// Attributes //////////////
 	
 	/** id of a site */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	private int id;
 	
 	/** name of a site */
+	@Column(name = "name", unique = true, nullable = false, length = 100)
 	private String name;	
 	
 	/** site type */
@@ -30,6 +50,11 @@ public class Site {
 	
 	/** location of a site */
 	private String location;
+	
+	/**
+	 * Defining the oneToMany relationship with Area entity - see getter
+	 */
+	private Set<Area> areas = new HashSet<Area>(0);
 
 	/////////////// GETTER/SETTERS //////////////
 	
@@ -73,4 +98,20 @@ public class Site {
 	public void setLocation(String location) {
 		this.location = location;
 	}		
+	
+	/**
+	 * Now when you load a Site from the database, 
+	 * JPA loads its id, name, and other fields for you. 
+	 * But you have two options for Areas: to load it together with the rest of the fields (i.e. eagerly) 
+	 * or to load it on-demand (i.e. lazily) when you call the site's getAreas() method.
+	 * @return
+	 */
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "climb_area")
+	public Set<Area> getAreas() {
+		return this.areas;
+	}
+
+	public void setAreas(Set<Area> areas) {
+		this.areas = areas;
+	}
 }
