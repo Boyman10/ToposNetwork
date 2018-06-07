@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
 
 	<display-name>Climbing Created Web Application</display-name>
-	
-	
+
+
 	<!-- Struts 2 filter -->
 	<filter>
 		<filter-name>struts2</filter-name>
@@ -22,15 +22,21 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-    <context-param>
-    	<param-name>contextConfigLocation</param-name>
-    	  <param-value>classpath:/bootstrapContext.xml</param-value>
-    </context-param>
+	
+	<!-- https://docs.spring.io/spring-framework/docs/3.0.0.M3/reference/html/ch04s04.html - Beans Scope  -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/bootstrapContext.xml</param-value>
+	</context-param>
 
 	<resource-ref>
 		<description>postgreSQL Datasource for Climb db</description>
 		<res-ref-name>jdbc/DB_CLIMB</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
-</resource-ref>
+	</resource-ref>
 </web-app>
