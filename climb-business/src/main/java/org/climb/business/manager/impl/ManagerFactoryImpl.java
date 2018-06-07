@@ -1,5 +1,6 @@
 package org.climb.business.manager.impl;
 
+import org.climb.business.manager.interfaces.AreaManager;
 import org.climb.business.manager.interfaces.GradeManager;
 import org.climb.business.manager.interfaces.RoleManager;
 import org.climb.business.manager.interfaces.SiteManager;
@@ -28,6 +29,9 @@ public class ManagerFactoryImpl implements ManagerFactory {
 		
 	@Autowired
 	private SiteManager siteManager;
+
+	@Autowired
+	private AreaManager areaManager;
 	
 	@Override
 	public UserManager getUserManager() {
@@ -74,6 +78,16 @@ public class ManagerFactoryImpl implements ManagerFactory {
 	public void setGradeManager(GradeManager gradeManager) {
 		this.gradeManager = gradeManager;
 		
+	}
+
+	@Override
+	public AreaManager getAreaManager() {
+		return this.areaManager;
+	}
+
+	@Override
+	public void setAreaManager(AreaManager areaManager) {
+		this.areaManager = areaManager;		
 	}
 
 }

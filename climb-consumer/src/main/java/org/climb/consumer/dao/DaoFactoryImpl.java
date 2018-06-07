@@ -1,5 +1,6 @@
 package org.climb.consumer.dao;
 
+import org.climb.consumer.dao.interfaces.AreaDao;
 import org.climb.consumer.dao.interfaces.DaoFactory;
 import org.climb.consumer.dao.interfaces.GradeDao;
 import org.climb.consumer.dao.interfaces.RoleDao;
@@ -22,6 +23,9 @@ public class DaoFactoryImpl implements DaoFactory {
 	
 	@Autowired
 	private GradeDao gradeDao;
+
+	@Autowired
+	private AreaDao areaDao;
 	
 	@Override
 	public UserDao getUserDao() {
@@ -48,6 +52,11 @@ public class DaoFactoryImpl implements DaoFactory {
 	public GradeDao getGradeDao() {
 		
 		return gradeDao;
+	}
+
+	@Override
+	public AreaDao getAreaDao() {
+		return areaDao;
 	}
 
 }

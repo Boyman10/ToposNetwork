@@ -12,10 +12,12 @@ public interface ManagerFactory {
 	RoleManager getRoleManager();
 	SiteManager getSiteManager();
 	GradeManager getGradeManager();
+	AreaManager getAreaManager();
 	
 	void setUserManager(UserManager userManager);
 	void setRoleManager(RoleManager roleManager);
 	void setSiteManager(SiteManager siteManager);
 	void setGradeManager(GradeManager gradeManager);
+	void setAreaManager(AreaManager areaManager);
 
 }
