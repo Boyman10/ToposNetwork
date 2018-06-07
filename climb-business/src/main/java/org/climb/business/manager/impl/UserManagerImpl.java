@@ -22,7 +22,7 @@ public class UserManagerImpl extends AbstractManager implements UserManager {
 	static final Logger LOGGER = LogManager.getLogger(UserManagerImpl.class);
 
 	@Inject
-	@Named("txUserManager")
+	@Named("txManager")
 	private PlatformTransactionManager platformTransactionManager;
 
 	@Override

@@ -3,6 +3,7 @@ org/climb/consumer/dao/RoleDaoImpl.class
 org/climb/consumer/dao/GradeDaoImpl.class
 org/climb/consumer/dao/interfaces/DaoFactory.class
 org/climb/consumer/dao/DaoFactoryImpl.class
+org/climb/consumer/rm/SiteRowMapper.class
 org/climb/consumer/rm/UserRowMapper.class
 org/climb/consumer/dao/SiteDaoImpl.class
 org/climb/consumer/dao/interfaces/RoleDao.class

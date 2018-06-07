@@ -27,7 +27,7 @@ public class SiteTransactionAspect {
 	static final Logger LOGGER = LogManager.getLogger(SiteTransactionAspect.class);
 
     @Inject
-    @Named("txSiteManager")
+    @Named("txManager")
     private PlatformTransactionManager platformTransactionManager;
     private TransactionStatus vTransactionStatus;
     

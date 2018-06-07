@@ -13,15 +13,11 @@
 	<context:component-scan
 		base-package="org.climb.business.manager.impl" />
 
-	<bean id="txUserManager"
+	<bean id="txManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSourceClimb" />
 	</bean>
 
-	<bean id="txSiteManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSourceClimb" />
-	</bean>
 
 	<aop:aspectj-autoproxy />
 	<!-- Aspect -->
