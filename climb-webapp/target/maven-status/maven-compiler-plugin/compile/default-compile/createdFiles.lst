@@ -1,3 +1,14 @@
 org/rhm/climb/webapp/action/Upload.class
+org/rhm/climb/webapp/action/admin/NewArea.class
+org/rhm/climb/webapp/action/admin/AddGrade.class
+org/rhm/climb/webapp/utils/FileUtils.class
+org/rhm/climb/webapp/action/admin/Sites.class
+org/rhm/climb/webapp/interceptors/RegisterInterceptor.class
+org/rhm/climb/webapp/action/Register.class
+org/rhm/climb/webapp/action/UserAction.class
+org/rhm/climb/webapp/action/Gravatar.class
+org/rhm/climb/webapp/converter/LevelConverter.class
 org/rhm/climb/webapp/action/Contact.class
+org/rhm/climb/webapp/action/admin/NewSite.class
+org/rhm/climb/webapp/interceptors/AuthInterceptor.class
 org/rhm/climb/webapp/action/Admin.class

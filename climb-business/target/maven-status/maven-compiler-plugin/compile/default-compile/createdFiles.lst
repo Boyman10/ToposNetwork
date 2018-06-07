@@ -5,7 +5,9 @@ org/climb/business/manager/impl/UserManagerImpl.class
 org/climb/business/manager/impl/GradeManagerImpl.class
 org/climb/business/manager/impl/UserManagerImpl$1.class
 org/climb/business/manager/aspects/SiteTransactionAspect.class
+org/climb/business/manager/impl/AreaManagerImpl.class
 org/climb/business/manager/impl/AbstractManager.class
+org/climb/business/manager/interfaces/AreaManager.class
 org/climb/business/manager/interfaces/SiteManager.class
 org/climb/business/manager/impl/SiteManagerImpl.class
 org/climb/business/manager/interfaces/factory/ManagerFactory.class

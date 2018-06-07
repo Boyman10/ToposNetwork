@@ -22,7 +22,7 @@ public class NewArea extends ActionSupport {
 
 	// The bean to be defined for the new area form - using corresponding entity
 	private Area areaBean;
-
+	
 	@Autowired
 	@Qualifier("managerFactory")
 	private ManagerFactory managerFactory;

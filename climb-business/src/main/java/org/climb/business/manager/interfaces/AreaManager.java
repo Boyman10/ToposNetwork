@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 public interface AreaManager {
 
 	public List<Area> getAreaList();
-	public void addArea(Area area);
+	public int addArea(Area area);
 }

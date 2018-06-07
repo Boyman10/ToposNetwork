@@ -17,11 +17,11 @@ public class AreaManagerImpl extends AbstractManager implements AreaManager {
 	public List<Area> getAreaList() {
 		LOGGER.debug("Getting list of areas - Area manager ");
 		
-		return getDaoFactory().getAreaDao().getAreas();	
+		return getDaoFactory().getAreaDao().getListArea();	
 	}
 
 	@Override
-	public void addArea(Area area) {
+	public int addArea(Area area) {
 	
 		
 		LOGGER.debug("Adding new area - Area manager " + area.getName());

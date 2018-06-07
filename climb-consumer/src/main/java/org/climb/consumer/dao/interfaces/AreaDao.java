@@ -12,5 +12,5 @@ import org.climb.model.bean.route.Area;
 public interface AreaDao {
 	
 	public List<Area> getListArea();
-	int addGrade(Area area);
+	int addArea(Area area);
 }

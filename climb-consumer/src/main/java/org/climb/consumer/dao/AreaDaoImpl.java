@@ -1,6 +1,5 @@
 package org.climb.consumer.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityTransaction;
@@ -53,7 +52,7 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 	}
 
 	@Override
-	public int addGrade(Area area) {
+	public int addArea(Area area) {
 
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();

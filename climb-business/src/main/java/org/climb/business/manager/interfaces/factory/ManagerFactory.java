@@ -1,5 +1,6 @@
 package org.climb.business.manager.interfaces.factory;
 
+import org.climb.business.manager.interfaces.AreaManager;
 import org.climb.business.manager.interfaces.GradeManager;
 import org.climb.business.manager.interfaces.RoleManager;
 import org.climb.business.manager.interfaces.SiteManager;
