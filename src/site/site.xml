@@ -23,5 +23,7 @@
         <menu ref="parent" inherit="top"/>
         <!-- Ajout d'un menu vers les différents modules du projet -->
         <menu ref="modules" inherit="top"/>
+        <!-- Ajout d'un menu vers les différents rapport -->
+        <menu ref="reports" inherit="top"/>
     </body>
 </project>
