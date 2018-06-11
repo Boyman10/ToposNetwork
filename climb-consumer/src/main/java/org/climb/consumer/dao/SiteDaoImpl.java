@@ -7,12 +7,15 @@ import org.apache.commons.logging.LogFactory;
 import org.climb.consumer.dao.interfaces.SiteDao;
 import org.climb.consumer.rm.SiteRowMapper;
 import org.climb.model.bean.route.Site;
+import org.climb.model.bean.user.Role;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 @Component("siteDao")
@@ -72,6 +75,41 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
         List<Site> vListSite = vJdbcTemplate.query(vSQL, vRowMapper);
 
         return vListSite;
+	}
+	
+	@Override
+	public Site getSiteFromId(int id) {
+		
+		String sql = "SELECT * FROM public.climb_site WHERE id = :id";
+		
+		try {
+			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
+			
+			this.setDataSource(getDataSource());
+			MapSqlParameterSource vParams = new MapSqlParameterSource();			
+			
+			LOGGER.debug("getting site by id : " + id);
+
+			vParams.addValue("id", id);
+			
+			LOGGER.debug("Launching query now...");
+
+			Site site = (Site) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(Site.class));
+			
+			LOGGER.debug("Query done ! ");
+			
+			return site;
+
+		} catch (InvalidResultSetAccessException e) {
+			LOGGER.error("FATAL ERROR Invalid resultset " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (DataAccessException e) {
+			LOGGER.error("FATAL ERROR dataAccess " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (Exception e) {
+			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
+			throw new RuntimeException(e);
+		}
 	}
 
 }
