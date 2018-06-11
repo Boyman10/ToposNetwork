@@ -54,8 +54,7 @@
 	</div>
 </div>
 
-<%@ include file="_include/footer.jsp"%>
-
+<%@ include file="../_include/_scripts.jsp"%>
 
 <script type="text/javascript">		
 
@@ -116,3 +115,5 @@ $(document).ready(function () {
 		
 		});	
 		</script>
+
+<%@ include file="_include/footer.jsp"%>		

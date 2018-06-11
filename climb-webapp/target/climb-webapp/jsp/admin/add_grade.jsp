@@ -32,5 +32,5 @@
 	</s:else>
 
 </div>
-
+<%@ include file="../_include/_scripts.jsp"%>
 <%@ include file="../_include/footer.jsp"%>>
