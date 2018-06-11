@@ -12,6 +12,8 @@
 		<s:text name="organization.url" />
 		 - <s:a action="contact_form">Contact us</s:a>
 		</p>
+		
+		<a href="${organization.url}">${organization.name}</a>
 	</div>
 </footer>
 
