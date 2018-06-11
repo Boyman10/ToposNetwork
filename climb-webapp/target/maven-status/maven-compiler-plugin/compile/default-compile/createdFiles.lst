@@ -5,6 +5,7 @@ org\rhm\climb\webapp\action\Admin.class
 org\rhm\climb\webapp\action\admin\NewSite.class
 org\rhm\climb\webapp\interceptors\AuthInterceptor.class
 org\rhm\climb\webapp\interceptors\RegisterInterceptor.class
+org\rhm\climb\webapp\converter\AreaConverter.class
 org\rhm\climb\webapp\action\admin\AddGrade.class
 org\rhm\climb\webapp\action\Register.class
 org\rhm\climb\webapp\action\Gravatar.class
