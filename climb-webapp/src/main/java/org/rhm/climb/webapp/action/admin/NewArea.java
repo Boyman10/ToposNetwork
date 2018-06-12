@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.route.Area;
+import org.climb.model.bean.route.Site;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -22,12 +23,23 @@ public class NewArea extends ActionSupport {
 
 	// The bean to be defined for the new area form - using corresponding entity
 	private Area areaBean;
+	private int siteId;
 	
 	@Autowired
 	@Qualifier("managerFactory")
 	private ManagerFactory managerFactory;
 	
 	
+	public int getSiteId() {
+		return siteId;
+	}
+
+
+	public void setSiteId(int siteId) {
+		this.siteId = siteId;
+	}
+
+
 	/**
 	 * @return the siteBean
 	 */
@@ -59,12 +71,15 @@ public class NewArea extends ActionSupport {
 		LOGGER.debug("Let's add a new area now !");
 		
 		// Check if we have a bean filled in :
-		if (areaBean != null && !StringUtils.isAllEmpty(areaBean.getName())) {
+		if (areaBean != null && !StringUtils.isAllEmpty(areaBean.getName()) && siteId > 0) {
 
 			try {
 
 				LOGGER.debug("About to persist the bean to DB " + areaBean.getName());
 
+				Site areaSite = managerFactory.getSiteManager().getSiteById(siteId);
+				areaBean.setSite(areaSite);
+				
 				// Persist data to db now :
 				if (this.managerFactory.getAreaManager().addArea(areaBean) > 0) {
 					vResult = ActionSupport.SUCCESS;

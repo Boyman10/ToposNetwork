@@ -26,7 +26,7 @@
 	<!-- =============================================================== -->
 	<distributionManagement>
 		<site>
-			<id>site-projet</id>
+			<id>site-project</id>
 			<url>scp://localhost/tmp/</url>
 		</site>
 	</distributionManagement>
@@ -187,7 +187,96 @@
 					<artifactId>maven-war-plugin</artifactId>
 					<version>3.2.1</version>
 				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.6</version>
+					<configuration>
+						<!-- site in english -->
+						<locales>en</locales>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
+
+
+	<!-- =============================================================== -->
+	<!-- reports generation -->
+	<!-- =============================================================== -->
+	<reporting>
+		<plugins>
+			<!-- ===== Rapport d'information général sur le projet ===== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>plugins</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<!-- ===== Génération de la Javadoc ===== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<quiet>true</quiet>
+					<locale>fr</locale>
+				</configuration>
+				<reportSets>
+					<!-- reportSet exécuté dans tous les modules -->
+					<reportSet>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+					<!-- reportSet d'agrégation des rapports des sous-modules -->
+					<reportSet>
+						<id>aggregate</id>
+						<inherited>false</inherited>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<!-- ===== Rapport d'analyse du code par Checkstyle ===== -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<configLocation>src/build/checkstyle.xml</configLocation>
+					<linkXRef>false</linkXRef>
+				</configuration>
+				<reportSets>
+					<!-- reportSet exécuté dans tous les modules -->
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+					<!-- reportSet d'agrégation des rapports des sous-modules -->
+					<reportSet>
+						<id>checkstyle-aggregate</id>
+						<inherited>false</inherited>
+						<configuration>
+							<skipExec>true</skipExec>
+						</configuration>
+						<reports>
+							<report>checkstyle-aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

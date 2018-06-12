@@ -13,4 +13,5 @@ public interface SiteDao {
 
 	public int addSite(Site site);
 	public List<Site> getSites();
+	Site getSiteFromId(int id);
 }

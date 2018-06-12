@@ -11,7 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * Area class with details - an area can have several routes and belongs to a site
+ * Area class with details - an area can have several routes and belongs to a
+ * site
+ * 
  * @author bill
  *
  */
@@ -23,17 +25,37 @@ public class Area {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	/** name of area */
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	
+
 	/** details of area */
-	@Column(name="details")
-	private String details;	
-	
+	@Column(name = "details")
+	private String details;
+
 	/** area Site */
 	private Site site;
+
+	/**
+	 * Empty constructor
+	 */
+	public Area() {
+	}
+
+	/**
+	 * Constructor for the class being called from AreaTypeConverter
+	 * 
+	 * @param name
+	 * @param details
+	 * @param site
+	 */
+	public Area(String name, String details, Site site) {
+		super();
+		this.name = name;
+		this.details = details;
+		this.site = site;
+	}
 
 	public String getName() {
 		return name;
@@ -50,7 +72,7 @@ public class Area {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "site_id", nullable = false)
 	public Site getSite() {
@@ -64,5 +86,5 @@ public class Area {
 	public int getId() {
 		return id;
 	}
-	
+
 }
