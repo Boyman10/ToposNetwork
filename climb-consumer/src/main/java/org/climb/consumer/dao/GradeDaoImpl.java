@@ -21,6 +21,7 @@ public class GradeDaoImpl extends AbstractDaoImpl implements GradeDao {
 	@Override
 	public int addGrade(Grade grade) {
 		
+		
 		SessionFactory sessionFactory = new Configuration().configure()
 				.buildSessionFactory();
 		Session session = sessionFactory.openSession();

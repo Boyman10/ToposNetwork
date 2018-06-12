@@ -22,7 +22,7 @@
 		<s:form action="new_area">
 			<s:textfield key="areaBean.name" />
 			<s:textarea key="areaBean.details" />
-			<s:select key="areaBean.site" list="{}" id="sites" listKey="id" />
+			<s:select key="siteId" list="{}" id="sites" listKey="id" />
 
 			<button class="btn btn-info" id="load">Load sites</button>
 

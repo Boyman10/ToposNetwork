@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityTransaction;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.climb.consumer.dao.interfaces.AreaDao;
 import org.climb.model.bean.route.Area;
 import org.hibernate.HibernateException;
@@ -21,6 +23,8 @@ import org.springframework.stereotype.Component;
  */
 @Component("areaDao")
 public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
+
+	private static final Log LOGGER = LogFactory.getLog(AreaDaoImpl.class);
 
 	
 	/**
@@ -54,21 +58,33 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 	@Override
 	public int addArea(Area area) {
 
+		LOGGER.debug("Preparing sessionFactory for Hibernate");
+
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Integer affectedRows = 0;
 
 		try {
+			
+			LOGGER.debug("Begin transaction");
+
 
 			session.beginTransaction();
 			affectedRows = (Integer) session.save(area);
 
+			LOGGER.debug("Saving data AREA to DB");
+
 			session.getTransaction().commit();
+			LOGGER.debug("Commit done !!");
+
 
 		} catch (Exception e) {
 			if (session != null)
 				((EntityTransaction) session).rollback();
-			e.printStackTrace();
+			//e.printStackTrace();
+			
+			LOGGER.debug("exception reached " + e.getMessage());
+
 		} finally {
 			session.close();
 		}

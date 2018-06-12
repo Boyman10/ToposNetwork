@@ -37,6 +37,11 @@ public class Area {
 	/** area Site */
 	private Site site;
 
+	/**
+	 * Empty constructor
+	 */
+	public Area() {
+	}
 
 	/**
 	 * Constructor for the class being called from AreaTypeConverter
@@ -51,7 +56,7 @@ public class Area {
 		this.details = details;
 		this.site = site;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -81,6 +86,5 @@ public class Area {
 	public int getId() {
 		return id;
 	}
-
 
 }
