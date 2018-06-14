@@ -55,7 +55,7 @@ public class Site {
 	/**
 	 * Defining the oneToMany relationship with Area entity - see getter
 	 */
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "climb_area")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "id")
 	private Set<Area> areas = new HashSet<Area>(0);
 
 	/////////////// GETTER/SETTERS //////////////

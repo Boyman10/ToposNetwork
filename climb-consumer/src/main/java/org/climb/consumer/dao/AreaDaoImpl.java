@@ -10,9 +10,7 @@ import org.climb.consumer.dao.interfaces.AreaDao;
 import org.climb.model.bean.route.Area;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -69,7 +67,7 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 			LOGGER.debug("Begin transaction");
 
 			Transaction tx = session.beginTransaction();
-			//affectedRows = (Integer) session.save(area);
+			affectedRows = (Integer) session.save(area);
 
 			LOGGER.debug("Saving data AREA to DB");
 
