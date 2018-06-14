@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -54,6 +55,7 @@ public class Site {
 	/**
 	 * Defining the oneToMany relationship with Area entity - see getter
 	 */
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "climb_area")
 	private Set<Area> areas = new HashSet<Area>(0);
 
 	/////////////// GETTER/SETTERS //////////////
@@ -109,7 +111,6 @@ public class Site {
 	 * or to load it on-demand (i.e. lazily) when you call the site's getAreas() method.
 	 * @return
 	 */
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "climb_area")
 	public Set<Area> getAreas() {
 		return this.areas;
 	}

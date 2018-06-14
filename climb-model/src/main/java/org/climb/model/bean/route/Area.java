@@ -24,10 +24,11 @@ public class Area {
 	/** auto increment id */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id", unique = true, nullable = false)
 	private int id;
 
 	/** name of area */
-	@Column(name = "name")
+	@Column(name = "name",unique = true, nullable = false, length = 50)
 	private String name;
 
 	/** details of area */
@@ -35,8 +36,9 @@ public class Area {
 	private String details;
 
 	/** area Site */
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_id", nullable = false)
 	private Site site;
-
 	/**
 	 * Empty constructor
 	 */
@@ -73,8 +75,7 @@ public class Area {
 		this.details = details;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "site_id", nullable = false)
+
 	public Site getSite() {
 		return site;
 	}

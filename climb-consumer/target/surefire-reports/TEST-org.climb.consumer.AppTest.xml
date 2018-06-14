@@ -1,63 +1,382 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="org.climb.consumer.AppTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="org.climb.consumer.AppTest" time="1.411" errors="1" skipped="0">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
     <property name="java.vm.version" value="25.171-b11"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/bob/eclipse-workspace-9/ToposNetwork"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\admin\eclipse-workspace\ToposNetwork"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
-    <property name="path.separator" value=":"/>
+    <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="user.country" value="GB"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/bob/eclipse-workspace-9/ToposNetwork"/>
-    <property name="java.runtime.version" value="1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="user.dir" value="C:\Users\admin\eclipse-workspace\ToposNetwork"/>
+    <property name="java.runtime.version" value="1.8.0_171-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.io.tmpdir" value="C:\Users\admin\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="os.name" value="Linux"/>
-    <property name="classworlds.conf" value="/home/bob/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf13976914918083211085.tmp"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Users\admin\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf6183655211973125456.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Roaming\npm;D:\Desktop;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="4.4.0-128-generic"/>
-    <property name="user.home" value="/home/bob"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\admin"/>
     <property name="user.timezone" value="Europe/Paris"/>
-    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
-    <property name="user.name" value="bob"/>
-    <property name="java.class.path" value="/opt/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="admin"/>
+    <property name="java.class.path" value="C:\Users\admin\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_1.8.3.20180227-2135\jars\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_171\jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean package"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="user.language" value="en"/>
-    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="user.language" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="java.version" value="1.8.0_171"/>
-    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
-    <property name="securerandom.source" value="file:/dev/./urandom"/>
-    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_171\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_171\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/home/bob/eclipse-workspace-9/ToposNetwork/EMBEDDED"/>
-    <property name="file.separator" value="/"/>
+    <property name="maven.home" value="C:\Users\admin\eclipse-workspace\ToposNetwork\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="org.climb.consumer.AppTest" name="testApp" time="0.001"/>
+  <testcase classname="org.climb.consumer.AppTest" name="testApp" time="1.411">
+    <error message="mappedBy reference an unknown target entity property: org.climb.model.bean.route.Area.climb_area in org.climb.model.bean.route.Site.areas" type="org.hibernate.AnnotationException">org.hibernate.AnnotationException: mappedBy reference an unknown target entity property: org.climb.model.bean.route.Area.climb_area in org.climb.model.bean.route.Site.areas
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:782)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:733)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:54)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1696)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1664)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:287)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:84)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:474)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:689)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:724)
+	at org.climb.consumer.AppTest.testApp(AppTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:176)
+	at junit.framework.TestCase.runBare(TestCase.java:141)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>DEBUG [main] org.jboss.logging : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+DEBUG [main] org.hibernate.integrator.internal.IntegratorServiceImpl : Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+DEBUG [main] org.hibernate.integrator.internal.IntegratorServiceImpl : Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+DEBUG [main] org.hibernate.integrator.internal.IntegratorServiceImpl : Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+INFO  [main] org.hibernate.Version : HHH000412: Hibernate Core {5.3.0.Final}
+INFO  [main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found
+DEBUG [main] org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver : Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+DEBUG [main] org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver : Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+DEBUG [main] org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor : cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+DEBUG [main] org.hibernate.cfg.Configuration : Building session factory using internal StandardServiceRegistryBuilder
+DEBUG [main] org.hibernate.service.spi.ServiceBinding : Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+DEBUG [main] org.hibernate.cfg.Configuration : Building session factory using provided StandardServiceRegistry
+DEBUG [main] org.hibernate.cache.internal.RegionFactoryInitiator : Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+DEBUG [main] org.hibernate.cache.internal.RegionFactoryInitiator : Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+INFO  [main] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.0.3.Final}
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration boolean -&gt; org.hibernate.type.BooleanType@5f049ea1
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration boolean -&gt; org.hibernate.type.BooleanType@5f049ea1
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Boolean -&gt; org.hibernate.type.BooleanType@5f049ea1
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration numeric_boolean -&gt; org.hibernate.type.NumericBooleanType@72035809
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration true_false -&gt; org.hibernate.type.TrueFalseType@606e4010
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration yes_no -&gt; org.hibernate.type.YesNoType@68c9133c
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration byte -&gt; org.hibernate.type.ByteType@5b218417
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration byte -&gt; org.hibernate.type.ByteType@5b218417
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Byte -&gt; org.hibernate.type.ByteType@5b218417
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration character -&gt; org.hibernate.type.CharacterType@273444fe
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration char -&gt; org.hibernate.type.CharacterType@273444fe
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Character -&gt; org.hibernate.type.CharacterType@273444fe
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration short -&gt; org.hibernate.type.ShortType@48bb62
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration short -&gt; org.hibernate.type.ShortType@48bb62
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Short -&gt; org.hibernate.type.ShortType@48bb62
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration integer -&gt; org.hibernate.type.IntegerType@6fa51cd4
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration int -&gt; org.hibernate.type.IntegerType@6fa51cd4
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Integer -&gt; org.hibernate.type.IntegerType@6fa51cd4
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration long -&gt; org.hibernate.type.LongType@cecf639
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration long -&gt; org.hibernate.type.LongType@cecf639
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Long -&gt; org.hibernate.type.LongType@cecf639
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration float -&gt; org.hibernate.type.FloatType@5b247367
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration float -&gt; org.hibernate.type.FloatType@5b247367
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Float -&gt; org.hibernate.type.FloatType@5b247367
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration double -&gt; org.hibernate.type.DoubleType@5890e879
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration double -&gt; org.hibernate.type.DoubleType@5890e879
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Double -&gt; org.hibernate.type.DoubleType@5890e879
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration big_decimal -&gt; org.hibernate.type.BigDecimalType@183ec003
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.math.BigDecimal -&gt; org.hibernate.type.BigDecimalType@183ec003
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration big_integer -&gt; org.hibernate.type.BigIntegerType@3e08ff24
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.math.BigInteger -&gt; org.hibernate.type.BigIntegerType@3e08ff24
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration string -&gt; org.hibernate.type.StringType@70ed52de
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.String -&gt; org.hibernate.type.StringType@70ed52de
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration nstring -&gt; org.hibernate.type.StringNVarcharType@7188af83
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration ncharacter -&gt; org.hibernate.type.CharacterNCharType@247310d0
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration url -&gt; org.hibernate.type.UrlType@4082ba93
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.net.URL -&gt; org.hibernate.type.UrlType@4082ba93
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration Duration -&gt; org.hibernate.type.DurationType@43df23d3
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.Duration -&gt; org.hibernate.type.DurationType@43df23d3
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration Instant -&gt; org.hibernate.type.InstantType@4d0d9fe7
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.Instant -&gt; org.hibernate.type.InstantType@4d0d9fe7
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration LocalDateTime -&gt; org.hibernate.type.LocalDateTimeType@66982506
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.LocalDateTime -&gt; org.hibernate.type.LocalDateTimeType@66982506
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration LocalDate -&gt; org.hibernate.type.LocalDateType@65987993
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.LocalDate -&gt; org.hibernate.type.LocalDateType@65987993
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration LocalTime -&gt; org.hibernate.type.LocalTimeType@6f53b8a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.LocalTime -&gt; org.hibernate.type.LocalTimeType@6f53b8a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration OffsetDateTime -&gt; org.hibernate.type.OffsetDateTimeType@1a245833
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.OffsetDateTime -&gt; org.hibernate.type.OffsetDateTimeType@1a245833
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration OffsetTime -&gt; org.hibernate.type.OffsetTimeType@5b799640
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.OffsetTime -&gt; org.hibernate.type.OffsetTimeType@5b799640
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration ZonedDateTime -&gt; org.hibernate.type.ZonedDateTimeType@17bffc17
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.time.ZonedDateTime -&gt; org.hibernate.type.ZonedDateTimeType@17bffc17
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration date -&gt; org.hibernate.type.DateType@55cb6996
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.Date -&gt; org.hibernate.type.DateType@55cb6996
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration time -&gt; org.hibernate.type.TimeType@26abb146
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.Time -&gt; org.hibernate.type.TimeType@26abb146
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration timestamp -&gt; org.hibernate.type.TimestampType@5b7a7f33
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.Timestamp -&gt; org.hibernate.type.TimestampType@5b7a7f33
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.Date -&gt; org.hibernate.type.TimestampType@5b7a7f33
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration dbtimestamp -&gt; org.hibernate.type.DbTimestampType@57bc27f5
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration calendar -&gt; org.hibernate.type.CalendarType@d554c5f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.Calendar -&gt; org.hibernate.type.CalendarType@d554c5f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.GregorianCalendar -&gt; org.hibernate.type.CalendarType@d554c5f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration calendar_date -&gt; org.hibernate.type.CalendarDateType@33ecda92
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration locale -&gt; org.hibernate.type.LocaleType@1c742ed4
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.Locale -&gt; org.hibernate.type.LocaleType@1c742ed4
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration currency -&gt; org.hibernate.type.CurrencyType@69c81773
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.Currency -&gt; org.hibernate.type.CurrencyType@69c81773
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration timezone -&gt; org.hibernate.type.TimeZoneType@4d15107f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.TimeZone -&gt; org.hibernate.type.TimeZoneType@4d15107f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration class -&gt; org.hibernate.type.ClassType@79207381
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Class -&gt; org.hibernate.type.ClassType@79207381
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration uuid-binary -&gt; org.hibernate.type.UUIDBinaryType@97e93f1
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.UUID -&gt; org.hibernate.type.UUIDBinaryType@97e93f1
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration uuid-char -&gt; org.hibernate.type.UUIDCharType@16150369
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration binary -&gt; org.hibernate.type.BinaryType@23f5b5dc
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration byte[] -&gt; org.hibernate.type.BinaryType@23f5b5dc
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration [B -&gt; org.hibernate.type.BinaryType@23f5b5dc
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration wrapper-binary -&gt; org.hibernate.type.WrapperBinaryType@5db6b9cd
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration Byte[] -&gt; org.hibernate.type.WrapperBinaryType@5db6b9cd
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration [Ljava.lang.Byte; -&gt; org.hibernate.type.WrapperBinaryType@5db6b9cd
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration row_version -&gt; org.hibernate.type.RowVersionType@1be2019a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration image -&gt; org.hibernate.type.ImageType@446a1e84
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration characters -&gt; org.hibernate.type.CharArrayType@7139992f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration char[] -&gt; org.hibernate.type.CharArrayType@7139992f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration [C -&gt; org.hibernate.type.CharArrayType@7139992f
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration wrapper-characters -&gt; org.hibernate.type.CharacterArrayType@7eecb5b8
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration [Ljava.lang.Character; -&gt; org.hibernate.type.CharacterArrayType@7eecb5b8
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration Character[] -&gt; org.hibernate.type.CharacterArrayType@7eecb5b8
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration text -&gt; org.hibernate.type.TextType@475c9c31
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration ntext -&gt; org.hibernate.type.NTextType@5276d6ee
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration blob -&gt; org.hibernate.type.BlobType@7dfd3c81
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.Blob -&gt; org.hibernate.type.BlobType@7dfd3c81
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration materialized_blob -&gt; org.hibernate.type.MaterializedBlobType@6933b6c6
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration clob -&gt; org.hibernate.type.ClobType@d23e042
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.Clob -&gt; org.hibernate.type.ClobType@d23e042
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration nclob -&gt; org.hibernate.type.NClobType@2254127a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.sql.NClob -&gt; org.hibernate.type.NClobType@2254127a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration materialized_clob -&gt; org.hibernate.type.MaterializedClobType@f68f0dc
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration materialized_nclob -&gt; org.hibernate.type.MaterializedNClobType@12591ac8
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration serializable -&gt; org.hibernate.type.SerializableType@7dc19a70
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration object -&gt; org.hibernate.type.ObjectType@49c90a9c
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.lang.Object -&gt; org.hibernate.type.ObjectType@49c90a9c
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_date -&gt; org.hibernate.type.AdaptedImmutableType@6e2aa843
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_time -&gt; org.hibernate.type.AdaptedImmutableType@6f36c2f0
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_timestamp -&gt; org.hibernate.type.AdaptedImmutableType@f58853c
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_dbtimestamp -&gt; org.hibernate.type.AdaptedImmutableType@1224144a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_calendar -&gt; org.hibernate.type.AdaptedImmutableType@29f7cefd
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_calendar_date -&gt; org.hibernate.type.AdaptedImmutableType@700fb871
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_binary -&gt; org.hibernate.type.AdaptedImmutableType@3b35a229
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration imm_serializable -&gt; org.hibernate.type.AdaptedImmutableType@9816741
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid2] -&gt; [org.hibernate.id.UUIDGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [guid] -&gt; [org.hibernate.id.GUIDGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid] -&gt; [org.hibernate.id.UUIDHexGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [uuid.hex] -&gt; [org.hibernate.id.UUIDHexGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [assigned] -&gt; [org.hibernate.id.Assigned]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [identity] -&gt; [org.hibernate.id.IdentityGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [select] -&gt; [org.hibernate.id.SelectGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence] -&gt; [org.hibernate.id.enhanced.SequenceStyleGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [seqhilo] -&gt; [org.hibernate.id.SequenceHiLoGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [increment] -&gt; [org.hibernate.id.IncrementGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [foreign] -&gt; [org.hibernate.id.ForeignGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [sequence-identity] -&gt; [org.hibernate.id.SequenceIdentityGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-sequence] -&gt; [org.hibernate.id.enhanced.SequenceStyleGenerator]
+DEBUG [main] org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory : Registering IdentifierGenerator strategy [enhanced-table] -&gt; [org.hibernate.id.enhanced.TableGenerator]
+WARN  [main] org.hibernate.orm.connections.pooling : HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO  [main] org.hibernate.orm.connections.pooling : HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost/climb]
+INFO  [main] org.hibernate.orm.connections.pooling : HHH10001001: Connection properties: {user=test, password=debian}
+INFO  [main] org.hibernate.orm.connections.pooling : HHH10001003: Autocommit mode: false
+DEBUG [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl : Initializing Connection pool with 1 Connections
+INFO  [main] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl : HHH000115: Hibernate connection pool size: 20 (min=1)
+DEBUG [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator : Database -&gt;
+       name : PostgreSQL
+    version : 10.4
+      major : 10
+      minor : 4
+DEBUG [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator : Driver -&gt;
+       name : PostgreSQL JDBC Driver
+    version : 42.2.2
+      major : 42
+      minor : 2
+DEBUG [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator : JDBC version : 4.2
+INFO  [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+DEBUG [main] org.hibernate.engine.jdbc.env.spi.IdentifierHelperBuilder : JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+INFO  [main] org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+DEBUG [main] org.hibernate.boot.model.relational.Namespace : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration pg-uuid -&gt; org.hibernate.type.PostgresUUIDType@25e2ab5a
+DEBUG [main] org.hibernate.type.BasicTypeRegistry : Adding type registration java.util.UUID -&gt; org.hibernate.type.PostgresUUIDType@25e2ab5a
+INFO  [main] org.hibernate.type.BasicTypeRegistry : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@97e93f1
+DEBUG [main] org.hibernate.type.spi.TypeConfiguration$Scope : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3ecd267f] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@58ffcbd7]
+DEBUG [main] org.hibernate.cfg.AnnotationBinder : Binding entity from annotated class: org.climb.model.bean.route.Grade
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Import with entity name Grade
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Bind entity org.climb.model.bean.route.Grade on table climb_grade
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_grade), mappingColumn=id, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property id with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Grade:id]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property id
+DEBUG [main] org.hibernate.cfg.BinderHelper : #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_grade), mappingColumn=details, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property details with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Grade:details]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for details
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property details
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_grade), mappingColumn=level, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property level with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Grade:level]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for level
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property level
+DEBUG [main] org.hibernate.cfg.AnnotationBinder : Binding entity from annotated class: org.climb.model.bean.route.Site
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Import with entity name Site
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Bind entity org.climb.model.bean.route.Site on table climb_site
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=id, insertable=true, updatable=true, unique=true}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property id with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:id]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property id
+DEBUG [main] org.hibernate.cfg.BinderHelper : #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3JoinColumn{logicalColumnName=&apos;null&apos;, referencedColumn=&apos;null&apos;, mappedBy=&apos;climb_area&apos;}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=areas, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=null, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=element, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=areas_KEY, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3JoinColumn{logicalColumnName=&apos;areas_KEY&apos;, referencedColumn=&apos;null&apos;, mappedBy=&apos;null&apos;}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3JoinColumn{logicalColumnName=&apos;null&apos;, referencedColumn=&apos;null&apos;, mappedBy=&apos;climb_area&apos;}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3JoinColumn{logicalColumnName=&apos;null&apos;, referencedColumn=&apos;null&apos;, mappedBy=&apos;climb_area&apos;}
+DEBUG [main] org.hibernate.cfg.annotations.CollectionBinder : Collection role: org.climb.model.bean.route.Site.areas
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property areas
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=country, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property country with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:country]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for country
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property country
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=department, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property department with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:department]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for department
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property department
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=location, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property location with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:location]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for location
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property location
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=name, insertable=true, updatable=true, unique=true}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property name with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:name]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for name
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property name
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=region, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property region with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:region]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for region
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property region
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_site), mappingColumn=type, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property type with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Site:type]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for type
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property type
+DEBUG [main] org.hibernate.cfg.AnnotationBinder : Binding entity from annotated class: org.climb.model.bean.route.Area
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3DiscriminatorColumn{logicalColumnName&apos;DTYPE&apos;, discriminatorTypeName=&apos;string&apos;}
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Import with entity name Area
+DEBUG [main] org.hibernate.cfg.annotations.EntityBinder : Bind entity org.climb.model.bean.route.Area on table climb_area
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_area), mappingColumn=id, insertable=true, updatable=true, unique=true}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property id with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Area:id]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property id
+DEBUG [main] org.hibernate.cfg.BinderHelper : #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, identity, , ...)
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_area), mappingColumn=details, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property details with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Area:details]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for details
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property details
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_area), mappingColumn=name, insertable=true, updatable=true, unique=true}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : MetadataSourceProcessor property name with lazy=false
+DEBUG [main] org.hibernate.cfg.AbstractPropertyHolder : Attempting to locate auto-apply AttributeConverter for property [org.climb.model.bean.route.Area:name]
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : building SimpleValue for name
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property name
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3JoinColumn{logicalColumnName=&apos;site_id&apos;, referencedColumn=&apos;&apos;, mappedBy=&apos;&apos;}
+DEBUG [main] org.hibernate.cfg.Ejb3Column : Binding column: Ejb3Column{table=org.hibernate.mapping.Table(climb_area), mappingColumn=site, insertable=true, updatable=true, unique=false}
+DEBUG [main] org.hibernate.cfg.annotations.PropertyBinder : Building property site
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for details
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for level
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for country
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for department
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for location
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for name
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for region
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for type
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for id
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for details
+DEBUG [main] org.hibernate.cfg.annotations.SimpleValueBinder : Starting fillSimpleValue for name
+DEBUG [main] org.hibernate.mapping.PrimaryKey : Forcing column [id] to be non-null as it is part of the primary key for table [climb_grade]
+DEBUG [main] org.hibernate.mapping.PrimaryKey : Forcing column [id] to be non-null as it is part of the primary key for table [climb_site]
+DEBUG [main] org.hibernate.mapping.PrimaryKey : Forcing column [id] to be non-null as it is part of the primary key for table [climb_area]
+DEBUG [main] org.hibernate.cfg.CollectionSecondPass : Second pass for collection: org.climb.model.bean.route.Site.areas
+</system-out>
+  </testcase>
 </testsuite>
