@@ -35,8 +35,5 @@
 
 
 <%@ include file="_include/_scripts.jsp"%>
-<<<<<<< HEAD
-=======
 
->>>>>>> dd3cf0846ad9408a36195f8204f4cd75a8d244dd
 <%@ include file="_include/footer.jsp"%>
