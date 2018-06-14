@@ -33,8 +33,8 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 	@Override
 	public List<Area> getListArea() {
 
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
+
 		Transaction tx = null;
 		List<Area> areas = null;
 
@@ -60,21 +60,20 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 
 		LOGGER.debug("Preparing sessionFactory for Hibernate");
 
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
+
 		Integer affectedRows = 0;
 
 		try {
 			
 			LOGGER.debug("Begin transaction");
 
-
-			session.beginTransaction();
-			affectedRows = (Integer) session.save(area);
+			Transaction tx = session.beginTransaction();
+			//affectedRows = (Integer) session.save(area);
 
 			LOGGER.debug("Saving data AREA to DB");
 
-			session.getTransaction().commit();
+			tx.commit();
 			LOGGER.debug("Commit done !!");
 
 

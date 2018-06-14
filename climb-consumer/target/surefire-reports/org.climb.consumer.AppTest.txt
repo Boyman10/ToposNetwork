@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.climb.consumer.AppTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
-=======
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
->>>>>>> dd3cf0846ad9408a36195f8204f4cd75a8d244dd
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec

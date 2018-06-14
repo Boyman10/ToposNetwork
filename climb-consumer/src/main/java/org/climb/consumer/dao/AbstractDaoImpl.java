@@ -2,6 +2,9 @@ package org.climb.consumer.dao;
 
 import javax.sql.DataSource;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -16,6 +19,8 @@ public class AbstractDaoImpl {
 	@Autowired
 	@Qualifier("dataSourceClimb")
 	private DataSource dataSource;
+	
+	protected static SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 	
 	protected NamedParameterJdbcTemplate npjTemplate;
 	

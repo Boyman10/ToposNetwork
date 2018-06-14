@@ -95,7 +95,7 @@ public class NewArea extends ActionSupport {
 
 			} catch (Exception pEx) {
 
-				this.addActionError("Something went wrong please check your entries !");
+				this.addActionError("Something went wrong please check your entries ! " + pEx.getMessage());
 			}
 		}
 		

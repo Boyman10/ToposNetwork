@@ -54,11 +54,7 @@
 	</div>
 </div>
 
-<<<<<<< HEAD
-<%@ include file="../_include/_scripts.jsp"%>
-=======
 <%@ include file="_include/_scripts.jsp"%>
->>>>>>> dd3cf0846ad9408a36195f8204f4cd75a8d244dd
 
 <script type="text/javascript">		
 
