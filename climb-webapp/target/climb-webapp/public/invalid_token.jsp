@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<%@ include file="_include/head.jsp"%>
-<%@ include file="_include/header.jsp"%>
+<%@ include file="../_include/head.jsp"%>
+<%@ include file="../_include/header.jsp"%>
 
 
 <div class="container">
@@ -25,7 +25,7 @@
 	</div>
 
 </div>
-<%@ include file="_include/_scripts.jsp"%>
-<%@ include file="_include/footer.jsp"%>
+<%@ include file="../_include/_scripts.jsp"%>
+<%@ include file="../_include/footer.jsp"%>
 
 

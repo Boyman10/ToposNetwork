@@ -12,7 +12,7 @@
 
 	<p>Please login now</p>
 
-	<s:form action="login">
+	<s:form namespace="public" action="login">
 
 		<s:textfield key="userBean.username" />
 		<s:password key="userBean.password"/>

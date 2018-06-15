@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<%@ include file="_include/head.jsp"%>
-<%@ include file="_include/header.jsp"%>
+<%@ include file="../_include/head.jsp"%>
+<%@ include file="../_include/header.jsp"%>
 
 
 <div class="container">
@@ -12,7 +12,7 @@
 
 	<p>Please login now</p>
 
-	<s:form action="login">
+	<s:form namespace="public" action="login">
 
 		<s:textfield key="userBean.username" />
 		<s:password key="userBean.password"/>
@@ -34,6 +34,6 @@
 </div>
 
 
-<%@ include file="_include/_scripts.jsp"%>
+<%@ include file="../_include/_scripts.jsp"%>
 
-<%@ include file="_include/footer.jsp"%>
+<%@ include file="../_include/footer.jsp"%>

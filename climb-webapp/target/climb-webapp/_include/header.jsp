@@ -20,17 +20,17 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         
         <s:if test="#session.user">
-			<s:a namespace="/" action="logout" title="logout" cssClass="dropdown-item nav-link">Logout</s:a>
+			<s:a namespace="/public" action="logout" title="logout" cssClass="dropdown-item nav-link">Logout</s:a>
         </s:if>
         <s:else>
-          <s:a namespace="/" action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
-          <s:a namespace="/" action="register_form" title="register" cssClass="dropdown-item nav-link">Register</s:a>       
+          <s:a namespace="/public" action="login" title="login" cssClass="dropdown-item nav-link">Login</s:a>
+          <s:a namespace="/public" action="register_form" title="register" cssClass="dropdown-item nav-link">Register</s:a>       
         
        	 
         </s:else>
 
           <div class="dropdown-divider"></div>
-          <s:a namespace="/" action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
+          <s:a namespace="/public" action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -38,9 +38,9 @@
           <s:text name="tools" />
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <s:a namespace="/" action="upload" title="Upload files" cssClass="dropdown-item nav-link">Uploads files</s:a>
+          <s:a namespace="/public" action="upload" title="Upload files" cssClass="dropdown-item nav-link">Uploads files</s:a>
           <div class="dropdown-divider"></div>
-          <s:a namespace="/" action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
+          <s:a namespace="/public" action="contact_form" title="Contact us" cssClass="dropdown-item nav-link">Contact</s:a>
         </div>
       </li>      
       <li class="nav-item dropdown">
@@ -53,7 +53,7 @@
         	<s:a namespace="/admin" action="admin" title="Administrative interface" cssClass="nav-link"><s:text name="board" /></s:a>
         	<div class="dropdown-divider"></div>
         	<s:a namespace="/admin" action="new_site" title="Add new Site" cssClass="dropdown-item nav-link">Add new site</s:a>
-        	<s:a namespace="/admin"action="new_area" title="Add new Area" cssClass="dropdown-item nav-link">Add new area</s:a>
+        	<s:a namespace="/admin" action="new_area" title="Add new Area" cssClass="dropdown-item nav-link">Add new area</s:a>
         	<s:a namespace="/admin" action="add_grade" title="Add new Grade" cssClass="dropdown-item nav-link">Add new grade</s:a>
         </div>
        </s:if>

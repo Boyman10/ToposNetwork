@@ -16,10 +16,10 @@
             Utilisateur connecté :
             <s:property value="#session.user.username" />
 
-			<s:a action="logout">Déconnexion</s:a>
+			<s:a namespace="public" action="logout">Déconnexion</s:a>
 		</s:if>
 		<s:else>
-			<s:a action="login">Connexion</s:a>
+			<s:a namespace="public" action="login">Connexion</s:a>
 		</s:else>
 	</div>
 

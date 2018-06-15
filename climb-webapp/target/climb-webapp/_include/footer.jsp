@@ -8,12 +8,12 @@
 		<p>
 		<hr />
 		<s:text name="contact" />
-		<s:text name="application.name" /> - version 0.0.1-SNAPSHOT &copy; 
+		<s:text name="application.name" /> - version ${project.version} &copy; 
 		<s:text name="organization.url" />
 		 - <s:a action="contact_form">Contact us</s:a>
 		</p>
 		
-		<a href="https://r-h-m.net">RHM</a>
+		<a href="${organization.url}">${organization.name}</a>
 	</div>
 </footer>
 

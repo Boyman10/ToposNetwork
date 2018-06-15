@@ -18,7 +18,7 @@
 		</div>
 	</s:if>
 
-	<s:form action="register" method="post" validate="true">
+	<s:form namespace="public" action="register" method="post" validate="true">
 		<s:textfield key="username" name="userBean.username" />
 		<s:textfield key="email" name="userBean.email" />
 		<s:password key="password" name="userBean.password" />

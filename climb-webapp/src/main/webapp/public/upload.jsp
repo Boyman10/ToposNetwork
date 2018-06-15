@@ -23,7 +23,7 @@
 		</div>
 	</s:if>
 	<s:else>
-		<s:form action="upload" method="post" enctype="multipart/form-data"
+		<s:form namespace="public" action="upload" method="post" enctype="multipart/form-data"
 			id="formGravatar">
 			<div class="form-group">
 				<s:file name="uploadFile" label="Your File"

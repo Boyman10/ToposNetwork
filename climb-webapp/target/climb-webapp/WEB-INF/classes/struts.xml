@@ -78,31 +78,38 @@
 		</global-results>
 
 
+		
 	</package>
 
+	<package name="main" extends="struts-default" namespace="/">
 
-	<package name="public" extends="global" namespace="/">
-
-		<!-- default Action -->
-		<default-action-ref name="index" />
 		<!-- Action "index" -->
 		<action name="index">
-			<result>/jsp/index.jsp</result>
+			<result>index.jsp</result>
 		</action>
+	</package>
+
+	<package name="public" extends="global" namespace="/public">
 
 		<!-- Action "login" -->
 		<action name="login" class="UserAction" method="doLogin">
-			<result name="input">/jsp/login.jsp</result>
-			<result type="redirectAction">index</result>
+			<result name="input">login.jsp</result>
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+  				<param name="namespace">/</param>
+			</result>
 		</action>
 
 		<action name="logout" class="UserAction" method="doLogout">
-			<result type="redirectAction">index</result>
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+  				<param name="namespace">/</param>
+			</result>
 		</action>
 
 		<!-- Action "register" -->
 		<action name="register_form" class="Register" method="input">
-			<result name="input">/jsp/register.jsp</result>
+			<result name="input">register.jsp</result>
 		</action>
 
 
@@ -112,22 +119,22 @@
 			<interceptor-ref name="registerStack">
 		       
 		    </interceptor-ref>   
-			<result name="success">/jsp/register.jsp</result>
-			<result name="input">/jsp/register.jsp</result>
-			<result name="invalid.token">/jsp/invalid_token.jsp</result>
+			<result name="success">register.jsp</result>
+			<result name="input">register.jsp</result>
+			<result name="invalid.token">invalid_token.jsp</result>
 		</action>
 
 		<!-- Action "upload" -->
 		<action name="upload" class="Upload">
 			<interceptor-ref name="fileUploadStack" />
 			<param name="filesPath">myfiles</param>
-			<result name="input">/jsp/upload.jsp</result>
-			<result name="success">/jsp/upload.jsp</result>
+			<result name="input">upload.jsp</result>
+			<result name="success">upload.jsp</result>
 		</action>
 
 		<!-- Action "register" -->
 		<action name="contact_form" class="Contact" method="input">
-			<result name="input">/jsp/contact.jsp</result>
+			<result name="input">contact.jsp</result>
 		</action>
 		
 		<!-- Action "contact" -->
@@ -140,9 +147,9 @@
 		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
 		    </interceptor-ref>
 
-			<result name="success">/jsp/contact.jsp</result>
-			<result name="input">/jsp/contact.jsp</result>
-			<result name="invalid.token">/jsp/invalid_token.jsp</result>
+			<result name="success">contact.jsp</result>
+			<result name="input">contact.jsp</result>
+			<result name="invalid.token">invalid_token.jsp</result>
 		</action>
 	</package>
 
@@ -165,14 +172,14 @@
 		
 		<!-- Adding new area-->
 		<action name="new_area" class="NewArea">
-			<result name="input">/jsp/admin/new_area.jsp</result>
-			<result name="success">/jsp/admin/new_area.jsp</result>
+			<result name="input">new_area.jsp</result>
+			<result name="success">new_area.jsp</result>
 		</action>		
 
 		<!-- Adding new grade -->
 		<action name="add_grade" class="AddGrade">
-			<result name="input">/jsp/admin/add_grade.jsp</result>
-			<result name="success">/jsp/admin/add_grade.jsp</result>
+			<result name="input">add_grade.jsp</result>
+			<result name="success">add_grade.jsp</result>
 		</action>
 	</package>
 

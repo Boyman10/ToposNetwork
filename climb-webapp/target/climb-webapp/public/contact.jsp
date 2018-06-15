@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<%@ include file="_include/head.jsp"%>
-<%@ include file="_include/header.jsp"%>
+<%@ include file="../_include/head.jsp"%>
+<%@ include file="../_include/header.jsp"%>
 
 
 <div class="container">
@@ -16,7 +16,7 @@
 			<s:actionmessage />
 		</div>
 	</s:if>
-		<s:form action="contact" method="post" validate="true">
+		<s:form namespace="public" action="contact" method="post" validate="true">
 			<s:textfield name="contactEmail" key="email" />
 			<s:textfield name="contactSubject" key="subject" />
 			<s:textarea key="message" name="contactMessage" />
@@ -37,5 +37,5 @@
 </div>
 
 
-<%@ include file="_include/_scripts.jsp"%>
-<%@ include file="_include/footer.jsp"%>
+<%@ include file="../_include/_scripts.jsp"%>
+<%@ include file="../_include/footer.jsp"%>

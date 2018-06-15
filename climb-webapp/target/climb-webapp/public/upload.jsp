@@ -2,8 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<%@ include file="_include/head.jsp"%>
-<%@ include file="_include/header.jsp"%>
+<%@ include file="../_include/head.jsp"%>
+<%@ include file="../_include/header.jsp"%>
 
 
 <div class="container">
@@ -23,7 +23,7 @@
 		</div>
 	</s:if>
 	<s:else>
-		<s:form action="upload" method="post" enctype="multipart/form-data"
+		<s:form namespace="public" action="upload" method="post" enctype="multipart/form-data"
 			id="formGravatar">
 			<div class="form-group">
 				<s:file name="uploadFile" label="Your File"
@@ -43,10 +43,5 @@
 </div>
 
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> dd3cf0846ad9408a36195f8204f4cd75a8d244dd
-<%@ include file="_include/_scripts.jsp"%>
-<%@ include file="_include/footer.jsp"%>
+<%@ include file="../_include/_scripts.jsp"%>
+<%@ include file="../_include/footer.jsp"%>
