@@ -81,7 +81,7 @@
 	</package>
 
 
-	<package name="public" extends="global">
+	<package name="public" extends="global" namespace="/">
 
 		<!-- default Action -->
 		<default-action-ref name="index" />
