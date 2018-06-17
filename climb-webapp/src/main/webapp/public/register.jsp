@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 
-<%@ include file="_include/head.jsp"%>
-<%@ include file="_include/header.jsp"%>
+<%@ include file="../_include/head.jsp"%>
+<%@ include file="../_include/header.jsp"%>
 
 
 <div class="container">
@@ -22,6 +23,10 @@
 		<s:textfield key="username" name="userBean.username" />
 		<s:textfield key="email" name="userBean.email" />
 		<s:password key="password" name="userBean.password" />
+		
+		<!--  birth date - example of use with datetimepicker - jquery -->
+		<sj:datepicker value="today" id="date3" name="date3" displayFormat="dd.mm.yy" label="Today" />
+		
 		<s:password key="confirm" name="confirm" />
 		<s:submit value="Submit" />
 		<%-- add token to JSP to be used by Token interceptor --%>
