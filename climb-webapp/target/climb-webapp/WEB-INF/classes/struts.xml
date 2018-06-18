@@ -164,6 +164,11 @@
 			<result>index.jsp</result>
 		</action>
 
+		<!-- profile action -->
+		<action name="profile" class="Profile">
+			<result>profile.jsp</result>
+		</action>
+		
 		<!-- Adding new site/area/route -->
 		<action name="new_site" class="NewSite">
 			<result name="input">new_site.jsp</result>

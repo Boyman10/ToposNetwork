@@ -9,10 +9,10 @@
 
 	<h2>Admin interface</h2>
 
-	<p>
-		This page shows you several links to add information to the community website
-	</p>
+	<p>This page shows you several links to add information to the
+		community website</p>
 
+	<p><s:a namespace="/admin" action="profile">See my profile</s:a></p>
 
 </div>
 <%@ include file="../_include/_scripts.jsp"%>

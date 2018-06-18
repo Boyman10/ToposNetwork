@@ -25,7 +25,7 @@
 		<s:password key="password" name="userBean.password" />
 		
 		<!--  birth date - example of use with datetimepicker - jquery -->
-		<sj:datepicker value="today" id="date3" name="date3" displayFormat="dd.mm.yy" label="Today" />
+		<sj:datepicker value="today" id="datereg" name="datereg" displayFormat="yy-mm-dd" label="Today" />
 		
 		<s:password key="confirm" name="confirm" />
 		<s:submit value="Submit" />

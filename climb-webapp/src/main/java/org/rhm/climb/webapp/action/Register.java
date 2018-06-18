@@ -28,6 +28,9 @@ public class Register extends ActionSupport implements Preparable {
 	private User userBean;
 	private String confirm;
 
+	// optional parameter just for testing
+	private String datereg;
+
 
 	@Autowired
 	@Qualifier("managerFactory")
@@ -63,7 +66,14 @@ public class Register extends ActionSupport implements Preparable {
 		this.userBean = userBean;
 	}
 	
-	
+
+	public String getDatereg() {
+		return datereg;
+	}
+
+	public void setDatereg(String datereg) {
+		this.datereg = datereg;
+	}
 	/**
 	 * Confirm password 
 	 * @return the confirm
