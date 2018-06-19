@@ -31,5 +31,5 @@
 
 </s:if>
 <s:else>
-	<s:a action="login">Please do login first !</s:a>
+	<s:a namespace="/public" action="login">Please do login first !</s:a>
 </s:else>

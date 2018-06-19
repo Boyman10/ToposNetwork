@@ -12,7 +12,7 @@
 	<p>This page shows you several links to add information to the
 		community website</p>
 
-	<p><s:a namespace="admin" action="profile">See my profile</s:a></p>
+	<p><s:a namespace="/admin" action="profile">See my profile</s:a></p>
 
 </div>
 <%@ include file="../_include/_scripts.jsp"%>
