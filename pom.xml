@@ -47,11 +47,11 @@
 	</properties>
 
 	<modules>
-		<module>toponetwork-webapp</module>
-		<module>toponetwork-model</module>
-		<module>${project.artifactId}-technical</module>
-		<module>${project.artifactId}-consumer</module>
-		<module>${project.artifactId}-business</module>
+		<module>climb-webapp</module>
+		<module>climb-model</module>
+		<module>climb-technical</module>
+		<module>climb-consumer</module>
+		<module>climb-business</module>
 	</modules>
 
 

@@ -12,7 +12,7 @@
 
 	<artifactId>${project.parent.artifactId}-business</artifactId>
 
-	<name>toponetwork-business</name>
+	<name>climb-business</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

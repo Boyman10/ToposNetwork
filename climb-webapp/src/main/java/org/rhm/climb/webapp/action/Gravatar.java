@@ -93,6 +93,8 @@ public class Gravatar extends ActionSupport implements SessionAware {
 		//gravatar = ((User) (userSession.get(USER))).getGravatar();
         if (filename == null) {
             addActionError("File must be valid !");
+            
+            LOGGER.debug("NO file submitted" );
         } else 
         	gravatar = filename;
 		

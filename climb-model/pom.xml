@@ -10,7 +10,7 @@
 
   <artifactId>toponetwork-model</artifactId>
 
-  <name>toponetwork-model</name>
+  <name>climb-model</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
