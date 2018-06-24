@@ -28,8 +28,8 @@ public class Gravatar extends ActionSupport implements SessionAware {
 
 	// Handling the file being submitted
 	private File uploadFile;
-    private String contentType;
-    private String filename;
+    private String uploadFileContentType;
+    private String uploadFileFilename;
     
     // testing field from form submission - ajax
     private String sourceToken;
@@ -73,13 +73,13 @@ public class Gravatar extends ActionSupport implements SessionAware {
      }
 
      public void setUploadFileContentType(String contentType) {
-        this.contentType = contentType;
+        this.uploadFileContentType = contentType;
      }
 
      public void setUploadFileFileName(String filename) {
     	 
     	 LOGGER.debug("Setting upload filename : " + filename);
-        this.filename = filename;
+        this.uploadFileFilename = filename;
      }
 	
 	
@@ -91,12 +91,12 @@ public class Gravatar extends ActionSupport implements SessionAware {
 
 		LOGGER.debug("Within execute action : " );
 		//gravatar = ((User) (userSession.get(USER))).getGravatar();
-        if (filename == null) {
+        if (uploadFileFilename == null) {
             addActionError("File must be valid !");
             
             LOGGER.debug("NO file submitted" );
         } else 
-        	gravatar = filename;
+        	gravatar = uploadFileFilename;
 		
 		Thread.sleep(5000);
 		
