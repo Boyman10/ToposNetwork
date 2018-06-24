@@ -12,6 +12,7 @@
 	<bean id="Register" class="org.rhm.climb.webapp.action.Register" />
 	<bean id="Gravatar" class="org.rhm.climb.webapp.action.Gravatar" scope="prototype" />
 	<bean id="Upload" class="org.rhm.climb.webapp.action.Upload" scope="prototype" />
+	<bean id="ShowImage" class="org.rhm.climb.webapp.action.ShowImage" scope="prototype" />
 	
 	<bean id="AddGrade" class="org.rhm.climb.webapp.action.admin.AddGrade" scope="prototype" />
 	<bean id="NewSite" class="org.rhm.climb.webapp.action.admin.NewSite" scope="prototype" />

@@ -86,8 +86,9 @@ public class Upload extends ActionSupport implements ServletContextAware {
         	try {
     			LOGGER.debug("Saving file to proper location" );
     			
-    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("") + File.separator + filesPath);
-    			
+    			//FileUtils.saveFile(getUploadFile(), getUploadFileFileName(), context.getRealPath("/") + File.separator + filesPath);
+    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName());
+
     			addActionMessage("File successfully saved !");
     			
     		} catch (IOException e) {

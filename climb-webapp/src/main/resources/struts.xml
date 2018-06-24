@@ -127,7 +127,7 @@
 		<!-- Action "upload" -->
 		<action name="upload" class="Upload">
 			<interceptor-ref name="fileUploadStack" />
-			<param name="filesPath">myfiles</param>
+			<param name="filesPath">uploads</param>
 			<result name="input">upload.jsp</result>
 			<result name="success">upload.jsp</result>
 		</action>
@@ -150,6 +150,11 @@
 			<result name="success">contact.jsp</result>
 			<result name="input">contact.jsp</result>
 			<result name="invalid.token">invalid_token.jsp</result>
+		</action>
+		
+		
+		<!-- action to display an image -->
+		<action name="showImage" class="ShowImage">
 		</action>
 	</package>
 
