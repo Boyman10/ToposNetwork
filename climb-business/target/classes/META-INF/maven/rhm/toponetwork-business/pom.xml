@@ -10,9 +10,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>toponetwork-business</artifactId>
+	<artifactId>${project.parent.artifactId}-business</artifactId>
 
-	<name>${projectName} business</name>
+	<name>toponetwork-business</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -21,16 +21,16 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.parent.artifactId}-consumer</artifactId>
+			<groupId>rhm</groupId>
+			<artifactId>toponetwork-consumer</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-technical</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-model</artifactId>
 		</dependency>
 		<dependency>
@@ -86,5 +86,6 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 		</dependency>
+
 	</dependencies>
 </project>

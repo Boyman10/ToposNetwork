@@ -11,8 +11,8 @@
 	</parent>
 
 	<artifactId>toponetwork-consumer</artifactId>
-
-	<name>climb-consumer</name>
+	<version>${project.parent.version}</version>
+	<name>toponetwork-consumer</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,12 +20,12 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-model</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-technical</artifactId>
 		</dependency>
 

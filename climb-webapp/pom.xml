@@ -14,12 +14,11 @@
 
 	<!-- ===== Informations Maven ===== -->
 	<artifactId>toponetwork-webapp</artifactId>
-
-
+<version>${project.parent.version}</version>
 	<packaging>war</packaging>
 
 	<!-- ===== Informations ===== -->
-	<name>${projectName} - web app</name>
+	<name>toponetwork-webapp</name>
 
 
 	<!-- =============================================================== -->
@@ -36,16 +35,16 @@
 	<dependencies>
 		<!-- ===== Modules ===== -->
 		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>${project.parent.artifactId}-model</artifactId>
+			<groupId>rhm</groupId>
+			<artifactId>toponetwork-model</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-technical</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>${project.parent.artifactId}-business</artifactId>
 		</dependency>
 
