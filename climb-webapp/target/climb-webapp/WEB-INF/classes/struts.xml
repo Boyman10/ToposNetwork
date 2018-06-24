@@ -5,6 +5,13 @@
 <struts>
 
 	<package name="global" abstract="true" extends="struts-default">
+	
+		<result-types>
+			<result-type name="imageResult"
+				class="CustomImage" />
+		</result-types>
+		
+		
 		<interceptors>
 
 			<!-- Own interceptors -->
@@ -78,7 +85,7 @@
 		</global-results>
 
 
-		
+
 	</package>
 
 	<package name="main" extends="struts-default" namespace="/">
@@ -96,14 +103,14 @@
 			<result name="input">login.jsp</result>
 			<result type="redirectAction">
 				<param name="actionName">index</param>
-  				<param name="namespace">/</param>
+				<param name="namespace">/</param>
 			</result>
 		</action>
 
 		<action name="logout" class="UserAction" method="doLogout">
 			<result type="redirectAction">
 				<param name="actionName">index</param>
-  				<param name="namespace">/</param>
+				<param name="namespace">/</param>
 			</result>
 		</action>
 
@@ -117,8 +124,8 @@
 			<interceptor-ref name="token">
 			</interceptor-ref>
 			<interceptor-ref name="registerStack">
-		       
-		    </interceptor-ref>   
+
+			</interceptor-ref>
 			<result name="success">register.jsp</result>
 			<result name="input">register.jsp</result>
 			<result name="invalid.token">invalid_token.jsp</result>
@@ -127,7 +134,7 @@
 		<!-- Action "upload" -->
 		<action name="upload" class="Upload">
 			<interceptor-ref name="fileUploadStack" />
-			<param name="filesPath">myfiles</param>
+			<param name="filesPath">uploads</param>
 			<result name="input">upload.jsp</result>
 			<result name="success">upload.jsp</result>
 		</action>
@@ -136,20 +143,29 @@
 		<action name="contact_form" class="Contact" method="input">
 			<result name="input">contact.jsp</result>
 		</action>
-		
+
 		<!-- Action "contact" -->
 		<action name="contact" class="Contact">
-			<interceptor-ref name="token">		
-			</interceptor-ref> 
-		    <interceptor-ref name="defaultStack">
-		       <param name="exception.logEnabled">true</param>
-		       <param name="exception.logLevel">ERROR</param>
-		       <param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
-		    </interceptor-ref>
+			<interceptor-ref name="token">
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack">
+				<param name="exception.logEnabled">true</param>
+				<param name="exception.logLevel">ERROR</param>
+				<param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+			</interceptor-ref>
 
 			<result name="success">contact.jsp</result>
 			<result name="input">contact.jsp</result>
 			<result name="invalid.token">invalid_token.jsp</result>
+		</action>
+
+		<!-- actions to display an image -->
+
+
+
+		<action name="showImage" class="ShowImage">
+			<result name="success" type="imageResult">
+			</result>
 		</action>
 	</package>
 
@@ -168,18 +184,18 @@
 		<action name="profile" class="Profile">
 			<result>profile.jsp</result>
 		</action>
-		
+
 		<!-- Adding new site/area/route -->
 		<action name="new_site" class="NewSite">
 			<result name="input">new_site.jsp</result>
 			<result name="success">new_site.jsp</result>
 		</action>
-		
-		<!-- Adding new area-->
+
+		<!-- Adding new area -->
 		<action name="new_area" class="NewArea">
 			<result name="input">new_area.jsp</result>
 			<result name="success">new_area.jsp</result>
-		</action>		
+		</action>
 
 		<!-- Adding new grade -->
 		<action name="add_grade" class="AddGrade">
@@ -190,7 +206,7 @@
 
 	<!-- package dedicated to ajax Actions -->
 	<package name="ajax" extends="global, json-default">
-		
+
 		<!-- Gravatar Upload using Ajax -->
 		<action name="gravatar" class="Gravatar">
 			<interceptor-ref name="basicStack" />
@@ -205,13 +221,14 @@
 			<result type="json" name="input">
 			</result>
 		</action>
-		
+
 		<!-- Site listing API -->
-		<action name="sites" class="org.rhm.climb.webapp.action.admin.Sites" method="execute">
-            <result name="success" type="json">
-                <param name="root">siteList</param>
-            </result>
-        </action>
-		
+		<action name="sites"
+			class="org.rhm.climb.webapp.action.admin.Sites" method="execute">
+			<result name="success" type="json">
+				<param name="root">siteList</param>
+			</result>
+		</action>
+
 	</package>
 </struts>

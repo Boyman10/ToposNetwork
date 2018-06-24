@@ -16,10 +16,8 @@
 		<div class="welcome">
 			<s:actionmessage />
 
-			<s:if test="uploadFileFilename">
 			Check out your file :<br/>
-				<img src="<s:property value="filesPath"/>/<s:property value="uploadFileFilename"/>" border="0" alt="My uploaded image">
-			</s:if>
+				<img src="<s:url action='showImage?imageId=create-a-gravatar-beard.png' />" border="0" alt="My uploaded image">
 		</div>
 	</s:if>
 	<s:else>

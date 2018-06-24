@@ -7,6 +7,8 @@ org\rhm\climb\webapp\interceptors\RegisterInterceptor.class
 org\rhm\climb\webapp\converter\AreaConverter.class
 org\rhm\climb\webapp\action\admin\AddGrade.class
 org\rhm\climb\webapp\action\admin\Admin.class
+org\rhm\climb\webapp\result\CustomImageBytesResult.class
+org\rhm\climb\webapp\action\ShowImage.class
 org\rhm\climb\webapp\action\Register.class
 org\rhm\climb\webapp\action\Gravatar.class
 org\rhm\climb\webapp\action\UserAction.class
