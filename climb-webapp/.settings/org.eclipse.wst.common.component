@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                                    
+                                        
+    
     
     
     
@@ -8,7 +9,8 @@
     
     
     <wb-module deploy-name="climb-webapp">
-                                                                        
+                                                                                
+        
         
         
         
@@ -17,7 +19,8 @@
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-                                                                        
+                                                                                
+        
         
         
         
@@ -26,7 +29,8 @@
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                                                                        
+                                                                                
+        
         
         
         
@@ -35,7 +39,8 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-                                                                        
+                                                                                
+        
         
         
         
@@ -44,20 +49,22 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <dependent-module archiveName="toponetwork-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-model/toponetwork-model">
+        <dependent-module archiveName="toponetwork-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-model/climb-model">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="toponetwork-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-technical/toponetwork-technical">
+        <dependent-module archiveName="toponetwork-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-technical/climb-technical">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="toponetwork-business-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-business/toponetwork-business">
+        <dependent-module archiveName="toponetwork-business-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-business/climb-business">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="toponetwork-consumer-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-consumer/toponetwork-consumer">
+        <dependent-module archiveName="toponetwork-consumer-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/climb-consumer/climb-consumer">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                                                                        
+                                                                                
+        
         
         
         
@@ -66,7 +73,8 @@
         
         
         <property name="context-root" value="climb-webapp"/>
-                                                                        
+                                                                                
+        
         
         
         
@@ -75,7 +83,8 @@
         
         
         <property name="java-output-path" value="/climb-webapp/target/classes"/>
-                                                                    
+                                                                            
+    
     
     
     
@@ -84,7 +93,8 @@
     
     
     </wb-module>
-                                
+                                    
+
 
 
 

@@ -101,7 +101,7 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 	@Override
 	public User findUserByBean(User user) {
 		
-		String sql = "SELECT * FROM public.climb_user WHERE (username = :name ) AND pass = :password";
+		String sql = "SELECT * FROM public.climb_user WHERE (username = :name )";
 		
 		try {
 			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
@@ -112,13 +112,13 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 			LOGGER.debug("getting user by name and pass : " + user.getUsername());
 
 			vParams.addValue("name", user.getUsername());
-			vParams.addValue("password", user.getPassword());
+			//vParams.addValue("password", user.getPassword());
 			
 			LOGGER.debug("Launching query now...");
 
 			User qUser = (User) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(User.class));
 			
-			LOGGER.debug("Query done - returning user ");
+			LOGGER.debug("Query done - returning user " + qUser.getUsername());
 			
 			return qUser;
 			

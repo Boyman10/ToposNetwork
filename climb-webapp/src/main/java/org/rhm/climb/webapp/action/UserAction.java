@@ -11,12 +11,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.user.User;
+import org.rhm.climb.webapp.utils.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.interceptor.ParameterNameAware;
 
 /**
  * Defined Action for authentication purpose and may be additional user
@@ -103,6 +102,15 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 				if (uEx != null) {
 					/* Perfect we are all good we should continue now : */
 
+					// Now check the passwords :
+					PasswordEncoder encoding = new PasswordEncoder();
+					LOGGER.debug("Encoding password matching...");
+					if (encoding.passwordMatch(userBean.getPassword(), uEx.getPassword())) {
+						LOGGER.debug("Password don't match");
+						this.addActionError("Wrong username and password combination !");
+						return vResult;
+					}
+					
 					LOGGER.debug("Adding user to session");
 					userBean = uEx;
 					// Adding user to session :
@@ -114,8 +122,8 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 					this.addActionError("Wrong username and password combination !");
 
 			} catch (Exception pEx) {
-
-				this.addActionError("Identifiant ou mot de passe invalide !");
+				LOGGER.debug("Exception while login in " + pEx.getMessage() + " pass : " + userBean.getPassword());
+				this.addActionError("Identifiant ou mot de passe invalide !" );
 			}
 		} else {
 			

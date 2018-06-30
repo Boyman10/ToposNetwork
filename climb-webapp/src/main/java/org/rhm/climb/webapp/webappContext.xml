@@ -9,7 +9,7 @@
 	<bean id="UserAction" class="org.rhm.climb.webapp.action.UserAction" scope="prototype" />
 	<bean id="Contact" class="org.rhm.climb.webapp.action.Contact" />
 	<bean id="Admin" class="org.rhm.climb.webapp.action.admin.Admin" />
-	<bean id="Register" class="org.rhm.climb.webapp.action.Register" />
+	<bean id="Register" class="org.rhm.climb.webapp.action.Register"  scope="prototype" />
 	<bean id="Gravatar" class="org.rhm.climb.webapp.action.Gravatar" scope="prototype" />
 	<bean id="Upload" class="org.rhm.climb.webapp.action.Upload" scope="prototype" />
 	<bean id="ShowImage" class="org.rhm.climb.webapp.action.ShowImage" scope="prototype" />

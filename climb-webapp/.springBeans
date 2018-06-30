@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/java/org/rhm/climb/webapp/webappContext.xml</config>
 		<config>src/main/resources/bootstrapContext.xml</config>
+		<config>src/main/resources/spring-security.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

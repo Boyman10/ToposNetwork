@@ -209,12 +209,7 @@
 
 		<!-- Gravatar Upload using Ajax -->
 		<action name="gravatar" class="Gravatar">
-			<interceptor-ref name="basicStack" />
-			<interceptor-ref name="fileUpload">
-				<param name="allowedTypes">image/jpeg,image/gif,image/png</param>
-			</interceptor-ref>
-			<interceptor-ref name="validation" />
-			<interceptor-ref name="workflow" />
+			<interceptor-ref name="fileUploadStack" />
 			<result type="json" name="success">
 				<param name="root">gravatar</param>
 			</result>

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.climb.business.manager.interfaces.factory.ManagerFactory;
 import org.climb.model.bean.user.Role;
 import org.climb.model.bean.user.User;
+import org.rhm.climb.webapp.utils.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -36,20 +37,6 @@ public class Register extends ActionSupport implements Preparable {
 	@Qualifier("managerFactory")
 	private ManagerFactory managerFactory;
 
-	/**
-	 * @return the managerFactory
-	 */
-	public ManagerFactory getManagerFactory() {
-		return managerFactory;
-	}
-
-	/**
-	 * @param managerFactory
-	 *            the managerFactory to set
-	 */
-	public void setManagerFactory(ManagerFactory managerFactory) {
-		this.managerFactory = managerFactory;
-	}
 
 	/**
 	 * @return the userBean
@@ -125,6 +112,18 @@ public class Register extends ActionSupport implements Preparable {
 				// First retrieve the default Role by its name :
 				Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
 				userBean.setRole(role);
+				
+				// verify password :
+				if (!userBean.getPassword().equals(confirm)) {
+					
+					this.addActionError("Password don't match!");
+					LOGGER.debug("Password don't match " + confirm + " != " + userBean.getPassword());
+					return vResult;
+				}
+				
+				// Encrypt password :
+				PasswordEncoder encoding = new PasswordEncoder();
+				userBean.setPassword(encoding.encodePassword(userBean.getPassword()));
 
 				// Persist data to db now :
 				if (this.managerFactory.getUserManager().addUser(userBean)) {
@@ -142,7 +141,7 @@ public class Register extends ActionSupport implements Preparable {
 				}
 			} catch (Exception pEx) {
 
-				this.addActionError("Somehting went wrong please check your entries !");
+				this.addActionError("Something went wrong please check your entries !");
 			}
 		}
 
