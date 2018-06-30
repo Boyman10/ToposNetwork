@@ -19,6 +19,17 @@ public class SendEmail {
 	
 	private String authPassword = "", emailFrom = "";
 	
+	/**
+	 * Constructor initializing smtp mail parameters - 
+	 * @todo use properties file to handle the configuration parameters...
+	 * @param pass
+	 * @param emailFrom
+	 */
+	public SendEmail(String pass, String emailFrom) {
+		this.authPassword = pass;
+		this.emailFrom = emailFrom;
+	}
+	
 	public int sendMail(String to, String subject, String msg) {
 
 		// setting gmail smtp properties
@@ -32,14 +43,14 @@ public class SendEmail {
 		// check the authentication
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(from, authPassword);
+				return new PasswordAuthentication(emailFrom, authPassword);
 			}
 		});
 
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(from));
+			message.setFrom(new InternetAddress(emailFrom));
 
 			// recipients email address
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));

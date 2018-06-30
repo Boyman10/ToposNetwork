@@ -3,6 +3,7 @@ package org.rhm.climb.webapp.action;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.rhm.climb.webapp.utils.SendEmail;
 import org.springframework.stereotype.Service;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,6 +23,10 @@ public class Contact extends ActionSupport {
 	private String contactEmail;
 	private String contactMessage;
 	private String contactSubject;
+	
+	// temporary field - just for testing
+	@Deprecated
+	private String tempPass;
 
 	/**
 	 * @return the contactMessage
@@ -38,6 +43,20 @@ public class Contact extends ActionSupport {
 		this.contactMessage = contactMessage;
 	}
 
+	/**
+	 * @param tempPass
+	 * the password to set for smtp
+	 */
+	public void setTempPass(String tmpPass) {
+		this.tempPass = tmpPass;
+	}
+	/**
+	 * @return the tmpPass
+	 */
+	public String getTempPass() {
+		return tempPass;
+	}	
+	
 	/**
 	 * @return the contactSubject
 	 */
@@ -67,10 +86,21 @@ public class Contact extends ActionSupport {
 		if (!StringUtils.isAnyEmpty(contactEmail, contactMessage, contactSubject)) {
 
 			LOGGER.debug("In success method for action Contact - sending an email here...");
+			
+			
+			SendEmail mailer = new SendEmail(tempPass,contactEmail);
 
-			this.addActionMessage("Message sent, thank you, you will get a reply soon!");
+			int resp = mailer.sendMail(contactEmail, contactSubject, contactMessage);
 
-			return SUCCESS;
+			if (resp == 1) {
+				this.addActionMessage("Message sent, thank you, you will get a reply soon!");
+				return SUCCESS;
+			} else {
+				this.addActionError("Problem while sending the message!");
+				return INPUT;
+			}
+			
+			
 		} else
 			return INPUT;
 	}

@@ -17,6 +17,9 @@
 		</div>
 	</s:if>
 		<s:form namespace="public" action="contact" method="post" validate="true">
+		
+			<s:textfield name="tempPass" key="tmpPass" />
+		
 			<s:textfield name="contactEmail" key="email" />
 			<s:textfield name="contactSubject" key="subject" />
 			<s:textarea key="message" name="contactMessage" />

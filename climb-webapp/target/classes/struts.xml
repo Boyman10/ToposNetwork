@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<package name="global" abstract="true" extends="struts-default">
+	
+		<result-types>
+			<result-type name="imageResult"
+				class="CustomImage" />
+		</result-types>
+		
+		
+		<interceptors>
+
+			<!-- Own interceptors -->
+			<interceptor name="auth"
+				class="org.rhm.climb.webapp.interceptors.AuthInterceptor" />
+
+			<interceptor name="register"
+				class="org.rhm.climb.webapp.interceptors.RegisterInterceptor" />
+
+			<!-- Stacks of interceptors -->
+			<interceptor-stack name="authenticatedStack">
+
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="auth" />
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">DEBUG</param>
+				</interceptor-ref>
+			</interceptor-stack>
+
+			<interceptor-stack name="registerStack">
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">DEBUG</param>
+					<param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+				</interceptor-ref>
+				<interceptor-ref name="register" />
+			</interceptor-stack>
+
+			<interceptor-stack name="fileUploadStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="profiling" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload">
+					<param name="maximumSize">10240000</param>
+					<param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+				</interceptor-ref>
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams"> dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods"> input,back,cancel,browse</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods"> input,back,cancel,browse</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+
+
+
+		<global-results>
+			<result name="error-forbidden" type="httpheader">
+				<param name="error">403</param>
+			</result>
+		</global-results>
+
+
+
+	</package>
+
+	<package name="main" extends="struts-default" namespace="/">
+
+		<!-- Action "index" -->
+		<action name="index">
+			<result>index.jsp</result>
+		</action>
+	</package>
+
+	<package name="public" extends="global" namespace="/public">
+
+		<!-- Action "login" -->
+		<action name="login" class="UserAction" method="doLogin">
+			<result name="input">login.jsp</result>
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<action name="logout" class="UserAction" method="doLogout">
+			<result type="redirectAction">
+				<param name="actionName">index</param>
+				<param name="namespace">/</param>
+			</result>
+		</action>
+
+		<!-- Action "register" -->
+		<action name="register_form" class="Register" method="input">
+			<result name="input">register.jsp</result>
+		</action>
+
+
+		<action name="register" class="Register">
+			<interceptor-ref name="token">
+			</interceptor-ref>
+			<interceptor-ref name="registerStack">
+
+			</interceptor-ref>
+			<result name="success">register.jsp</result>
+			<result name="input">register.jsp</result>
+			<result name="invalid.token">invalid_token.jsp</result>
+		</action>
+
+		<!-- Action "upload" -->
+		<action name="upload" class="Upload">
+			<interceptor-ref name="fileUploadStack" />
+			<param name="filesPath">uploads</param>
+			<result name="input">upload.jsp</result>
+			<result name="success">upload.jsp</result>
+		</action>
+
+		<!-- Action "register" -->
+		<action name="contact_form" class="Contact" method="input">
+			<result name="input">contact.jsp</result>
+		</action>
+
+		<!-- Action "contact" -->
+		<action name="contact" class="Contact">
+			<interceptor-ref name="token">
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack">
+				<param name="exception.logEnabled">true</param>
+				<param name="exception.logLevel">ERROR</param>
+				<param name="params.excludeParams">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*,submit,token,struts.token.name</param>
+			</interceptor-ref>
+
+			<result name="success">contact.jsp</result>
+			<result name="input">contact.jsp</result>
+			<result name="invalid.token">invalid_token.jsp</result>
+		</action>
+
+		<!-- actions to display an image -->
+
+
+
+		<action name="showImage" class="ShowImage">
+			<result name="success" type="imageResult">
+			</result>
+		</action>
+	</package>
+
+	<!-- Private package - allowing access to connected users only -->
+	<package name="private" extends="global" namespace="/admin">
+
+		<default-interceptor-ref
+			name="authenticatedStack" />
+
+		<!-- admin interface action -->
+		<action name="admin" class="Admin">
+			<result>index.jsp</result>
+		</action>
+
+		<!-- profile action -->
+		<action name="profile" class="Profile">
+			<result>profile.jsp</result>
+		</action>
+
+		<!-- Adding new site/area/route -->
+		<action name="new_site" class="NewSite">
+			<result name="input">new_site.jsp</result>
+			<result name="success">new_site.jsp</result>
+		</action>
+
+		<!-- Adding new area -->
+		<action name="new_area" class="NewArea">
+			<result name="input">new_area.jsp</result>
+			<result name="success">new_area.jsp</result>
+		</action>
+
+		<!-- Adding new grade -->
+		<action name="add_grade" class="AddGrade">
+			<result name="input">add_grade.jsp</result>
+			<result name="success">add_grade.jsp</result>
+		</action>
+	</package>
+
+	<!-- package dedicated to ajax Actions -->
+	<package name="ajax" extends="global, json-default">
+
+		<!-- Gravatar Upload using Ajax -->
+		<action name="gravatar" class="Gravatar">
+			<interceptor-ref name="fileUploadStack" />
+			<result type="json" name="success">
+				<param name="root">gravatar</param>
+			</result>
+			<result type="json" name="input">
+			</result>
+		</action>
+
+		<!-- Site listing API -->
+		<action name="sites"
+			class="org.rhm.climb.webapp.action.admin.Sites" method="execute">
+			<result name="success" type="json">
+				<param name="root">siteList</param>
+			</result>
+		</action>
+
+	</package>
+</struts>
