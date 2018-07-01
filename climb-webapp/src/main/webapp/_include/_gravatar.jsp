@@ -24,7 +24,8 @@
 			</div>
 		</s:form>
 
-
+	<div class="alert alert-info" role="alert" id="gravatar-msg">
+	</div>
 
 
 	</s:else>

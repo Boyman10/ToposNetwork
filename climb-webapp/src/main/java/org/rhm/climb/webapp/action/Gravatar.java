@@ -1,12 +1,14 @@
 package org.rhm.climb.webapp.action;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
 import org.climb.model.bean.user.User;
+import org.rhm.climb.webapp.utils.FileUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -33,10 +35,7 @@ public class Gravatar extends ActionSupport implements SessionAware {
     
     // testing field from form submission - ajax
     private String sourceToken;
-	/*
-	 * @Inject ManagerFactory managerFactory;
-	 */
-	private String gravatar;
+
 
 	// ============= GETTERS/ SETTERS ===============
 	public String getSourceToken() {
@@ -47,20 +46,12 @@ public class Gravatar extends ActionSupport implements SessionAware {
 		this.sourceToken = sourceToken;
 	}
 	
-	/**
-	 * @return the gravatar
-	 */
-	public String getGravatar() {
-		return gravatar;
-	}
-	/**
-	 * @param gravatar
-	 *            the gravatar to set
-	 */
-	public void setGravatar(String gravatar) {
-		this.gravatar = gravatar;
-	}
-
+	
+    public File getUploadFile() {
+        return this.uploadFile;
+     }
+    
+    
 	// ============= METHODS ==============
 
 	/**
@@ -81,7 +72,11 @@ public class Gravatar extends ActionSupport implements SessionAware {
     	 LOGGER.debug("Setting upload filename : " + filename);
         this.uploadFileFilename = filename;
      }
-	
+     public String getUploadFileFileName() {
+    	 
+         return this.uploadFileFilename;
+       }
+  			
 	
 	/**
 	 * Default action method to deliver the listing
@@ -90,13 +85,28 @@ public class Gravatar extends ActionSupport implements SessionAware {
 	public String execute() throws Exception {
 
 		LOGGER.debug("Within execute action : " );
-		//gravatar = ((User) (userSession.get(USER))).getGravatar();
+
         if (uploadFileFilename == null) {
-            addActionError("File must be valid !");
-            
-            LOGGER.debug("NO file submitted" );
-        } else 
-        	gravatar = uploadFileFilename;
+            LOGGER.debug("Within execute action - no file sent yet..." );
+        } else {
+        	    		
+        	try {
+    			LOGGER.debug("Saving file to proper location" );
+    			
+    			FileUtils.saveFile(getUploadFile(), getUploadFileFileName());
+
+    			addActionMessage("File successfully saved !");
+    			
+    		} catch (IOException e) {
+    			
+    			//e.printStackTrace();
+    			
+    			addActionError("File must be valid !" + e.getMessage());
+    			
+    			return ActionSupport.INPUT;
+    		}
+        	
+        }
 		
 		Thread.sleep(5000);
 		

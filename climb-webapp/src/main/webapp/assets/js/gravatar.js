@@ -2,9 +2,13 @@
 $(document).ready(function () {
 	//https://www.mkyong.com/jquery/jquery-ajax-submit-a-multipart-form/
 
+	// first hiding the alert box :
+	$("div#gravatar-msg").hide();
 	
 	$("#subGravatar").click(function(event){
 		console.log("Click on BTN...");
+		
+		
 		
         //stop submit the form, we will post it manually.
         event.preventDefault();
@@ -34,16 +38,23 @@ $(document).ready(function () {
             contentType: false,
             cache: false,
             timeout: 600000,
-            success: function (data) {
+            success: function (data) { // here the function when everything goes fine :
 
             	console.log("Receiving data : " , data);
+            	/*
             	$.each(data, function (key, val) {
             		
             		console.log("SUCCESS key : ", key , " and val : ", val );
             		
                 });
                 
-                
+                */
+            	// Hide the form :
+            	$("form#formGravatar").hide();
+            	
+            	// Display the message and gravatar :
+            	$("div#gravatar-msg").show();
+            	$("div#gravatar-msg").append("The gravatar has been uploaded successfully !");
 
             },
             error: function (e) {
