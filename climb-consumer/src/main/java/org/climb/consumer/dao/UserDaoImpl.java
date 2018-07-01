@@ -116,7 +116,10 @@ public class UserDaoImpl extends AbstractDaoImpl implements UserDao {
 			
 			LOGGER.debug("Launching query now...");
 
-			User qUser = (User) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(User.class));
+			RowMapper<User> vRowMapper = new UserRowMapper();
+			
+			// Case fields match the ones in DB we can use a defaultRowMapper using the User.class...
+			User qUser = (User) this.npjTemplate.queryForObject(sql, vParams, vRowMapper);
 			
 			LOGGER.debug("Query done - returning user " + qUser.getUsername());
 			

@@ -105,7 +105,8 @@ public class UserAction extends ActionSupport implements SessionAware, ServletRe
 					// Now check the passwords :
 					PasswordEncoder encoding = new PasswordEncoder();
 					LOGGER.debug("Encoding password matching...");
-					if (encoding.passwordMatch(userBean.getPassword(), uEx.getPassword())) {
+					
+					if (!encoding.passwordMatch(userBean.getPassword(), uEx.getPassword())) {
 						LOGGER.debug("Password don't match");
 						this.addActionError("Wrong username and password combination !");
 						return vResult;
