@@ -100,7 +100,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+
 			<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-bom -->
 			<dependency>
 				<groupId>org.springframework.security</groupId>
@@ -122,14 +122,13 @@
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
 				<version>4.0.1</version>
+				 <scope>provided</scope>
 			</dependency>
 			<!-- commons-io above logging to avoid conflict - ex in uploading files -->
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>2.6</version>
-				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
 
 
@@ -137,22 +136,20 @@
 				<groupId>commons-logging</groupId>
 				<artifactId>commons-logging</artifactId>
 				<version>1.2</version>
-				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-core</artifactId>
 				<version>2.11.0</version>
-				<type>pom</type>
-				<scope>import</scope>
+				<scope>runtime</scope>
+
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-jcl</artifactId>
 				<version>2.11.0</version>
-				<type>pom</type>
-				<scope>import</scope>
+				<scope>runtime</scope>
+
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 			<dependency>
@@ -167,15 +164,11 @@
 				<groupId>ognl</groupId>
 				<artifactId>ognl</artifactId>
 				<version>3.1.15</version>
-				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>javax.inject</groupId>
 				<artifactId>javax.inject</artifactId>
 				<version>1</version>
-				<type>pom</type>
-				<scope>import</scope>
 			</dependency>
 
 			<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
@@ -229,6 +222,11 @@
 				<groupId>com.jgeppert.struts2.jquery</groupId>
 				<artifactId>struts2-jquery-mobile-plugin</artifactId>
 				<version>4.0.3</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.mail</groupId>
+				<artifactId>javax.mail</artifactId>
+				<version>1.6.1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

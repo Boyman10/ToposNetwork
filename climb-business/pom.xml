@@ -10,7 +10,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>${project.parent.artifactId}-business</artifactId>
+	<artifactId>toponetwork-business</artifactId>
 
 	<name>climb-business</name>
 	<url>http://maven.apache.org</url>
@@ -70,7 +70,6 @@
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-			<version>1</version>
 		</dependency>
 
 

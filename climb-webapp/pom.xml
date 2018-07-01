@@ -14,7 +14,6 @@
 
 	<!-- ===== Informations Maven ===== -->
 	<artifactId>toponetwork-webapp</artifactId>
-	<version>${project.parent.version}</version>
 	<packaging>war</packaging>
 
 	<!-- ===== Informations ===== -->
@@ -179,4 +178,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<url>http://localhost:8080/climb-webapp/</url>
 </project>
