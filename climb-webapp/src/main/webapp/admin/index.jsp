@@ -12,7 +12,14 @@
 	<p>This page shows you several links to add information to the
 		community website</p>
 
-	<p><s:a namespace="/admin" action="profile">See my profile</s:a></p>
+	<p>
+		<s:a namespace="/admin" action="profile">See my profile</s:a>
+	</p>
+
+	<ul class="list-group">
+		<li class="list-group-item"><s:a namespace="/admin" action="sites-listing">Access site listing</s:a></li>
+
+	</ul>
 
 </div>
 <%@ include file="../_include/_scripts.jsp"%>
