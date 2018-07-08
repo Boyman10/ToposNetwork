@@ -20,7 +20,7 @@
 </div>
 <%@ include file="../_include/_scripts.jsp"%>
 
-<s:url action="site.action" namespace="/admin" var="urlTag"></s:url>
+<s:url action="site.action" namespace="/admin" var="urlTag" ></s:url>
 
 <script type="text/javascript">
 	// Once doc is ready
@@ -42,9 +42,8 @@
 
 							jQuery.each(data, function(key, val) {
 								
-								console.log(val.name + " " + val.id);
-								
-							    var siteUrl = '<s:a href="%{urlTag}?id=' + val.id + '">' + val.name + '</s:a>';				
+								var siteUrl = '<a href="<s:property value="#urlTag" />"?id=' + data['id'] + '>' + data['name'] + '</a>' ;
+							    				
 								$sites.append("<li class=\"list-group-item\">" + siteUrl  + "</li>");
 							});
 						}).fail(function(data) {
