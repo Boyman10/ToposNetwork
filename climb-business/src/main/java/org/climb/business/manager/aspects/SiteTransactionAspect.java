@@ -32,7 +32,7 @@ public class SiteTransactionAspect {
     private TransactionStatus vTransactionStatus;
     
     
-	@Before("execution(* org.climb.business.manager.impl.SiteManagerImpl.addSite(..))")
+	@Before("execution(* org.climb.business.manager.impl.SiteManagerImpl.*Site(..))")
 	public void transactionBefore(JoinPoint joinPoint) {
 
 		LOGGER.debug("transactionBefore() is running!");
@@ -43,7 +43,7 @@ public class SiteTransactionAspect {
 
 	}
 
-	@AfterReturning(pointcut = "execution(* org.climb.business.manager.impl.SiteManagerImpl.addSite(..))", returning = "result")
+	@AfterReturning(pointcut = "execution(* org.climb.business.manager.impl.SiteManagerImpl.*Site(..))", returning = "result")
 	public void afterTransactionalMethod(JoinPoint joinPoint, Object result) {
 
 		LOGGER.debug("afterTransactionalMethod() is running!");
@@ -53,7 +53,7 @@ public class SiteTransactionAspect {
 		platformTransactionManager.commit(vTransactionStatus);
 	}
 
-	@AfterThrowing(pointcut = "execution(* org.climb.business.manager.impl.SiteManagerImpl.addSite(..))", throwing = "error")
+	@AfterThrowing(pointcut = "execution(* org.climb.business.manager.impl.SiteManagerImpl.*Site(..))", throwing = "error")
 	public void transactionAfterThrowing(JoinPoint joinPoint, Throwable error) {
 
 		System.out.println("transactionAfterThrowing() is running!");
