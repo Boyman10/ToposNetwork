@@ -17,6 +17,7 @@
 	
 	<bean id="AddGrade" class="org.rhm.climb.webapp.action.admin.AddGrade" scope="prototype" />
 	<bean id="NewSite" class="org.rhm.climb.webapp.action.admin.NewSite" scope="prototype" />
+	<bean id="EditSite" class="org.rhm.climb.webapp.action.admin.EditSite" scope="prototype" />
 	<bean id="NewArea" class="org.rhm.climb.webapp.action.admin.NewArea" scope="prototype" />
 	<bean id="Profile" class="org.rhm.climb.webapp.action.admin.Profile" />
 

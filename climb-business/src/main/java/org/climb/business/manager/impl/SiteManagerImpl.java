@@ -23,7 +23,13 @@ public class SiteManagerImpl extends AbstractManager implements SiteManager {
 
 		return getDaoFactory().getSiteDao().addSite(site);	
 	}
+	@Override
+	public int updateSite(Site site) {
+		
+		LOGGER.debug("Updating site - Site manager " + site.getName());
 
+		return getDaoFactory().getSiteDao().updateSite(site);	
+	}
 
 	@Override
 	public List<Site> getSiteList() {

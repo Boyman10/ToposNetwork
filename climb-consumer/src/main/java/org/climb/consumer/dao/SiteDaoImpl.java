@@ -62,6 +62,46 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 			throw new RuntimeException(e);
 		}
 	}
+	@Override
+	public int updateSite(Site site) {
+		
+		int nRows = 0;
+		
+		try {
+			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
+			this.setDataSource(getDataSource());
+			
+			LOGGER.debug("updating site to DB : " + site.getName());
+
+			BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(site);
+
+			LOGGER.debug("Launching query now...");
+
+			nRows = this.npjTemplate.update(
+					"UPDATE public.climb_site(location,region,department,name,country,type) "
+					+ "values(:location,:region,:department,:name,:country,:type) "
+					+ " WHERE id = :id",
+					params);
+			
+			LOGGER.debug("Query done ! ");
+			
+						
+			return nRows;
+
+		}catch (DuplicateKeyException e) {
+			LOGGER.error("FATAL ERROR duplicate entry " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (InvalidResultSetAccessException e) {
+			LOGGER.error("FATAL ERROR Invalid resultset " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (DataAccessException e) {
+			LOGGER.error("FATAL ERROR dataAccess " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (Exception e) {
+			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
+			throw new RuntimeException(e);
+		}
+	}
 
 	@Override
 	public List<Site> getSites() {

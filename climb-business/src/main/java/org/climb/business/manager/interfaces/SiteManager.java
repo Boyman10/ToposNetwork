@@ -15,4 +15,5 @@ public interface SiteManager {
 	public int addSite(Site site);
 	public List<Site> getSiteList();
 	Site getSiteById(int id);
+	int updateSite(Site site);
 }

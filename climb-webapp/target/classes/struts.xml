@@ -196,6 +196,13 @@
 			<result name="success">new_site.jsp</result>
 		</action>
 
+		<!-- Editing a site -->
+		<action name="site" class="EditSite">
+			<result name="input">edit_site.jsp</result>
+			<result name="success">edit__site.jsp</result>
+		</action>
+		
+		
 		<!-- Adding new area -->
 		<action name="new_area" class="NewArea">
 			<result name="input">new_area.jsp</result>
