@@ -1,13 +1,13 @@
 package org.climb.consumer.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.climb.consumer.dao.interfaces.SiteDao;
 import org.climb.consumer.rm.SiteRowMapper;
 import org.climb.model.bean.route.Site;
-import org.climb.model.bean.user.Role;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.InvalidResultSetAccessException;
@@ -16,6 +16,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
 @Component("siteDao")
@@ -38,12 +40,18 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 
 			LOGGER.debug("Launching query now...");
 
+			// Using keyholder to retrieve the last insert id :
+			KeyHolder keyHolder = new GeneratedKeyHolder();
+	        String[] columnNames = new String[] {"id"};
+			
 			nRows = this.npjTemplate.update(
 					"INSERT INTO public.climb_site(location,region,department,name,country,type) "
 					+ "values(:location,:region,:department,:name,:country,:type)",
-					params);
+					params, keyHolder, columnNames);
 			
-			LOGGER.debug("Query done ! ");
+			Map<String,Object> keys = keyHolder.getKeys();
+			
+			LOGGER.debug("Query done ! " + keys.get("id"));
 			
 						
 			return nRows;
