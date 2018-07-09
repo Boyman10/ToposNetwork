@@ -17,15 +17,15 @@
 		</div>
 	</s:if>
 	<s:else>
-		<s:form action="edit_site">
-			<s:textfield key="siteBean.name" value="%{siteBean.name}" class="form-control" />
-			<s:textfield key="siteBean.type" value="%{siteBean.type}" class="form-control" />
-			<s:textfield key="siteBean.location" value="siteBean.location" class="form-control" />
-			<s:textfield key="siteBean.region" value="siteBean.region" class="form-control" />
-			<s:textfield key="siteBean.department" value="siteBean.department" class="form-control" />
-			<s:textfield key="siteBean.country" value="siteBean.country" class="form-control" />
+		<s:form action="site">
+			<s:textfield key="siteBean.name"  class="form-control" />
+			<s:textfield key="siteBean.type"  class="form-control" />
+			<s:textfield key="siteBean.location"  class="form-control" />
+			<s:textfield key="siteBean.region" class="form-control" />
+			<s:textfield key="siteBean.department"  class="form-control" />
+			<s:textfield key="siteBean.country" class="form-control" />
 			
-			<s:hidden key="siteBean.id" value="siteBean.id" />
+			<s:hidden key="siteBean.id" />
 			<s:submit value="Submit" class="btn btn-primary" />
 		</s:form>
 		<s:if test="hasActionErrors()">

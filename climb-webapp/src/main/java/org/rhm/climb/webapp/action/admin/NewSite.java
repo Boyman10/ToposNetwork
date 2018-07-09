@@ -44,14 +44,6 @@ public class NewSite extends ActionSupport {
 	}
 
 	@Override
-	public String input() {
-		
-		LOGGER.debug("Yes we are on the input form for a new Site entry");
-		
-		return INPUT;
-	}
-
-	@Override
 	public String execute() {
 		
 		String vResult = INPUT;

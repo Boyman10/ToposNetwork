@@ -107,6 +107,15 @@ public class EditSite extends ActionSupport {
 
 				this.addActionError("Something went wrong please check your entries !");
 			}
+		} else {
+			// We are in input method :
+			
+			siteBean = this.managerFactory.getSiteManager().getSiteById(this.id);
+			
+			if (siteBean == null) {
+				this.addActionError("There must be something wrong here - please contact the support for debugging");
+			}
+			
 		}
 		
 		return vResult;

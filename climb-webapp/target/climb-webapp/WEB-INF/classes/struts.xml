@@ -199,7 +199,7 @@
 		<!-- Editing a site -->
 		<action name="site" class="EditSite">
 			<result name="input">edit_site.jsp</result>
-			<result name="success">edit__site.jsp</result>
+			<result name="success">edit_site.jsp</result>
 		</action>
 		
 		

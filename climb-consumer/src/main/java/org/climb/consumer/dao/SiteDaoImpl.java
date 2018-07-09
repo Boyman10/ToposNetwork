@@ -78,8 +78,7 @@ public class SiteDaoImpl extends AbstractDaoImpl implements SiteDao {
 			LOGGER.debug("Launching query now...");
 
 			nRows = this.npjTemplate.update(
-					"UPDATE public.climb_site(location,region,department,name,country,type) "
-					+ "values(:location,:region,:department,:name,:country,:type) "
+					"UPDATE public.climb_site SET location=:location,region=:region,department=:department,name=:name,country=:country,type=:type "
 					+ " WHERE id = :id",
 					params);
 			
