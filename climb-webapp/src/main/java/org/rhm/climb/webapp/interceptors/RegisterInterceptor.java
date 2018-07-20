@@ -6,11 +6,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
+import org.rhm.climb.webapp.action.Register;
+
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 /**
  * Interceptor controling access using session and role
+ * @see https://struts.apache.org/core-developers/writing-interceptors.html
  */
 public class RegisterInterceptor extends AbstractInterceptor  {
 
@@ -43,13 +46,18 @@ public class RegisterInterceptor extends AbstractInterceptor  {
 			LOGGER.debug("Within action User  - intercepting username : " + username);
 
 			if (StringUtils.containsAny(username, "admin", "bob")) {
-						
-				return "error-forbidden";
+										
+			       Register action = (Register)pInvocation.getAction();
+			       action.setError("What language are you speaking !!");
+			       
+			       return pInvocation.invoke();
+			       
 			}
 		} else {
 			LOGGER.debug("Within intereceptor... METHOD : " + request.getMethod());
 		}
 
+		//allow the next Interceptor to execute
 		return pInvocation.invoke();
 	}
 }

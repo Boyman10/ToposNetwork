@@ -32,6 +32,8 @@ public class Register extends ActionSupport implements Preparable {
 	// optional parameter just for testing
 	private String datereg;
 
+	// Just for the interceptor
+	private String error = "";
 
 	@Autowired
 	@Qualifier("managerFactory")
@@ -75,6 +77,14 @@ public class Register extends ActionSupport implements Preparable {
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
+	
+	/**
+	 * If there is an error filled from within an interceptor...
+	 * @param error
+	 */
+	public void setError(String error) {
+		this.error = error;
+	}
 
 	@Override
 	public String input() {
@@ -105,43 +115,51 @@ public class Register extends ActionSupport implements Preparable {
 		// Check if we have password and userBean submitted :
 		if (userBean != null && !StringUtils.isAllEmpty(Integer.toString(userBean.getId()))) {
 
-			try {
-
-				LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername() + " With date " + userBean.getDatereg() );
-
-				// First retrieve the default Role by its name :
-				Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
-				userBean.setRole(role);
+			if (!this.error.equals("")) {
 				
-				// verify password :
-				if (!userBean.getPassword().equals(confirm)) {
+				this.addActionError(this.error);
+				return vResult;
+				
+			} else {
+			
+				try {
+	
+					LOGGER.debug("Retrieving user with pseudo " + userBean.getUsername() + " With date " + userBean.getDatereg() );
+	
+					// First retrieve the default Role by its name :
+					Role role = this.managerFactory.getRoleManager().getRoleByName("ROLE_USER");
+					userBean.setRole(role);
 					
-					this.addActionError("Password don't match!");
-					LOGGER.debug("Password don't match " + confirm + " != " + userBean.getPassword());
-					return vResult;
+					// verify password :
+					if (!userBean.getPassword().equals(confirm)) {
+						
+						this.addActionError("Password don't match!");
+						LOGGER.debug("Password don't match " + confirm + " != " + userBean.getPassword());
+						return vResult;
+					}
+					
+					// Encrypt password :
+					PasswordEncoder encoding = new PasswordEncoder();
+					userBean.setPassword(encoding.encodePassword(userBean.getPassword()));
+	
+					// Persist data to db now :
+					if (this.managerFactory.getUserManager().addUser(userBean)) {
+						vResult = ActionSupport.SUCCESS;
+						/* Perfect we are all good we should continue now : */
+	
+						this.addActionMessage(
+								"Welcome here dude, you should now confirm your email and then sign in from the menu !");
+	
+						LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
+					} else {
+						this.addActionError("Somehting went wrong please check your entries!");
+						this.userBean = null;
+						LOGGER.debug("Not written to db - removing bean now");
+					}
+				} catch (Exception pEx) {
+	
+					this.addActionError("Something went wrong please check your entries !");
 				}
-				
-				// Encrypt password :
-				PasswordEncoder encoding = new PasswordEncoder();
-				userBean.setPassword(encoding.encodePassword(userBean.getPassword()));
-
-				// Persist data to db now :
-				if (this.managerFactory.getUserManager().addUser(userBean)) {
-					vResult = ActionSupport.SUCCESS;
-					/* Perfect we are all good we should continue now : */
-
-					this.addActionMessage(
-							"Welcome here dude, you should now confirm your email and then sign in from the menu !");
-
-					LOGGER.debug("Adding user to DB - Adding event to send confirmation email");
-				} else {
-					this.addActionError("Somehting went wrong please check your entries!");
-					this.userBean = null;
-					LOGGER.debug("Not written to db - removing bean now");
-				}
-			} catch (Exception pEx) {
-
-				this.addActionError("Something went wrong please check your entries !");
 			}
 		}
 
