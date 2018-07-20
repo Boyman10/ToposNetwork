@@ -158,7 +158,7 @@ public class Register extends ActionSupport implements Preparable {
 					}
 				} catch (Exception pEx) {
 	
-					this.addActionError("Something went wrong please check your entries !");
+					this.addActionError("Something went wrong please check your entries !" + pEx.getCause().getMessage());
 				}
 			}
 		}
