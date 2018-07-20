@@ -18,4 +18,5 @@ public interface DaoFactory {
 	public GradeDao getGradeDao();
 	
 	public AreaDao getAreaDao();
+	public RouteDao getRouteDao();
 }

@@ -14,4 +14,6 @@ public interface GradeDao {
 	public List<Grade> getListGrades();
 
 	int addGrade(Grade grade);
+
+	Grade getGradeFromId(int id);
 }

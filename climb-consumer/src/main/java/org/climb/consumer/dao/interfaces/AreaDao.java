@@ -13,4 +13,5 @@ public interface AreaDao {
 	
 	public List<Area> getListArea();
 	int addArea(Area area);
+	Area getAreaFromId(int id);
 }

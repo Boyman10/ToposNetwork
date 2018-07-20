@@ -29,4 +29,10 @@ public class AreaManagerImpl extends AbstractManager implements AreaManager {
 		return getDaoFactory().getAreaDao().addArea(area);	
 	}
 
+	@Override
+	public Area getAreaById(int id) {
+		
+		return getDaoFactory().getAreaDao().getAreaFromId(id);	
+	}
+
 }

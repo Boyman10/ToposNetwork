@@ -10,4 +10,6 @@ public interface AreaManager {
 
 	public List<Area> getAreaList();
 	public int addArea(Area area);
+	Area getAreaById(int id);
+
 }

@@ -79,6 +79,12 @@ public class Route {
 	public int getId() {
 		return id;
 	}
+
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		this.id = id;
+		
+	}
 	
 	
 	

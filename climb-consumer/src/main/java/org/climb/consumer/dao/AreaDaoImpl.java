@@ -11,6 +11,10 @@ import org.climb.model.bean.route.Area;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.InvalidResultSetAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -88,5 +92,38 @@ public class AreaDaoImpl extends AbstractDaoImpl implements AreaDao {
 
 		return affectedRows;
 	}
+	@Override
+	public Area getAreaFromId(int id) {
+		
+		String sql = "SELECT * FROM public.climb_area WHERE id = :id";
+		
+		try {
+			LOGGER.debug("Setting up dataSource initializing NamedParameterJdbcTemplate under npjTemplate");
+			
+			this.setDataSource(getDataSource());
+			MapSqlParameterSource vParams = new MapSqlParameterSource();			
+			
+			LOGGER.debug("getting area by id : " + id);
 
+			vParams.addValue("id", id);
+			
+			LOGGER.debug("Launching query now...");
+
+			Area area = (Area) this.npjTemplate.queryForObject(sql, vParams, new BeanPropertyRowMapper(Area.class));
+			
+			LOGGER.debug("Query done ! ");
+			
+			return area;
+
+		} catch (InvalidResultSetAccessException e) {
+			LOGGER.error("FATAL ERROR Invalid resultset " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (DataAccessException e) {
+			LOGGER.error("FATAL ERROR dataAccess " + e.getMessage());
+			throw new RuntimeException(e);
+		} catch (Exception e) {
+			LOGGER.error("FATAL ERROR Exception " + e.getMessage());
+			throw new RuntimeException(e);
+		}
+	}
 }

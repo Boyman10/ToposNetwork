@@ -10,4 +10,6 @@ public interface GradeManager {
 
 	public List<Grade> getGradesList();
 	public int addGrade(Grade grade);
+	Grade getGradeById(int id);
+
 }

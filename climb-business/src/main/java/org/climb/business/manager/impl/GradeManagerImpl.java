@@ -20,4 +20,10 @@ public class GradeManagerImpl extends AbstractManager implements GradeManager {
 		return getDaoFactory().getGradeDao().addGrade(grade);			
 	}
 
+	@Override
+	public Grade getGradeById(int id) {
+		
+		return getDaoFactory().getGradeDao().getGradeFromId(id);			
+	}
+
 }
