@@ -4,6 +4,7 @@ import org.climb.consumer.dao.interfaces.AreaDao;
 import org.climb.consumer.dao.interfaces.DaoFactory;
 import org.climb.consumer.dao.interfaces.GradeDao;
 import org.climb.consumer.dao.interfaces.RoleDao;
+import org.climb.consumer.dao.interfaces.RouteDao;
 import org.climb.consumer.dao.interfaces.SiteDao;
 import org.climb.consumer.dao.interfaces.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class DaoFactoryImpl implements DaoFactory {
 
 	@Autowired
 	private AreaDao areaDao;
+	
+	@Autowired
+	private RouteDao routeDao;
 	
 	@Override
 	public UserDao getUserDao() {
@@ -57,6 +61,12 @@ public class DaoFactoryImpl implements DaoFactory {
 	@Override
 	public AreaDao getAreaDao() {
 		return areaDao;
+	}
+
+	@Override
+	public RouteDao getRouteDao() {
+		// TODO Auto-generated method stub
+		return routeDao;
 	}
 
 }

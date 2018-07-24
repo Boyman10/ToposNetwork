@@ -208,7 +208,13 @@
 			<result name="input">new_area.jsp</result>
 			<result name="success">new_area.jsp</result>
 		</action>
-
+		
+		<!-- Adding new route-->
+		<action name="new_route" class="NewRoute">
+			<result name="input">new_route.jsp</result>
+			<result name="success">new_route.jsp</result>
+		</action>
+		
 		<!-- Adding new grade -->
 		<action name="add_grade" class="AddGrade">
 			<result name="input">add_grade.jsp</result>

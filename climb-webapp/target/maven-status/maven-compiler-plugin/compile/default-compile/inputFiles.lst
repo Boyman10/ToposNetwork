@@ -6,6 +6,7 @@
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/Register.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/admin/NewArea.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/admin/EditSite.java
+/home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/admin/NewRoute.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/admin/AddGrade.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/utils/FileUtils.java
 /home/bob/eclipse-workspace-9/ToposNetwork/climb-webapp/src/main/java/org/rhm/climb/webapp/action/UserAction.java

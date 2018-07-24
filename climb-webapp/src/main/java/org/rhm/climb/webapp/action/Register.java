@@ -1,5 +1,7 @@
 package org.rhm.climb.webapp.action;
 
+import java.sql.SQLException;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,6 +11,7 @@ import org.climb.model.bean.user.User;
 import org.rhm.climb.webapp.utils.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DuplicateKeyException;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.Preparable;
@@ -158,7 +161,10 @@ public class Register extends ActionSupport implements Preparable {
 					}
 				} catch (Exception pEx) {
 	
-					this.addActionError("Something went wrong please check your entries !" + pEx.getCause().getMessage());
+					if (pEx.getMessage().contains("Duplicate"))
+						this.addActionError("This user name or email is already in use, please pick up another value !");
+					else 
+						this.addActionError("Something went wrong please contact our support with the following error : " + pEx.getCause().getMessage());
 				}
 			}
 		}

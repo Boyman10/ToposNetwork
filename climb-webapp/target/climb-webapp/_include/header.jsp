@@ -54,6 +54,8 @@
         	<div class="dropdown-divider"></div>
         	<s:a namespace="/admin" action="new_site" title="Add new Site" cssClass="dropdown-item nav-link">Add new site</s:a>
         	<s:a namespace="/admin" action="new_area" title="Add new Area" cssClass="dropdown-item nav-link">Add new area</s:a>
+        	<s:a namespace="/admin" action="new_route" title="Add new Route" cssClass="dropdown-item nav-link">Add new route</s:a>
+        	<div class="dropdown-divider"></div>
         	<s:a namespace="/admin" action="add_grade" title="Add new Grade" cssClass="dropdown-item nav-link">Add new grade</s:a>
         </div>
        </s:if>

@@ -8,6 +8,7 @@ org/rhm/climb/webapp/action/admin/EditSite.class
 org/rhm/climb/webapp/action/admin/Sites.class
 org/rhm/climb/webapp/interceptors/RegisterInterceptor.class
 org/rhm/climb/webapp/utils/SendEmail.class
+org/rhm/climb/webapp/action/admin/NewRoute.class
 org/rhm/climb/webapp/utils/SendEmail$1.class
 org/rhm/climb/webapp/action/Register.class
 org/rhm/climb/webapp/action/UserAction.class

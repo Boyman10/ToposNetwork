@@ -1,4 +1,5 @@
 org/climb/business/manager/interfaces/UserManager.class
+org/climb/business/manager/interfaces/RouteManager.class
 org/climb/business/manager/interfaces/RoleManager.class
 org/climb/business/manager/impl/RoleManagerImpl.class
 org/climb/business/manager/impl/UserManagerImpl.class
@@ -11,5 +12,6 @@ org/climb/business/manager/interfaces/AreaManager.class
 org/climb/business/manager/interfaces/SiteManager.class
 org/climb/business/manager/impl/SiteManagerImpl.class
 org/climb/business/manager/interfaces/factory/ManagerFactory.class
+org/climb/business/manager/impl/RouteManagerImpl.class
 org/climb/business/manager/interfaces/GradeManager.class
 org/climb/business/manager/impl/ManagerFactoryImpl.class
