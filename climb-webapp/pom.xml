@@ -108,47 +108,47 @@
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-			<!-- jquery struts plugin -->
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-grid-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-datatables-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-richtext-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-tree-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.jgeppert.struts2.jquery</groupId>
-				<artifactId>struts2-jquery-mobile-plugin</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.security</groupId>
-				<artifactId>spring-security-config</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.security</groupId>
-				<artifactId>spring-security-crypto</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.security</groupId>
-				<artifactId>spring-security-core</artifactId>
-			</dependency>
-			<dependency>
-				<groupId>com.sun.mail</groupId>
-				<artifactId>javax.mail</artifactId>
-			</dependency>
+		<!-- jquery struts plugin -->
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-grid-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-datatables-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-richtext-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-tree-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.jgeppert.struts2.jquery</groupId>
+			<artifactId>struts2-jquery-mobile-plugin</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -171,7 +171,90 @@
 					</webResources>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- je choisis un nom unique pour définir cette exécution -->
+						<id>enforce-profile-target</id>
+						<!-- je branche l'exécution à la phase "validate" -->
+						<phase>validate</phase>
+						<!-- cette exécution lancera le goal "enforce" -->
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<!-- La configuration du plugin propre à cette exécution -->
+						<configuration>
+							<rules>
+								<requireActiveProfile>
+									<profiles>target-dev,target-test,target-prod</profiles>
+									<all>false</all>
+								</requireActiveProfile>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<url>http://localhost:8080/climb-webapp/</url>
+	
+
+	<!-- =============================================================== -->
+	<!-- Profils -->
+	<!-- =============================================================== -->
+	<profiles>
+		<!-- Profile for dev env -->
+		<profile>
+			<id>target-dev</id>
+
+		</profile>
+
+		<!-- Profile for testing env -->
+		<profile>
+			<id>target-test</id>
+
+		</profile>
+
+		<!-- Profile for prod. -->
+		<profile>
+			<id>target-prod</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-enforcer-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>enforce-target-prod-no-snapshot</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>enforce</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<!-- Le projet et son parent ne doivent pas être en SNAPSHOT -->
+										<requireReleaseVersion />
+										<!-- Aucune dépendance ne doit être en SNAPSHOT -->
+										<requireReleaseDeps />
+									</rules>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>	
 </project>
