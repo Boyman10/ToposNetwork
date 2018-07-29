@@ -18,18 +18,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <dependent-module archiveName="toponetwork-model-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-model/toponetwork-model">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="toponetwork-technical-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-technical/toponetwork-technical">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="toponetwork-business-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-business/toponetwork-business">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="toponetwork-consumer-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/toponetwork-consumer/toponetwork-consumer">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
                                                                                         
         
         
