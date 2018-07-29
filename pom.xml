@@ -44,6 +44,9 @@
 		<struts.version>2.5.16</struts.version>
 		<servlet.version>4.0.1</servlet.version>
 		<junit.version>4.12</junit.version>
+		
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>		
 	</properties>
 
 	<modules>
@@ -277,6 +280,34 @@
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.1.0</version>
 				</plugin>
+				
+				
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <!-- je choisis un nom unique pour définir cette exécution -->
+                        <id>enforce-profile-target</id>
+                        <!-- je branche l'exécution à la phase "validate" -->
+                        <phase>validate</phase>
+                        <!-- cette exécution lancera le goal "enforce" -->
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <!-- La configuration du plugin propre à cette exécution -->
+                        <configuration>
+                            <rules>
+                                <requireActiveProfile>
+                                    <profiles>target-dev,target-test,target-prod</profiles>
+                                    <all>false</all>
+                                </requireActiveProfile>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>				
 			</plugins>
 		</pluginManagement>
 	</build>
@@ -359,4 +390,27 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	
+	    <!-- =============================================================== -->
+    <!-- Profils -->
+    <!-- =============================================================== -->
+    <profiles>
+        <!-- Profile for dev env -->
+        <profile>
+            <id>target-dev</id>
+            
+        </profile>
+
+        <!-- Profile for testing env-->
+        <profile>
+            <id>target-test</id>
+           
+        </profile>
+
+        <!-- Profile for prod. -->
+        <profile>
+            <id>target-prod</id>
+          
+        </profile>
+    </profiles>
 </project>
