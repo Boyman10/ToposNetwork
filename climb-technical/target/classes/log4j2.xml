@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="info">
-    <!-- ===== Appenders ===== -->
-    <Appenders>
-        <!-- == Sortie sur la console == -->
-        <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%highlight{%-5level} [%t] %c : %m%n"/>
-        </Console>
-    </Appenders>
+	<!-- ===== Appenders ===== -->
+	<Appenders>
+		<!-- == Sortie sur la console == -->
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%highlight{%-5level} [%t] %c : %m%n" />
+		</Console>
+		<File name="MyFile" fileName="${sys:catalina.base}/logs/all.log" immediateFlush="false"
+			append="false">
+			<PatternLayout
+				pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+	</Appenders>
 
-    <!-- ===== Loggers ===== -->
-    <Loggers>
-        <!-- == Logger pour Struts == -->
-        <Logger name="com.opensymphony.xwork2" level="warn">
-            <AppenderRef ref="STDOUT"/>
-        </Logger>
-        <Logger name="org.apache.struts2" level="warn">
-            <AppenderRef ref="STDOUT"/>
-        </Logger>
+	<!-- ===== Loggers ===== -->
+	<Loggers>
+		<!-- == Logger pour Struts == -->
+		<Logger name="com.opensymphony.xwork2.*" level="warn">
+			<AppenderRef ref="MyFile" />
+		</Logger>
+		<Logger name="org.apache.struts2*" level="warn">
+			<AppenderRef ref="MyFile" />
+		</Logger>
 
-        <!-- == Logger pour l'application = -->
-        <Logger name="org.rhm.climb.FAKE" level="info" additivity="false">
-            <AppenderRef ref="STDOUT"/>
-        </Logger>
+		<!-- == Logger pour l'application = -->
+		<Logger name="org.rhm.climb.*" level="info"
+			additivity="false">
+			<AppenderRef ref="STDOUT" />
+		</Logger>
 
-        <!-- == Logger de base == -->
-        <Root level="debug">
-            <AppenderRef ref="STDOUT"/>
-        </Root>
-    </Loggers>
+		<!-- == Logger de base == -->
+		<Root level="error">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
 </Configuration>
