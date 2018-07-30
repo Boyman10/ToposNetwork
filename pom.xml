@@ -64,27 +64,27 @@
 			<dependency>
 				<groupId>rhm</groupId>
 				<artifactId>toponetwork-webapp</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>rhm</groupId>
 				<artifactId>toponetwork-model</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>rhm</groupId>
 				<artifactId>toponetwork-business</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>rhm</groupId>
 				<artifactId>toponetwork-technical</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>rhm</groupId>
 				<artifactId>toponetwork-consumer</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.1.1</version>
 			</dependency>
 			<!-- ===== Tests ===== -->
 			<!-- https://mvnrepository.com/artifact/junit/junit -->
