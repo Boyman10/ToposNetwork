@@ -194,13 +194,16 @@
 				<version>1.9.1</version>
 			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-bom -->
+
+			<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-bom -->
 			<dependency>
 				<groupId>org.hibernate.ogm</groupId>
 				<artifactId>hibernate-ogm-bom</artifactId>
-				<version>5.4.0.Beta1</version>
+				<version>5.4.0.Final</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
 
 			<!-- jquery struts plugin -->
 			<dependency>
